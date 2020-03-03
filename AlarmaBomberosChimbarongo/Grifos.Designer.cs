@@ -82,7 +82,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.trackZoom = new System.Windows.Forms.TrackBar();
-            this.label21 = new System.Windows.Forms.Label();
             this.btnPlano = new System.Windows.Forms.Button();
             this.btnSatelite = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -438,7 +437,7 @@
             "CoordenadasUbicacion"});
             this.cmbBuscarEn.Location = new System.Drawing.Point(190, 11);
             this.cmbBuscarEn.Name = "cmbBuscarEn";
-            this.cmbBuscarEn.Size = new System.Drawing.Size(121, 21);
+            this.cmbBuscarEn.Size = new System.Drawing.Size(129, 21);
             this.cmbBuscarEn.TabIndex = 56;
             // 
             // txtCordenadasUbicacion
@@ -464,7 +463,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(103, 14);
+            this.label3.Location = new System.Drawing.Point(108, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 57;
@@ -484,7 +483,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(337, 15);
+            this.label1.Location = new System.Drawing.Point(341, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 58;
@@ -616,7 +615,6 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.trackZoom);
-            this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.btnPlano);
             this.panel1.Controls.Add(this.btnSatelite);
             this.panel1.Controls.Add(this.pictureBox9);
@@ -629,7 +627,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.mapa2;
-            this.pictureBox11.Location = new System.Drawing.Point(441, 5);
+            this.pictureBox11.Location = new System.Drawing.Point(445, 6);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(40, 40);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -639,7 +637,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.Satellite_icon_icons_com_74901;
-            this.pictureBox10.Location = new System.Drawing.Point(518, 6);
+            this.pictureBox10.Location = new System.Drawing.Point(520, 6);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(40, 40);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -651,7 +649,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(58, 37);
+            this.label14.Location = new System.Drawing.Point(62, 37);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(235, 12);
             this.label14.TabIndex = 83;
@@ -661,7 +659,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(58, 21);
+            this.label11.Location = new System.Drawing.Point(62, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(161, 16);
             this.label11.TabIndex = 82;
@@ -672,7 +670,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(646, 7);
+            this.label17.Location = new System.Drawing.Point(646, 25);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 16);
             this.label17.TabIndex = 80;
@@ -680,7 +678,8 @@
             // 
             // trackZoom
             // 
-            this.trackZoom.Location = new System.Drawing.Point(692, 3);
+            this.trackZoom.LargeChange = 2;
+            this.trackZoom.Location = new System.Drawing.Point(692, 21);
             this.trackZoom.Maximum = 20;
             this.trackZoom.Minimum = 4;
             this.trackZoom.Name = "trackZoom";
@@ -688,17 +687,6 @@
             this.trackZoom.TabIndex = 79;
             this.trackZoom.Value = 10;
             this.trackZoom.ValueChanged += new System.EventHandler(this.trackZoom_ValueChanged);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Orbitron", 9F, System.Drawing.FontStyle.Bold);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(328, 42);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(95, 15);
-            this.label21.TabIndex = 76;
-            this.label21.Text = "Tipo de Vista";
             // 
             // btnPlano
             // 
@@ -725,7 +713,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.mapa;
-            this.pictureBox9.Location = new System.Drawing.Point(6, 11);
+            this.pictureBox9.Location = new System.Drawing.Point(10, 11);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(46, 46);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -740,7 +728,7 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(3, 69);
+            this.gMapControl1.Location = new System.Drawing.Point(10, 69);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -754,7 +742,7 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(905, 454);
+            this.gMapControl1.Size = new System.Drawing.Size(898, 450);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDoubleClick);
@@ -808,7 +796,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TrackBar trackZoom;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnPlano;
         private System.Windows.Forms.Button btnSatelite;
         private System.Windows.Forms.PictureBox pictureBox9;

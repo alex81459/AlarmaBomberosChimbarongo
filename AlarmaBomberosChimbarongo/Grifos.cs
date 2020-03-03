@@ -203,7 +203,7 @@ namespace AlarmaBomberosChimbarongo
         private void txtBuscarEn_KeyUp(object sender, KeyEventArgs e)
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELEC * From Grifos Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Grifos Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
