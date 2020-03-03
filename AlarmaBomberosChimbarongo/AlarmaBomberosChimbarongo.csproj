@@ -82,6 +82,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -227,6 +233,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alert_alarm_22185.ico" />
+    <None Include="Resources\mapa2.png" />
+    <None Include="Resources\mapa1.png" />
+    <None Include="Resources\Satellite_icon-icons.com_74901.png" />
+    <None Include="Resources\mapa.png" />
     <None Include="Resources\base-de-datos.png" />
     <None Include="Resources\base-de-datos%281%29.png" />
     <None Include="Resources\settings5_118054.png" />

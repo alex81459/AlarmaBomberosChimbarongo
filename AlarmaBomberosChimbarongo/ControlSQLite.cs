@@ -24,11 +24,11 @@ namespace AlarmaBomberosChimbarongo
                 sqlComando.ExecuteNonQuery();
                 cadenaConexion.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al Ejecutar el Proceso Solicitado", "Error Proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al Ejecutar el Proceso Solicitado ERROR: "+ex.Message, "Error Proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               //cadenaConexion.Dispose();
                 cadenaConexion.Close();
-                
             }   
         }
 
@@ -43,17 +43,16 @@ namespace AlarmaBomberosChimbarongo
                 DataTable dt = new DataTable();
                 db.Fill(ds);
                 dt = ds.Tables[0];
-                
+
+                cadenaConexion.Close();
                 return dt;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al Intentar Extraer los Datos y Cargarlos","Error Extracion",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return null;
-            }
-            finally
-            {
+                MessageBox.Show("Error al Intentar Extraer los Datos y Cargarlos ERROR: "+ ex.Message,"Error Extracion",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                //cadenaConexion.Dispose();
                 cadenaConexion.Close();
+                return null;
             }
         }
 

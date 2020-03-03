@@ -303,6 +303,36 @@ namespace AlarmaBomberosChimbarongo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mapa {
+            get {
+                object obj = ResourceManager.GetObject("mapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapa1 {
+            get {
+                object obj = ResourceManager.GetObject("mapa1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapa2 {
+            get {
+                object obj = ResourceManager.GetObject("mapa2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Paleta_Colores {
             get {
                 object obj = ResourceManager.GetObject("Paleta Colores", resourceCulture);
@@ -316,6 +346,16 @@ namespace AlarmaBomberosChimbarongo.Properties {
         internal static System.Drawing.Bitmap salvar {
             get {
                 object obj = ResourceManager.GetObject("salvar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Satellite_icon_icons_com_74901 {
+            get {
+                object obj = ResourceManager.GetObject("Satellite_icon-icons.com_74901", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

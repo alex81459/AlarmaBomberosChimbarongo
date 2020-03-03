@@ -44,9 +44,9 @@ namespace AlarmaBomberosChimbarongo
 
                     MessageBox.Show("Se realizo correctamente la Copia de Seguridad de los Datos", "Copia Seguridad Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Ha ocurrido un error al intentar realizar la Copia de Seguridad","Erro Copia Seguridad",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Ha ocurrido un error al intentar realizar la Copia de Seguridad ERROR: "+ex.Message,"Error Copia Seguridad",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
         }
@@ -75,9 +75,9 @@ namespace AlarmaBomberosChimbarongo
 
                         MessageBox.Show("Se realizo correctamente la restaurancion de los datos del programa", "Restauracion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Ha ocurrido un error al intentar restaurar la copia de seguridad");
+                        MessageBox.Show("Ha ocurrido un error al intentar restaurar la copia de seguridad ERROR: "+ex.Message);
                     }
                 }
                 else

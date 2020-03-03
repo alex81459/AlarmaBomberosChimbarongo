@@ -45,18 +45,11 @@ namespace AlarmaBomberosChimbarongo
 
                 if (resultadoMensaje == DialogResult.Yes)
                 {
-                    try
-                    {
                         ControlSQLite eliminarClaveRadial= new ControlSQLite();
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.ClavesRadiales WHERE _rowid_ IN ('"+txtID.Text+"');");
 
                         MessageBox.Show("La Clave Radial " + txtClaveRadial.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarCampos();
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    } 
                 }
                 else
                 {
