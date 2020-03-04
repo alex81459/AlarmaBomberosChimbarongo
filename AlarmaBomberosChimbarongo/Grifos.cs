@@ -118,6 +118,7 @@ namespace AlarmaBomberosChimbarongo
                 txtDireccionGrifo.Text = Convert.ToString(fila.Cells["DireccionGrifo"].Value);
                 txtEstado.Text = Convert.ToString(fila.Cells["Estado"].Value);
                 txtCordenadasUbicacion.Text = Convert.ToString(fila.Cells["CoordenadasUbicacion"].Value);
+                btnEliminar.Enabled = true;
                 
                 if (Convert.ToString(fila.Cells["CoordenadasUbicacion"]) != "")
                 {
@@ -258,7 +259,7 @@ namespace AlarmaBomberosChimbarongo
                 if (resultadoMensaje == DialogResult.Yes)
                 {
                     ControlSQLite eliminarClaveRadial = new ControlSQLite();
-                    eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Grifo WHERE _rowid_ IN ('" + txtID.Text + "');");
+                    eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Grifos WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                     MessageBox.Show("El Grifo Numero: " + txtNumero.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
