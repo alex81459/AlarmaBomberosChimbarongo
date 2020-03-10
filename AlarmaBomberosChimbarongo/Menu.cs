@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -15,13 +17,6 @@ namespace AlarmaBomberosChimbarongo
         {
             InitializeComponent();
             tiempo.Enabled = true;
-            /*int LocalizacionPanel1 = panel8.Location.X;
-            int AnchoPanel1 = panel8.Size.Width;
-            int AnchoFechaHora1 = txtFechayHora.Width;
-            int PosicionMedio1 = LocalizacionPanel1+((AnchoPanel1/2)-(AnchoFechaHora1/2));
-
-            txtFechayHora.Location = new Point(PosicionMedio1, panel8.Location.Y);*/
-
         }
 
         Boolean TemaColorOscuro = Properties.Settings.Default.FondoOscuro;
@@ -63,21 +58,44 @@ namespace AlarmaBomberosChimbarongo
             txtFechayHora.Text = DateTime.Now.ToString();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void btnCLavesRadiales_Click(object sender, EventArgs e)
         {
-
+            ClavesRadiales abrirClaves = new ClavesRadiales();
+            abrirClaves.ShowDialog();
         }
 
-        private void txtFechayHora_Click(object sender, EventArgs e)
+        private void Menu_Resize(object sender, EventArgs e)
         {
+           
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnAJustes_Click(object sender, EventArgs e)
+        {
+            Ajustes abrirAjustes = new Ajustes();
+            abrirAjustes.ShowDialog();
+        }
+
+        private void btnCLavesRadiales_Click_1(object sender, EventArgs e)
+        {
+            ClavesRadiales abrirClaves = new ClavesRadiales();
+            abrirClaves.ShowDialog();
         }
 
         private void btnGrifos_Click(object sender, EventArgs e)
         {
             Grifos abrirGrifos = new Grifos();
             abrirGrifos.ShowDialog();
-            
+        }
+
+        private void btnGuiaTelefonica_Click(object sender, EventArgs e)
+        {
+            GuiaTelefonica abrirGuia = new GuiaTelefonica();
+            abrirGuia.ShowDialog();
         }
 
         private void btnVoluntarios_Click(object sender, EventArgs e)
@@ -86,22 +104,18 @@ namespace AlarmaBomberosChimbarongo
             abrirVoluntarios.ShowDialog();
         }
 
-        private void btnGuiaTelefonica_Click(object sender, EventArgs e)
+        private void btnMaterialesPeligroso_Click(object sender, EventArgs e)
         {
-            GuiaTelefonica abrirGuiaTelefonica = new GuiaTelefonica();
-            abrirGuiaTelefonica.ShowDialog();
-        }
-
-        private void btnCLavesRadiales_Click(object sender, EventArgs e)
-        {
-            ClavesRadiales abrirClavesRadiales = new ClavesRadiales();
-            abrirClavesRadiales.ShowDialog();
-        }
-
-        private void btnAJustes_Click(object sender, EventArgs e)
-        {
-            Ajustes abrirAjustes = new Ajustes();
-            abrirAjustes.ShowDialog();
+            try
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = @".\GRE.pdf";
+                p.Start();
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show("Error al intentar abrir la GRE - GUÍA DE RESPUESTA EN CASO DE EMERGENCIA ERROR: "+ex.Message,"Error Abrir GRE",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }

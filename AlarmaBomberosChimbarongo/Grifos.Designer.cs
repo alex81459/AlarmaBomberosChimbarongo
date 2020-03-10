@@ -191,9 +191,10 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(2, 24);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 22);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(948, 541);
+            this.panel2.Size = new System.Drawing.Size(950, 598);
             this.panel2.TabIndex = 26;
             // 
             // txtEstado
@@ -298,9 +299,9 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.limpiar;
-            this.pictureBox6.Location = new System.Drawing.Point(777, 343);
+            this.pictureBox6.Location = new System.Drawing.Point(781, 352);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox6.Size = new System.Drawing.Size(56, 51);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 77;
             this.pictureBox6.TabStop = false;
@@ -361,9 +362,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.basura;
-            this.pictureBox3.Location = new System.Drawing.Point(854, 341);
+            this.pictureBox3.Location = new System.Drawing.Point(860, 352);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(58, 64);
+            this.pictureBox3.Size = new System.Drawing.Size(51, 53);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
@@ -371,9 +372,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.salvar;
-            this.pictureBox1.Location = new System.Drawing.Point(698, 341);
+            this.pictureBox1.Location = new System.Drawing.Point(702, 352);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(57, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 70;
             this.pictureBox1.TabStop = false;
@@ -752,7 +753,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(950, 569);
+            this.ClientSize = new System.Drawing.Size(950, 620);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Barra);
             this.ForeColor = System.Drawing.Color.White;

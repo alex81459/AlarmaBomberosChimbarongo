@@ -134,7 +134,7 @@ namespace AlarmaBomberosChimbarongo
 
                     //Se posiciona la Ubicacion de la tienda
                     marker.Position = new PointLatLng(Convert.ToDouble(Latidud), Convert.ToDouble(Longitud));
-                    marker.ToolTipText = string.Format("Ubicacion Grifo: " + txtNumero.Text + " Latitud: {0} \n Longitud: {1}", Convert.ToDouble(Latidud), Convert.ToDouble(Longitud));
+                    marker.ToolTipText = string.Format("Grifo Numero: " + txtNumero.Text + " Latitud: {0} \n Longitud: {1}", Convert.ToDouble(Latidud), Convert.ToDouble(Longitud));
                     gMapControl1.Position = new PointLatLng(Convert.ToDouble(Latidud), Convert.ToDouble(Longitud));
                     gMapControl1.Zoom = 17;
                     trackZoom.Value = 17;
