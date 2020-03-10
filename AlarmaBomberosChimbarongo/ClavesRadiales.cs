@@ -35,25 +35,30 @@ namespace AlarmaBomberosChimbarongo
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            ClaveMaestra verificarClave = new ClaveMaestra();
+
             if (txtID.Text == "¿?")
             {
                 MessageBox.Show("Debe SELECCIONAR Una Clave Radial para Eliminarla de los Registros, para seleccionar debe darle Doble Click", "Clave Radial NO Seleccionada", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Eliminar la Clave Radial " + txtClaveRadial.Text + " ?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
-
-                if (resultadoMensaje == DialogResult.Yes)
+                if (verificarClave.ShowDialog() == DialogResult.OK)
                 {
-                        ControlSQLite eliminarClaveRadial= new ControlSQLite();
-                        eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.ClavesRadiales WHERE _rowid_ IN ('"+txtID.Text+"');");
+                    DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Eliminar la Clave Radial " + txtClaveRadial.Text + " ?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
+
+                    if (resultadoMensaje == DialogResult.Yes)
+                    {
+                        ControlSQLite eliminarClaveRadial = new ControlSQLite();
+                        eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.ClavesRadiales WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("La Clave Radial " + txtClaveRadial.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Muy Bien Falsa Alarma la Clave Radial " + txtClaveRadial.Text + " No se ha Eliminado", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Muy Bien Falsa Alarma la Clave Radial " + txtClaveRadial.Text + " No se ha Eliminado", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
@@ -77,19 +82,23 @@ namespace AlarmaBomberosChimbarongo
             }
             else
             {
-                if (txtClaveRadial.Text != "" && txtCategoria.Text != "" && txtDescripcion.Text != "")
-                {
-                    ControlSQLite modificarClaveRadial = new ControlSQLite();
-                    modificarClaveRadial.EjecutarConsulta("UPDATE main.ClavesRadiales SET 'ClaveRadial'='" + txtClaveRadial.Text + "','Categoria'='" + txtCategoria.Text + "','Descripcion'='" + txtDescripcion.Text + "' Where ID= '" + txtID.Text + "' ");
+                ClaveMaestra verificarClave = new ClaveMaestra();
 
-                    MessageBox.Show("Se Modifico Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
-                }
-                else
+                if (verificarClave.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("NO Debe debe dejar ninguno de los campos vacios para modificar la Clave Radial","Datos Faltantes",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                }
-                   
+                    if (txtClaveRadial.Text != "" && txtCategoria.Text != "" && txtDescripcion.Text != "")
+                    {
+                        ControlSQLite modificarClaveRadial = new ControlSQLite();
+                        modificarClaveRadial.EjecutarConsulta("UPDATE main.ClavesRadiales SET 'ClaveRadial'='" + txtClaveRadial.Text + "','Categoria'='" + txtCategoria.Text + "','Descripcion'='" + txtDescripcion.Text + "' Where ID= '" + txtID.Text + "' ");
+
+                        MessageBox.Show("Se Modifico Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO Debe debe dejar ninguno de los campos vacios para modificar la Clave Radial", "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                } 
             }
         }
 
@@ -97,7 +106,7 @@ namespace AlarmaBomberosChimbarongo
             CargarTabla();
             txtID.Text = "¿?";
             txtClaveRadial.Text = "";
-            txtCategoria.Text = "";
+            txtCategoria.SelectedIndex = -1;
             txtDescripcion.Text = "";
             btnGuardar.Enabled = true;
             btnLimpiar.Enabled = true;

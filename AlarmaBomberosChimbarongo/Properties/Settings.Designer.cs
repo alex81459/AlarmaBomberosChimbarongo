@@ -100,5 +100,17 @@ namespace AlarmaBomberosChimbarongo.Properties {
                 this["ClavesRadiales"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("42c5ba79f0761abc25be49d6c39a10180d82c8a1d2f6dfac9f10cf99b5fe36e8")]
+        public string ClaveMaestra {
+            get {
+                return ((string)(this["ClaveMaestra"]));
+            }
+            set {
+                this["ClaveMaestra"] = value;
+            }
+        }
     }
 }

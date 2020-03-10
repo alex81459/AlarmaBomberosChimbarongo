@@ -192,8 +192,7 @@ namespace AlarmaBomberosChimbarongo
             txtID.Text = "¿?";
             txtNumero.Text = "";
             txtDireccionGrifo.Text = "";
-            txtEstado.Text = "";
-            txtEstado.Text = "";
+            txtEstado.SelectedIndex = -1;
             txtCordenadasUbicacion.Text = "";
             btnGuardar.Enabled = true;
             btnLimpiar.Enabled = true;
@@ -228,11 +227,16 @@ namespace AlarmaBomberosChimbarongo
             {
                 if (txtNumero.Text != "" && txtDireccionGrifo.Text != "" && txtEstado.Text != "")
                 {
-                    ControlSQLite modificarClaveRadial = new ControlSQLite();
-                    modificarClaveRadial.EjecutarConsulta("UPDATE main.Grifos SET 'NumeroGrifo'='" + txtNumero.Text + "','DireccionGrifo'='" + txtDireccionGrifo.Text + "','Estado'='" + txtEstado.Text + "','CoordenadasUbicacion'='" + txtCordenadasUbicacion.Text + "' Where ID= '" + txtID.Text + "' ");
+                    ClaveMaestra verificarClave = new ClaveMaestra();
 
-                    MessageBox.Show("Se Modifico Correctamente el Grifo Numero: " + txtNumero.Text + "", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (verificarClave.ShowDialog() == DialogResult.OK)
+                    {
+                        ControlSQLite modificarClaveRadial = new ControlSQLite();
+                        modificarClaveRadial.EjecutarConsulta("UPDATE main.Grifos SET 'NumeroGrifo'='" + txtNumero.Text + "','DireccionGrifo'='" + txtDireccionGrifo.Text + "','Estado'='" + txtEstado.Text + "','CoordenadasUbicacion'='" + txtCordenadasUbicacion.Text + "' Where ID= '" + txtID.Text + "' ");
+
+                        MessageBox.Show("Se Modifico Correctamente el Grifo Numero: " + txtNumero.Text + "", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }     
                 }
                 else
                 {
@@ -258,11 +262,16 @@ namespace AlarmaBomberosChimbarongo
 
                 if (resultadoMensaje == DialogResult.Yes)
                 {
-                    ControlSQLite eliminarClaveRadial = new ControlSQLite();
-                    eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Grifos WHERE _rowid_ IN ('" + txtID.Text + "');");
+                    ClaveMaestra verificarClave = new ClaveMaestra();
 
-                    MessageBox.Show("El Grifo Numero: " + txtNumero.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (verificarClave.ShowDialog() == DialogResult.OK)
+                    {
+                        ControlSQLite eliminarClaveRadial = new ControlSQLite();
+                        eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Grifos WHERE _rowid_ IN ('" + txtID.Text + "');");
+
+                        MessageBox.Show("El Grifo Numero: " + txtNumero.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }    
                 }
                 else
                 {

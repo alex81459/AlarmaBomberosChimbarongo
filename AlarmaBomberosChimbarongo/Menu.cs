@@ -117,5 +117,10 @@ namespace AlarmaBomberosChimbarongo
                MessageBox.Show("Error al intentar abrir la GRE - GUÍA DE RESPUESTA EN CASO DE EMERGENCIA ERROR: "+ex.Message,"Error Abrir GRE",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

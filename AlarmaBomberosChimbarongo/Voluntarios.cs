@@ -59,6 +59,10 @@ namespace AlarmaBomberosChimbarongo
             txtTelefono.Text = "";
             txtDireccion.Text = "";
             txtEstado.Text = "";
+            txtNumeroVoluntario.Text = "";
+            txtCompañia.SelectedIndex = -1;
+            txtCargo.SelectedIndex = -1;
+            txtEstado.SelectedIndex = -1;
             btnGuardar.Enabled = true;
             btnLimpiar.Enabled = true;
             btnEliminar.Enabled = false;
@@ -159,28 +163,33 @@ namespace AlarmaBomberosChimbarongo
             {
                 if (txtID.Text == "¿?")
                 {
-                    if (txtRut.Text != "" && txtNombreVoluntario.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtEstado.Text != "")
+                    if (txtNumeroVoluntario.Text != "" && txtRut.Text != "" && txtNombreVoluntario.Text != "" && txtTelefono.Text != "" && txtDireccion.Text !="" && txtCompañia.Text !="" && txtCargo.Text !="" && txtEstado.Text != "")
                     {
                         ControlSQLite guardarClaveRadial = new ControlSQLite();
-                        guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Voluntarios(RUT, NombreVoluntario, Telefono,Direccion,Estado)VALUES ('" + txtRut.Text + "','" + txtNombreVoluntario.Text + "', '" + txtTelefono.Text + "', '" + txtDireccion.Text + "', '" + txtEstado.Text + "');");
+                        guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Voluntarios(NumeroVoluntario, RUT, NombreVoluntario, Telefono, Direccion, CompañiaBomberos, Cargo, Estado) VALUES ('"+ txtNumeroVoluntario.Text+ "', '"+ txtRut.Text+ "', '"+ txtNombreVoluntario.Text+ "', '"+ txtTelefono.Text+ "', '"+ txtDireccion.Text+ "', '"+ txtCompañia.Text+ "', '"+ txtCargo.Text+ "', '"+ txtEstado.Text+ "');");
 
                         MessageBox.Show("Se guardo Correctamente el Voluntario de RUT: " + txtRut.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarCampos();
                     }
                     else
                     {
-                        MessageBox.Show("Debe Ingresar los Datos Obligarorios para registrar a un voluntario, el RUT del Voluntario, el nombre, el telefono, la direccion y el estado", "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Debe Ingresar los Datos Obligarorios para registrar a un voluntario, N° de Voluntario, RUT, Nombre del Voluntario, Telefono, Direccion, Compañia de Bomberos, Cargo y Estado", "Datos Faltantes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else
                 {
                     if (txtRut.Text != "" && txtNombreVoluntario.Text != "" && txtTelefono.Text != "" && txtDireccion.Text != "" && txtEstado.Text != "")
                     {
-                        ControlSQLite modificarClaveRadial = new ControlSQLite();
-                        modificarClaveRadial.EjecutarConsulta("UPDATE main.Voluntarios SET 'RUT'='" + txtRut.Text + "','NombreVoluntario'='" + txtNombreVoluntario.Text + "','Telefono'='" + txtTelefono.Text + "','Direccion'='" + txtDireccion.Text + "','Estado'='" + txtEstado.Text + "' Where ID= '" + txtID.Text + "' ");
+                        ClaveMaestra verificarClave = new ClaveMaestra();
 
-                        MessageBox.Show("Se Modifico Correctamente el Voluntario con el RUT: " + txtRut.Text + "", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarCampos();
+                        if (verificarClave.ShowDialog() == DialogResult.OK)
+                        {
+                            ControlSQLite modificarClaveRadial = new ControlSQLite();
+                            modificarClaveRadial.EjecutarConsulta("UPDATE main.Voluntarios SET 'NumeroVoluntario'='" + txtNumeroVoluntario.Text + "','RUT'='" + txtRut.Text + "','NombreVoluntario'='" + txtNombreVoluntario.Text + "','Telefono'='" + txtTelefono.Text + "','Direccion'='" + txtDireccion.Text + "','CompañiaBomberos'='" + txtCompañia.Text + "','Cargo'='" + txtCargo.Text + "','Estado'='" + txtEstado.Text + "' Where ID= '" + txtID.Text + "' ");
+
+                            MessageBox.Show("Se Modifico Correctamente el Voluntario con el RUT: " + txtRut.Text + "", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimpiarCampos();
+                        }
                     }
                     else
                     {
@@ -205,6 +214,9 @@ namespace AlarmaBomberosChimbarongo
                 txtTelefono.Text = Convert.ToString(fila.Cells["Telefono"].Value);
                 txtDireccion.Text = Convert.ToString(fila.Cells["Direccion"].Value);
                 txtEstado.Text = Convert.ToString(fila.Cells["Estado"].Value);
+                txtNumeroVoluntario.Text = Convert.ToString(fila.Cells["NumeroVoluntario"].Value);
+                txtCompañia.Text = Convert.ToString(fila.Cells["CompañiaBomberos"].Value);
+                txtCargo.Text = Convert.ToString(fila.Cells["Cargo"].Value); ;
                 btnEliminar.Enabled = true;
             }
         }
@@ -221,16 +233,34 @@ namespace AlarmaBomberosChimbarongo
 
                 if (resultadoMensaje == DialogResult.Yes)
                 {
-                    ControlSQLite eliminarClaveRadial = new ControlSQLite();
-                    eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Voluntarios WHERE _rowid_ IN ('" + txtID.Text + "');");
+                    ClaveMaestra verificarClave = new ClaveMaestra();
 
-                    MessageBox.Show("El Voluntario Rut: " + txtRut.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (verificarClave.ShowDialog() == DialogResult.OK)
+                    {
+                        ControlSQLite eliminarClaveRadial = new ControlSQLite();
+                        eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Voluntarios WHERE _rowid_ IN ('" + txtID.Text + "');");
+
+                        MessageBox.Show("El Voluntario Rut: " + txtRut.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }   
                 }
                 else
                 {
                     MessageBox.Show("Muy Bien Falsa Alarma el Voluntario Rut: " + txtRut.Text + " No se ha Eliminado", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void txtNumeroVoluntario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                //Si son numeros o borrar se mantienen en el textbox
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

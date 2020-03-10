@@ -21,7 +21,7 @@ namespace AlarmaBomberosChimbarongo
             CargarTabla();
             txtID.Text = "¿?";
             txtNumero.Text = "";
-            txtCategoria.Text = "";
+            txtCategoria.SelectedIndex = -1;
             txtNombreContacto.Text = "";
             btnGuardar.Enabled = true;
             btnLimpiar.Enabled = true;
@@ -127,11 +127,16 @@ namespace AlarmaBomberosChimbarongo
             {
                 if (txtNumero.Text != "" && txtCategoria.Text != "" && txtNombreContacto.Text != "")
                 {
-                    ControlSQLite modificarClaveRadial = new ControlSQLite();
-                    modificarClaveRadial.EjecutarConsulta("UPDATE main.GuiaTelefonica SET 'Numero'='" + txtNumero.Text + "','Categoria'='" + txtCategoria.Text + "','NombreContacto'='" + txtNombreContacto.Text + "' Where ID= '" + txtID.Text + "' ");
+                    ClaveMaestra verificarClave = new ClaveMaestra();
 
-                    MessageBox.Show("Se Modifico Correctamente el Numero " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (verificarClave.ShowDialog() == DialogResult.OK)
+                    {
+                        ControlSQLite modificarClaveRadial = new ControlSQLite();
+                        modificarClaveRadial.EjecutarConsulta("UPDATE main.GuiaTelefonica SET 'Numero'='" + txtNumero.Text + "','Categoria'='" + txtCategoria.Text + "','NombreContacto'='" + txtNombreContacto.Text + "' Where ID= '" + txtID.Text + "' ");
+
+                        MessageBox.Show("Se Modifico Correctamente el Numero " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }     
                 }
                 else
                 {
@@ -150,15 +155,20 @@ namespace AlarmaBomberosChimbarongo
             }
             else
             {
-                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Eliminar el Numero de Telfono: " + txtNumero.Text + " ?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
+                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Eliminar el Numero de Telefono: " + txtNumero.Text + " ?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
 
                 if (resultadoMensaje == DialogResult.Yes)
                 {
+                    ClaveMaestra verificarClave = new ClaveMaestra();
+
+                    if (verificarClave.ShowDialog() == DialogResult.OK)
+                    {
                         ControlSQLite eliminarClaveRadial = new ControlSQLite();
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.GuiaTelefonica WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("El Numero de Telefono: " + txtNumero.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarCampos();
+                    }    
                 }
                 else
                 {

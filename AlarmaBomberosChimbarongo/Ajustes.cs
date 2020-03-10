@@ -24,67 +24,77 @@ namespace AlarmaBomberosChimbarongo
 
         private void btnRealizarCopiaBD_Click(object sender, EventArgs e)
         {
-            SaveFileDialog DialogoGuardar = new SaveFileDialog();
-            DialogoGuardar.Filter = "Archivos de Base de Datos DB(*.db)| *.db";
-            DialogoGuardar.Title = "Seleccione la Ubicacion de Guardado de la Copia de Seguridad";
+            ClaveMaestra verificarClave = new ClaveMaestra();
 
-            DateTime fecha = DateTime.Now;
-            String FechaCorta = fecha.ToShortDateString();
-
-            DialogoGuardar.FileName = FechaCorta + "CopiaSeguridad" + "AlarmaBomberosChimbarongo.db";
-
-            if (DialogoGuardar.ShowDialog() == DialogResult.OK)
+            if (verificarClave.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    String UbicacionGuardar = DialogoGuardar.FileName;
-                    String UbicacionBD = (Application.StartupPath + @"\AlarmaBomberosChimbarongo.db");
-                    File.Delete(UbicacionGuardar);
-                    File.Copy(UbicacionBD, UbicacionGuardar);
+                SaveFileDialog DialogoGuardar = new SaveFileDialog();
+                DialogoGuardar.Filter = "Archivos de Base de Datos DB(*.db)| *.db";
+                DialogoGuardar.Title = "Seleccione la Ubicacion de Guardado de la Copia de Seguridad";
 
-                    MessageBox.Show("Se realizo correctamente la Copia de Seguridad de los Datos", "Copia Seguridad Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
+                DateTime fecha = DateTime.Now;
+                String FechaCorta = fecha.ToShortDateString();
+
+                DialogoGuardar.FileName = FechaCorta + "CopiaSeguridad" + "AlarmaBomberosChimbarongo.db";
+
+                if (DialogoGuardar.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Ha ocurrido un error al intentar realizar la Copia de Seguridad ERROR: "+ex.Message,"Error Copia Seguridad",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    try
+                    {
+                        String UbicacionGuardar = DialogoGuardar.FileName;
+                        String UbicacionBD = (Application.StartupPath + @"\AlarmaBomberosChimbarongo.db");
+                        File.Delete(UbicacionGuardar);
+                        File.Copy(UbicacionBD, UbicacionGuardar);
+
+                        MessageBox.Show("Se realizo correctamente la Copia de Seguridad de los Datos", "Copia Seguridad Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ha ocurrido un error al intentar realizar la Copia de Seguridad ERROR: " + ex.Message, "Error Copia Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
         private void btnRestaurarBD_Click(object sender, EventArgs e)
         {
-            OpenFileDialog BuscarCopiaSegurudad = new OpenFileDialog();
+            ClaveMaestra verificarClave = new ClaveMaestra();
 
-            BuscarCopiaSegurudad.Filter = "Archivos de Base de Datos DB(*.db)| *.db";
-            BuscarCopiaSegurudad.Title = "Seleccione la Ubicacion de la Copia de Seguridad a Restaurar";
-            if (BuscarCopiaSegurudad.ShowDialog() == DialogResult.OK)
+            if (verificarClave.ShowDialog() == DialogResult.OK)
             {
-                String UbicacionBDRespaldo = BuscarCopiaSegurudad.FileName;
+                OpenFileDialog BuscarCopiaSegurudad = new OpenFileDialog();
 
-                String UbicacionBD = (Application.StartupPath + @"\AlarmaBomberosChimbarongo.db");
-
-
-                DialogResult resultadoMensaje = MessageBox.Show("¿Esta seguro que desea restaurar los datos del programa?, ADVERTENCIA todos los datos actuales seran eliminados y remplazados por los datos de la copia de seguridad que selecciono", "Confirmacion Restauracion", MessageBoxButtons.YesNo);
-
-                if (resultadoMensaje == DialogResult.Yes)
+                BuscarCopiaSegurudad.Filter = "Archivos de Base de Datos DB(*.db)| *.db";
+                BuscarCopiaSegurudad.Title = "Seleccione la Ubicacion de la Copia de Seguridad a Restaurar";
+                if (BuscarCopiaSegurudad.ShowDialog() == DialogResult.OK)
                 {
-                    try
-                    {
-                        File.Delete(UbicacionBD);
-                        File.Copy(UbicacionBDRespaldo, UbicacionBD);
+                    String UbicacionBDRespaldo = BuscarCopiaSegurudad.FileName;
 
-                        MessageBox.Show("Se realizo correctamente la restaurancion de los datos del programa", "Restauracion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
+                    String UbicacionBD = (Application.StartupPath + @"\AlarmaBomberosChimbarongo.db");
+
+
+                    DialogResult resultadoMensaje = MessageBox.Show("¿Esta seguro que desea restaurar los datos del programa?, ADVERTENCIA todos los datos actuales seran eliminados y remplazados por los datos de la copia de seguridad que selecciono", "Confirmacion Restauracion", MessageBoxButtons.YesNo);
+
+                    if (resultadoMensaje == DialogResult.Yes)
                     {
-                        MessageBox.Show("Ha ocurrido un error al intentar restaurar la copia de seguridad ERROR: "+ex.Message);
+                        try
+                        {
+                            File.Delete(UbicacionBD);
+                            File.Copy(UbicacionBDRespaldo, UbicacionBD);
+
+                            MessageBox.Show("Se realizo correctamente la restaurancion de los datos del programa", "Restauracion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ha ocurrido un error al intentar restaurar la copia de seguridad ERROR: " + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Muy bien falsa alarma, los datos actuales se mantendran y no seran restaurados de una copia anterior", "Restauracion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Muy bien falsa alarma, los datos actuales se mantendran y no seran restaurados de una copia anterior", "Restauracion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
+            }    
         }
     }
 }

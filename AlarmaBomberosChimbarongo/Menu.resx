@@ -120,19 +120,6 @@
   <metadata name="tiempo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="textClaves.Text" xml:space="preserve">
-    <value>10-0 Llamado Estructural
-10-1 Incendio Estructural
-10-2 Pastizal o Basura
-10-3 Persona Atrapada
-10-4 Rescate Vehicular
-10-5 Material Peligroso
-10-6 Emanación de Gas
-10-7 Eléctrico
-10-8 No Clasificado
-10-9 Otros Servicios
-10-12 Apoyo Otros Cuerpos</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

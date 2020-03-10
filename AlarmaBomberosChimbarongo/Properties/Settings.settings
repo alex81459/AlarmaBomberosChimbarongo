@@ -23,5 +23,8 @@
     <Setting Name="ClavesRadiales" Type="System.Data.DataTable" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ClaveMaestra" Type="System.String" Scope="User">
+      <Value Profile="(Default)">42c5ba79f0761abc25be49d6c39a10180d82c8a1d2f6dfac9f10cf99b5fe36e8</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
