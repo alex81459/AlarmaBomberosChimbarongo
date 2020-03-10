@@ -118,9 +118,115 @@ namespace AlarmaBomberosChimbarongo
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void txtSituacion_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 164) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 165) || (e.KeyChar == Convert.ToChar(Keys.Back)) || (e.KeyChar == 32) || (e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar == 35))
+            {
+                //Si se ingresa letras mayuculas, Ñ, minusculasn ñ, borrar , numerosy espacio se mantienen en el textbox
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtLugar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 164) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 165) || (e.KeyChar == Convert.ToChar(Keys.Back)) || (e.KeyChar == 32) || (e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar == 35))
+            {
+                //Si se ingresa letras mayuculas, Ñ, minusculasn ñ, borrar , numerosy espacio se mantienen en el textbox
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 164) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 165) || (e.KeyChar == Convert.ToChar(Keys.Back)) || (e.KeyChar == 32) || (e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar == 35))
+            {
+                //Si se ingresa letras mayuculas, Ñ, minusculasn ñ, borrar , numerosy espacio se mantienen en el textbox
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOficialAcargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 164) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 165) || (e.KeyChar == Convert.ToChar(Keys.Back)) || (e.KeyChar == 32))
+            {
+                //Si se ingresa letras mayuculas, Ñ, minusculasn ñ, borrar y espacio se mantienen en el textbox
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        public void LimpiarCampos()
+        {
+            clbClavesComunes.ClearSelected();
+            clbCompañiaBomberos.ClearSelected();
+            txtCoordenadas.Text = "";
+            clbPublicar.ClearSelected();
+            txtSituacion.Text = "";
+            txtOficialAcargo.Text = "";
+            txtLugar.Text = "";
+            txtDescripcion.Text = "";
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (clbClavesComunes.CheckedIndices.Count != 0 && clbCompañiaBomberos.CheckedIndices.Count != 0 && txtSituacion.Text != "" && txtOficialAcargo.Text != "" && txtLugar.Text != "" && txtDescripcion.Text != "")
+            {
+                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Despachar a la Situacion de Emergencia: " + txtSituacion.Text + " ? y ¿Esta seguro que los datos estan correctamente ingresado?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
+
+                if (resultadoMensaje == DialogResult.Yes)
+                {
+                    string ClavesSeleccionadas = "";
+                    for (int x = 0; x < clbClavesComunes.CheckedItems.Count; x++)
+                    {
+                        ClavesSeleccionadas = ClavesSeleccionadas + " " + clbClavesComunes.CheckedItems[x].ToString();
+                    }
+
+                    string CompañiasSeleccionadas = "";
+                    for (int x = 0; x < clbCompañiaBomberos.CheckedItems.Count; x++)
+                    {
+                        CompañiasSeleccionadas = CompañiasSeleccionadas + " " + clbCompañiaBomberos.CheckedItems[x].ToString();
+                    }
+
+                ControlSQLite guardarEmergencia = new ControlSQLite();
+                guardarEmergencia.EjecutarConsulta("INSERT INTO main.Emergencias (Claves, Compañias, Coordenadas, Situacion, OficialAcargo, Lugar, Descripcion, Fecha) VALUES ('"+ClavesSeleccionadas+"', '"+CompañiasSeleccionadas+"', '"+txtCoordenadas.Text+"', '"+txtSituacion.Text+"', '"+txtOficialAcargo.Text+"', '"+txtLugar.Text+"', '"+txtDescripcion.Text+ "', '" + txtFechayHora.Text + "');");
+
+                MessageBox.Show("Se guardo Activo Correctamente la Emergencia");
+                LimpiarCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Muy bien falsa Alarma","Siempre se puede retractar",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta llenar Informacion, Debe Selecionar al MENOS una Clave, una Compañia de bomberos, ESCRIBIR la situacion de emergencia, el ofical a cargo, el lugar y la descripcion de la emergencia","Faltas Datos",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnCoordenadas_Click(object sender, EventArgs e)
+        {
+            CoordenadasEmergencia buscarCoordendas = new CoordenadasEmergencia();
+            if (buscarCoordendas.ShowDialog() == DialogResult.OK)
+            {
+                String Coordendas = buscarCoordendas.CoordenadasEmer;
+                txtCoordenadas.Text = Coordendas;
+            }
         }
     }
 }

@@ -134,6 +134,12 @@
       <DependentUpon>ClavesRadiales.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlSQLite.cs" />
+    <Compile Include="CoordenadasEmergencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordenadasEmergencia.Designer.cs">
+      <DependentUpon>CoordenadasEmergencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grifos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClavesRadiales.resx">
       <DependentUpon>ClavesRadiales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoordenadasEmergencia.resx">
+      <DependentUpon>CoordenadasEmergencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifos.resx">
       <DependentUpon>Grifos.cs</DependentUpon>
