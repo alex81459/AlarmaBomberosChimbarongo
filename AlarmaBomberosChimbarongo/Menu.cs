@@ -172,8 +172,15 @@ namespace AlarmaBomberosChimbarongo
 
         public void LimpiarCampos()
         {
-            clbClavesComunes.ClearSelected();
-            clbCompañiaBomberos.ClearSelected();
+            for(int i = 0; i < clbClavesComunes.Items.Count; i++){
+                clbClavesComunes.SetItemChecked(i, false);
+            }
+
+            for (int i = 0; i < clbCompañiaBomberos.Items.Count; i++)
+            {
+                clbCompañiaBomberos.SetItemChecked(i, false);
+            }
+
             txtCoordenadas.Text = "";
             clbPublicar.ClearSelected();
             txtSituacion.Text = "";
@@ -186,7 +193,7 @@ namespace AlarmaBomberosChimbarongo
         {
             if (clbClavesComunes.CheckedIndices.Count != 0 && clbCompañiaBomberos.CheckedIndices.Count != 0 && txtSituacion.Text != "" && txtOficialAcargo.Text != "" && txtLugar.Text != "" && txtDescripcion.Text != "")
             {
-                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Despachar a la Situacion de Emergencia: " + txtSituacion.Text + " ? y ¿Esta seguro que los datos estan correctamente ingresado?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
+                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Despachar a la Situacion de Emergencia: " + txtSituacion.Text + "? y ¿Esta seguro que los datos estan correctamente ingresados?", "Confirmacion Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
 
                 if (resultadoMensaje == DialogResult.Yes)
                 {
@@ -205,7 +212,7 @@ namespace AlarmaBomberosChimbarongo
                 ControlSQLite guardarEmergencia = new ControlSQLite();
                 guardarEmergencia.EjecutarConsulta("INSERT INTO main.Emergencias (Claves, Compañias, Coordenadas, Situacion, OficialAcargo, Lugar, Descripcion, Fecha) VALUES ('"+ClavesSeleccionadas+"', '"+CompañiasSeleccionadas+"', '"+txtCoordenadas.Text+"', '"+txtSituacion.Text+"', '"+txtOficialAcargo.Text+"', '"+txtLugar.Text+"', '"+txtDescripcion.Text+ "', '" + txtFechayHora.Text + "');");
 
-                MessageBox.Show("Se guardo Activo Correctamente la Emergencia");
+                MessageBox.Show("Se Guardo Correctamente la Emergencia "+ txtSituacion.Text, "Guardado Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 LimpiarCampos();
                 }
                 else
@@ -227,6 +234,12 @@ namespace AlarmaBomberosChimbarongo
                 String Coordendas = buscarCoordendas.CoordenadasEmer;
                 txtCoordenadas.Text = Coordendas;
             }
+        }
+
+        private void btnVerEmergencias_Click(object sender, EventArgs e)
+        {
+            Emergencias abrirEmergencias = new Emergencias();
+            abrirEmergencias.ShowDialog();
         }
     }
 }

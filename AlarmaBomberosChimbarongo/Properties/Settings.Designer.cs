@@ -103,7 +103,7 @@ namespace AlarmaBomberosChimbarongo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("42c5ba79f0761abc25be49d6c39a10180d82c8a1d2f6dfac9f10cf99b5fe36e8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("a7ceff056d2f0212c18a1382f923c51e35341432b58910abf5d0c3bc68d5c3ab")]
         public string ClaveMaestra {
             get {
                 return ((string)(this["ClaveMaestra"]));

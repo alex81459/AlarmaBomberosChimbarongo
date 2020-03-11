@@ -37,6 +37,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.btnVerEmergencias = new System.Windows.Forms.Button();
             this.txtCoordenadas = new System.Windows.Forms.RichTextBox();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -80,11 +82,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -176,6 +183,12 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.pictureBox17);
+            this.panel1.Controls.Add(this.btnVerEmergencias);
             this.panel1.Controls.Add(this.txtCoordenadas);
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.label13);
@@ -224,6 +237,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 688);
             this.panel1.TabIndex = 23;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox17.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._016_megaphone;
+            this.pictureBox17.Location = new System.Drawing.Point(846, 214);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 301;
+            this.pictureBox17.TabStop = false;
+            // 
+            // btnVerEmergencias
+            // 
+            this.btnVerEmergencias.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnVerEmergencias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerEmergencias.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVerEmergencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnVerEmergencias.Location = new System.Drawing.Point(772, 378);
+            this.btnVerEmergencias.Name = "btnVerEmergencias";
+            this.btnVerEmergencias.Size = new System.Drawing.Size(187, 27);
+            this.btnVerEmergencias.TabIndex = 300;
+            this.btnVerEmergencias.Text = "Ver Emergencias";
+            this.btnVerEmergencias.UseVisualStyleBackColor = false;
+            this.btnVerEmergencias.Click += new System.EventHandler(this.btnVerEmergencias_Click);
             // 
             // txtCoordenadas
             // 
@@ -372,11 +410,11 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(786, 293);
+            this.button1.Location = new System.Drawing.Point(772, 267);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 65);
+            this.button1.Size = new System.Drawing.Size(187, 105);
             this.button1.TabIndex = 286;
-            this.button1.Text = "Despachar";
+            this.button1.Text = "Despachar a Emergencia";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -759,6 +797,46 @@
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(391, 494);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 12);
+            this.label14.TabIndex = 302;
+            this.label14.Text = "*100 caracteres";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(519, 494);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 12);
+            this.label15.TabIndex = 303;
+            this.label15.Text = "*50 caracteres";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(669, 494);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 12);
+            this.label16.TabIndex = 304;
+            this.label16.Text = "*100 caracteres";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(889, 494);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 12);
+            this.label17.TabIndex = 305;
+            this.label17.Text = "*500 caracteres";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -783,6 +861,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -853,6 +932,12 @@
         private System.Windows.Forms.RichTextBox txtLugar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox txtCoordenadas;
+        private System.Windows.Forms.Button btnVerEmergencias;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
     }
 }
 

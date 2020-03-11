@@ -24,7 +24,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ClaveMaestra" Type="System.String" Scope="User">
-      <Value Profile="(Default)">42c5ba79f0761abc25be49d6c39a10180d82c8a1d2f6dfac9f10cf99b5fe36e8</Value>
+      <Value Profile="(Default)">a7ceff056d2f0212c18a1382f923c51e35341432b58910abf5d0c3bc68d5c3ab</Value>
     </Setting>
   </Settings>
 </SettingsFile>

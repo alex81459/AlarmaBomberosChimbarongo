@@ -323,6 +323,16 @@ namespace AlarmaBomberosChimbarongo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap impresion {
+            get {
+                object obj = ResourceManager.GetObject("impresion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap information_info_1565 {
             get {
                 object obj = ResourceManager.GetObject("information_info_1565", resourceCulture);

@@ -188,9 +188,9 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.limpiar;
-            this.pictureBox6.Location = new System.Drawing.Point(796, 353);
+            this.pictureBox6.Location = new System.Drawing.Point(801, 369);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox6.Size = new System.Drawing.Size(47, 44);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 52;
             this.pictureBox6.TabStop = false;
@@ -251,9 +251,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.basura;
-            this.pictureBox3.Location = new System.Drawing.Point(873, 351);
+            this.pictureBox3.Location = new System.Drawing.Point(880, 369);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(58, 64);
+            this.pictureBox3.Size = new System.Drawing.Size(51, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 46;
             this.pictureBox3.TabStop = false;
@@ -261,9 +261,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.salvar;
-            this.pictureBox1.Location = new System.Drawing.Point(717, 351);
+            this.pictureBox1.Location = new System.Drawing.Point(723, 369);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;

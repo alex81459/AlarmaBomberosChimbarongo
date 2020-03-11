@@ -43,23 +43,23 @@ namespace AlarmaBomberosChimbarongo
             }
             else
             {
-                if (verificarClave.ShowDialog() == DialogResult.OK)
-                {
                     DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Eliminar la Clave Radial " + txtClaveRadial.Text + " ?", "Confirmacion Eliminar", MessageBoxButtons.YesNo);
 
                     if (resultadoMensaje == DialogResult.Yes)
+                    {
+                    if (verificarClave.ShowDialog() == DialogResult.OK)
                     {
                         ControlSQLite eliminarClaveRadial = new ControlSQLite();
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.ClavesRadiales WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("La Clave Radial " + txtClaveRadial.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarCampos();
+                    }  
                     }
                     else
                     {
                         MessageBox.Show("Muy Bien Falsa Alarma la Clave Radial " + txtClaveRadial.Text + " No se ha Eliminado", "Eliminacion Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
             }
         }
 

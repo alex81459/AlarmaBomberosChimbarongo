@@ -39,6 +39,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCargo = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtNumeroVoluntario = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCompañia = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.RichTextBox();
@@ -65,15 +74,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCompañia = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtNumeroVoluntario = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroVoluntario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RUT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,13 +87,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -190,6 +190,113 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(950, 548);
             this.panel1.TabIndex = 44;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
+            this.txtCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtCargo.FormattingEnabled = true;
+            this.txtCargo.Items.AddRange(new object[] {
+            "Ayudante",
+            "Bombero",
+            "Capitán",
+            "Comandante",
+            "Director",
+            "Secretario",
+            "Superintendente",
+            "Teniente 1",
+            "Teniente 2",
+            "Teniente 3",
+            "Tesorero",
+            "Vicesuperintendente"});
+            this.txtCargo.Location = new System.Drawing.Point(759, 348);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(125, 21);
+            this.txtCargo.TabIndex = 86;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(716, 351);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 13);
+            this.label15.TabIndex = 85;
+            this.label15.Text = "Cargo";
+            // 
+            // txtNumeroVoluntario
+            // 
+            this.txtNumeroVoluntario.Location = new System.Drawing.Point(798, 106);
+            this.txtNumeroVoluntario.MaxLength = 10;
+            this.txtNumeroVoluntario.Name = "txtNumeroVoluntario";
+            this.txtNumeroVoluntario.Size = new System.Drawing.Size(94, 20);
+            this.txtNumeroVoluntario.TabIndex = 84;
+            this.txtNumeroVoluntario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroVoluntario_KeyPress);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(715, 110);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 13);
+            this.label14.TabIndex = 83;
+            this.label14.Text = "N° Voluntario";
+            // 
+            // txtCompañia
+            // 
+            this.txtCompañia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtCompañia.FormattingEnabled = true;
+            this.txtCompañia.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.txtCompañia.Location = new System.Drawing.Point(840, 322);
+            this.txtCompañia.Name = "txtCompañia";
+            this.txtCompañia.Size = new System.Drawing.Size(52, 21);
+            this.txtCompañia.TabIndex = 82;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(715, 325);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(121, 13);
+            this.label13.TabIndex = 81;
+            this.label13.Text = "Compañia Bomberos";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.limpiar;
+            this.pictureBox6.Location = new System.Drawing.Point(800, 448);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(56, 51);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 80;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.basura;
+            this.pictureBox3.Location = new System.Drawing.Point(879, 448);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(51, 53);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 79;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.salvar;
+            this.pictureBox1.Location = new System.Drawing.Point(721, 448);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 51);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 78;
+            this.pictureBox1.TabStop = false;
             // 
             // label12
             // 
@@ -515,113 +622,6 @@
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.limpiar;
-            this.pictureBox6.Location = new System.Drawing.Point(800, 448);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(56, 51);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 80;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.basura;
-            this.pictureBox3.Location = new System.Drawing.Point(879, 448);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 53);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 79;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.salvar;
-            this.pictureBox1.Location = new System.Drawing.Point(721, 448);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 78;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(715, 325);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(121, 13);
-            this.label13.TabIndex = 81;
-            this.label13.Text = "Compañia Bomberos";
-            // 
-            // txtCompañia
-            // 
-            this.txtCompañia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtCompañia.FormattingEnabled = true;
-            this.txtCompañia.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.txtCompañia.Location = new System.Drawing.Point(840, 322);
-            this.txtCompañia.Name = "txtCompañia";
-            this.txtCompañia.Size = new System.Drawing.Size(52, 21);
-            this.txtCompañia.TabIndex = 82;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(715, 110);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 13);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "N° Voluntario";
-            // 
-            // txtNumeroVoluntario
-            // 
-            this.txtNumeroVoluntario.Location = new System.Drawing.Point(798, 106);
-            this.txtNumeroVoluntario.MaxLength = 10;
-            this.txtNumeroVoluntario.Name = "txtNumeroVoluntario";
-            this.txtNumeroVoluntario.Size = new System.Drawing.Size(94, 20);
-            this.txtNumeroVoluntario.TabIndex = 84;
-            this.txtNumeroVoluntario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroVoluntario_KeyPress);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(716, 351);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(40, 13);
-            this.label15.TabIndex = 85;
-            this.label15.Text = "Cargo";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
-            this.txtCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtCargo.FormattingEnabled = true;
-            this.txtCargo.Items.AddRange(new object[] {
-            "Ayudante",
-            "Bombero",
-            "Capitán",
-            "Comandante",
-            "Director",
-            "Secretario",
-            "Superintendente",
-            "Teniente 1",
-            "Teniente 2",
-            "Teniente 3",
-            "Tesorero",
-            "Vicesuperintendente"});
-            this.txtCargo.Location = new System.Drawing.Point(759, 348);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(125, 21);
-            this.txtCargo.TabIndex = 86;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -719,13 +719,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

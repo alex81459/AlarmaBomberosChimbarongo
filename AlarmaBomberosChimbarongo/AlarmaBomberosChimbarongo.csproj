@@ -87,6 +87,9 @@
     <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -140,6 +143,12 @@
     <Compile Include="CoordenadasEmergencia.Designer.cs">
       <DependentUpon>CoordenadasEmergencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Emergencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emergencias.Designer.cs">
+      <DependentUpon>Emergencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grifos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +191,9 @@
     <EmbeddedResource Include="CoordenadasEmergencia.resx">
       <DependentUpon>CoordenadasEmergencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Emergencias.resx">
+      <DependentUpon>Emergencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grifos.resx">
       <DependentUpon>Grifos.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,7 +217,7 @@
       <DependentUpon>Voluntarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AlarmaBomberosChimbarongo.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="app.config" />
     <None Include="GRE.pdf" />
@@ -251,6 +263,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alert_alarm_22185.ico" />
+    <Content Include="bomberoschimbarongo.png" />
+    <None Include="Resources\impresion.png" />
     <None Include="Resources\compartir.png" />
     <None Include="Resources\ban.png" />
     <None Include="Resources\check.png" />
