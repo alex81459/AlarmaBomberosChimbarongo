@@ -183,14 +183,14 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(964, 544);
+            this.panel1.Size = new System.Drawing.Size(964, 572);
             this.panel1.TabIndex = 44;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(7, 533);
+            this.label16.Location = new System.Drawing.Point(2, 562);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(273, 9);
             this.label16.TabIndex = 72;
@@ -199,7 +199,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.impresion;
-            this.pictureBox1.Location = new System.Drawing.Point(770, 508);
+            this.pictureBox1.Location = new System.Drawing.Point(770, 536);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +225,7 @@
             this.btnImprimir.BackColor = System.Drawing.Color.Gray;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(819, 511);
+            this.btnImprimir.Location = new System.Drawing.Point(819, 539);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
@@ -236,11 +236,13 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(720, 197);
+            this.txtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtFecha.ForeColor = System.Drawing.Color.White;
+            this.txtFecha.Location = new System.Drawing.Point(716, 197);
             this.txtFecha.MaxLength = 100;
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.ReadOnly = true;
-            this.txtFecha.Size = new System.Drawing.Size(232, 25);
+            this.txtFecha.Size = new System.Drawing.Size(243, 25);
             this.txtFecha.TabIndex = 68;
             this.txtFecha.Text = "";
             // 
@@ -248,7 +250,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(717, 181);
+            this.label15.Location = new System.Drawing.Point(713, 181);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(42, 13);
             this.label15.TabIndex = 67;
@@ -256,11 +258,13 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(720, 403);
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcion.Location = new System.Drawing.Point(716, 420);
             this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(232, 61);
+            this.txtDescripcion.Size = new System.Drawing.Size(243, 70);
             this.txtDescripcion.TabIndex = 66;
             this.txtDescripcion.Text = "";
             // 
@@ -268,7 +272,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(717, 387);
+            this.label14.Location = new System.Drawing.Point(713, 404);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 13);
             this.label14.TabIndex = 65;
@@ -276,11 +280,13 @@
             // 
             // txtLugar
             // 
-            this.txtLugar.Location = new System.Drawing.Point(720, 349);
+            this.txtLugar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtLugar.ForeColor = System.Drawing.Color.White;
+            this.txtLugar.Location = new System.Drawing.Point(716, 361);
             this.txtLugar.MaxLength = 100;
             this.txtLugar.Name = "txtLugar";
             this.txtLugar.ReadOnly = true;
-            this.txtLugar.Size = new System.Drawing.Size(232, 32);
+            this.txtLugar.Size = new System.Drawing.Size(243, 40);
             this.txtLugar.TabIndex = 64;
             this.txtLugar.Text = "";
             // 
@@ -288,7 +294,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(717, 333);
+            this.label13.Location = new System.Drawing.Point(713, 345);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 13);
             this.label13.TabIndex = 63;
@@ -296,11 +302,13 @@
             // 
             // txtOficialAcargo
             // 
-            this.txtOficialAcargo.Location = new System.Drawing.Point(720, 297);
+            this.txtOficialAcargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtOficialAcargo.ForeColor = System.Drawing.Color.White;
+            this.txtOficialAcargo.Location = new System.Drawing.Point(716, 311);
             this.txtOficialAcargo.MaxLength = 100;
             this.txtOficialAcargo.Name = "txtOficialAcargo";
             this.txtOficialAcargo.ReadOnly = true;
-            this.txtOficialAcargo.Size = new System.Drawing.Size(232, 31);
+            this.txtOficialAcargo.Size = new System.Drawing.Size(243, 31);
             this.txtOficialAcargo.TabIndex = 62;
             this.txtOficialAcargo.Text = "";
             // 
@@ -308,7 +316,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(717, 281);
+            this.label12.Location = new System.Drawing.Point(713, 295);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 13);
             this.label12.TabIndex = 61;
@@ -316,11 +324,13 @@
             // 
             // txtSituacion
             // 
-            this.txtSituacion.Location = new System.Drawing.Point(720, 241);
+            this.txtSituacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSituacion.ForeColor = System.Drawing.Color.White;
+            this.txtSituacion.Location = new System.Drawing.Point(716, 241);
             this.txtSituacion.MaxLength = 100;
             this.txtSituacion.Name = "txtSituacion";
             this.txtSituacion.ReadOnly = true;
-            this.txtSituacion.Size = new System.Drawing.Size(232, 36);
+            this.txtSituacion.Size = new System.Drawing.Size(243, 51);
             this.txtSituacion.TabIndex = 60;
             this.txtSituacion.Text = "";
             // 
@@ -328,7 +338,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(717, 225);
+            this.label11.Location = new System.Drawing.Point(712, 225);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 59;
@@ -336,11 +346,13 @@
             // 
             // txtCoordenadas
             // 
-            this.txtCoordenadas.Location = new System.Drawing.Point(720, 483);
+            this.txtCoordenadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCoordenadas.ForeColor = System.Drawing.Color.White;
+            this.txtCoordenadas.Location = new System.Drawing.Point(715, 509);
             this.txtCoordenadas.MaxLength = 100;
             this.txtCoordenadas.Name = "txtCoordenadas";
             this.txtCoordenadas.ReadOnly = true;
-            this.txtCoordenadas.Size = new System.Drawing.Size(232, 21);
+            this.txtCoordenadas.Size = new System.Drawing.Size(243, 21);
             this.txtCoordenadas.TabIndex = 58;
             this.txtCoordenadas.Text = "";
             // 
@@ -348,7 +360,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(717, 467);
+            this.label6.Location = new System.Drawing.Point(712, 493);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 57;
@@ -356,11 +368,13 @@
             // 
             // txtCompañias
             // 
-            this.txtCompañias.Location = new System.Drawing.Point(719, 144);
+            this.txtCompañias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCompañias.ForeColor = System.Drawing.Color.White;
+            this.txtCompañias.Location = new System.Drawing.Point(715, 144);
             this.txtCompañias.MaxLength = 100;
             this.txtCompañias.Name = "txtCompañias";
             this.txtCompañias.ReadOnly = true;
-            this.txtCompañias.Size = new System.Drawing.Size(232, 33);
+            this.txtCompañias.Size = new System.Drawing.Size(243, 33);
             this.txtCompañias.TabIndex = 56;
             this.txtCompañias.Text = "";
             // 
@@ -368,7 +382,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(716, 128);
+            this.label4.Location = new System.Drawing.Point(712, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 55;
@@ -417,7 +431,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.information_info_1565;
-            this.pictureBox4.Location = new System.Drawing.Point(9, 504);
+            this.pictureBox4.Location = new System.Drawing.Point(10, 537);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -427,7 +441,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 508);
+            this.label9.Location = new System.Drawing.Point(33, 541);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(339, 13);
             this.label9.TabIndex = 47;
@@ -473,11 +487,13 @@
             // 
             // txtClaves
             // 
-            this.txtClaves.Location = new System.Drawing.Point(720, 82);
+            this.txtClaves.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtClaves.ForeColor = System.Drawing.Color.White;
+            this.txtClaves.Location = new System.Drawing.Point(716, 82);
             this.txtClaves.MaxLength = 100;
             this.txtClaves.Name = "txtClaves";
             this.txtClaves.ReadOnly = true;
-            this.txtClaves.Size = new System.Drawing.Size(232, 40);
+            this.txtClaves.Size = new System.Drawing.Size(243, 40);
             this.txtClaves.TabIndex = 40;
             this.txtClaves.Text = "";
             // 
@@ -505,7 +521,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(717, 64);
+            this.label5.Location = new System.Drawing.Point(713, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 36;
@@ -572,7 +588,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 445);
+            this.dataGridView1.Size = new System.Drawing.Size(701, 472);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -597,7 +613,7 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 120;
+            this.Fecha.Width = 140;
             // 
             // Claves
             // 
@@ -660,7 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(964, 566);
+            this.ClientSize = new System.Drawing.Size(964, 594);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Barra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -719,6 +735,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Claves;
@@ -728,9 +748,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Lugar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Coordenadas;
-        private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label16;
     }
 }

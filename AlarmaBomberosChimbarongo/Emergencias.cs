@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Diagnostics;
 
 namespace AlarmaBomberosChimbarongo
 {
@@ -29,7 +30,7 @@ namespace AlarmaBomberosChimbarongo
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -108,7 +109,7 @@ namespace AlarmaBomberosChimbarongo
                 */
 
                 SaveFileDialog DialogoGuardar = new SaveFileDialog();
-                DialogoGuardar.FileName = "EmergenciaBomberosChimbarongoID"+ txtID.Text + ".pdf";
+                DialogoGuardar.FileName = "EmergenciaBomberosChimbarongoID" + txtID.Text + ".pdf";
 
                 if (DialogoGuardar.ShowDialog() == DialogResult.OK)
                 {
@@ -117,41 +118,67 @@ namespace AlarmaBomberosChimbarongo
                         Document doc = new Document(PageSize.LETTER);
                         PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(@"" + DialogoGuardar.FileName + "", FileMode.Create));
 
-                        doc.AddTitle("Emergencia Bomberos ID:"+ txtID.Text);
+                        doc.AddTitle("Emergencia Bomberos ID:" + txtID.Text);
                         doc.AddCreator("Emergencia Bomberos ©Alex Salinas Ponce");
 
                         doc.Open();
 
-                        iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 9, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                        iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
+                        doc.Add(new Paragraph("Registro Emergencia Bomberos Chimbarongo      ID " + txtID.Text + "      FECHA " + txtFecha.Text));
+                        doc.Add(new Paragraph(" "));
                         iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Application.StartupPath + @"\bomberoschimbarongo.png");
                         imagen.BorderWidth = 0;
-                        imagen.Alignment = Element.ALIGN_LEFT;
+                        imagen.Alignment = Element.ALIGN_CENTER;
                         float percentage = 0.0f;
                         percentage = 150 / imagen.Width;
-                        imagen.ScalePercent(percentage * 40);
+                        imagen.ScalePercent(percentage * 70);
                         doc.Add(imagen);
-
-                        doc.Add(new Paragraph("    Emergencia Bomberos Chimbarongo         ID:"+ txtID.Text + "        FECHA:"+ txtFecha.Text));
                         doc.Add(Chunk.NEWLINE);
+                        doc.Add(new Paragraph("-----Claves-----"));
+                        doc.Add(new Paragraph(txtClaves.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+CLAVES:"+ txtClaves.Text));
+                        doc.Add(new Paragraph("-----Compañias-----"));
+                        doc.Add(new Paragraph(txtCompañias.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+COMPAÑIAS:" + txtCompañias.Text));
+                        doc.Add(new Paragraph("-----Situacion-----"));
+                        doc.Add(new Paragraph(" " + txtSituacion.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+SITUACION: " + txtSituacion.Text));
+                        doc.Add(new Paragraph("-----Oficial a Cargo-----"));
+                        doc.Add(new Paragraph(" " + txtOficialAcargo.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+OFICIAL A CARGO: " + txtOficialAcargo.Text));
+                        doc.Add(new Paragraph("-----Lugar-----"));
+                        doc.Add(new Paragraph(" " + txtLugar.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+LUGAR: " + txtLugar.Text));
+                        doc.Add(new Paragraph("-----Descripcion-----"));
+                        doc.Add(new Paragraph(" " + txtDescripcion.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+DESCRIPCION: " + txtDescripcion.Text));
-                        doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("+COORDENADAS: " + txtCoordenadas.Text));
+                        doc.Add(new Paragraph("-----Coordenadas-----"));
+
+                        if (txtCoordenadas.Text == "")
+                        {
+                            doc.Add(new Paragraph(" No Especificadas"));
+                        }
+                        else
+                        {
+                            doc.Add(new Paragraph(" " + txtCoordenadas.Text));
+                        }
+
                         doc.Close();
                         writer.Close();
 
                         MessageBox.Show("Se realizo correctamente la Generacion del Documento", "Documento Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            Process p = new Process();
+                            p.StartInfo.FileName = @""+ DialogoGuardar.FileName+ "";
+                            p.Start();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al intentar abrir el documento Generado ERROR: " + ex.Message, "Error Abrir Documento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     catch (Exception ex)
                     {

@@ -37,6 +37,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.btnVerEmergencias = new System.Windows.Forms.Button();
             this.txtCoordenadas = new System.Windows.Forms.RichTextBox();
@@ -82,10 +86,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -237,6 +237,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 688);
             this.panel1.TabIndex = 23;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(889, 494);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 12);
+            this.label17.TabIndex = 305;
+            this.label17.Text = "*500 caracteres";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(669, 494);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 12);
+            this.label16.TabIndex = 304;
+            this.label16.Text = "*100 caracteres";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(519, 494);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(65, 12);
+            this.label15.TabIndex = 303;
+            this.label15.Text = "*50 caracteres";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(391, 494);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 12);
+            this.label14.TabIndex = 302;
+            this.label14.Text = "*100 caracteres";
             // 
             // pictureBox17
             // 
@@ -414,7 +454,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 105);
             this.button1.TabIndex = 286;
-            this.button1.Text = "Despachar a Emergencia";
+            this.button1.Text = "Despachar A Emergencia";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -529,7 +569,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._029_alarm_1;
-            this.pictureBox9.Location = new System.Drawing.Point(826, 560);
+            this.pictureBox9.Location = new System.Drawing.Point(827, 560);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(50, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -540,7 +580,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._023_uniform;
-            this.pictureBox7.Location = new System.Drawing.Point(104, 561);
+            this.pictureBox7.Location = new System.Drawing.Point(94, 560);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(50, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -578,9 +618,9 @@
             this.btnVoluntarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoluntarios.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnVoluntarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVoluntarios.Location = new System.Drawing.Point(68, 616);
+            this.btnVoluntarios.Location = new System.Drawing.Point(61, 616);
             this.btnVoluntarios.Name = "btnVoluntarios";
-            this.btnVoluntarios.Size = new System.Drawing.Size(117, 27);
+            this.btnVoluntarios.Size = new System.Drawing.Size(124, 27);
             this.btnVoluntarios.TabIndex = 242;
             this.btnVoluntarios.Text = "Voluntarios";
             this.btnVoluntarios.UseVisualStyleBackColor = false;
@@ -639,7 +679,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._011_gasoline;
-            this.pictureBox8.Location = new System.Drawing.Point(631, 560);
+            this.pictureBox8.Location = new System.Drawing.Point(627, 560);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(50, 50);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -664,7 +704,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._024_hydrant_1;
-            this.pictureBox5.Location = new System.Drawing.Point(480, 560);
+            this.pictureBox5.Location = new System.Drawing.Point(478, 560);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -688,7 +728,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._028_fire_station;
-            this.pictureBox1.Location = new System.Drawing.Point(222, 560);
+            this.pictureBox1.Location = new System.Drawing.Point(215, 560);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -796,46 +836,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(391, 494);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 12);
-            this.label14.TabIndex = 302;
-            this.label14.Text = "*100 caracteres";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(519, 494);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 12);
-            this.label15.TabIndex = 303;
-            this.label15.Text = "*50 caracteres";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(669, 494);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(70, 12);
-            this.label16.TabIndex = 304;
-            this.label16.Text = "*100 caracteres";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(889, 494);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 12);
-            this.label17.TabIndex = 305;
-            this.label17.Text = "*500 caracteres";
             // 
             // Menu
             // 
