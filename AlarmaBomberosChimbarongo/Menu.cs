@@ -6,13 +6,27 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows.Forms;
+using TweetSharp;
 
 namespace AlarmaBomberosChimbarongo
 {
     public partial class Menu : Form
     {
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        public static string Base64Decode(string base64EncodedData)
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
+
         public Menu()
         {
             InitializeComponent();
@@ -182,7 +196,7 @@ namespace AlarmaBomberosChimbarongo
             }
 
             txtCoordenadas.Text = "";
-            clbPublicar.ClearSelected();
+            cbPublicar.Checked = false;
             txtSituacion.Text = "";
             txtOficialAcargo.Text = "";
             txtLugar.Text = "";
@@ -193,7 +207,7 @@ namespace AlarmaBomberosChimbarongo
         {
             if (clbClavesComunes.CheckedIndices.Count != 0 && clbCompañiaBomberos.CheckedIndices.Count != 0 && txtSituacion.Text != "" && txtOficialAcargo.Text != "" && txtLugar.Text != "" && txtDescripcion.Text != "")
             {
-                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Despachar a la Situacion de Emergencia: " + txtSituacion.Text + "? y ¿Esta seguro que los datos estan correctamente ingresados?", "Confirmacion Eliminar", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                DialogResult resultadoMensaje = MessageBox.Show("¿Esta Seguro que Desea Despachar a la Situacion de Emergencia: " + txtSituacion.Text + "? y ¿Esta seguro que los datos estan correctamente ingresados?", "Confirmacion Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (resultadoMensaje == DialogResult.Yes)
                 {
@@ -209,11 +223,17 @@ namespace AlarmaBomberosChimbarongo
                         CompañiasSeleccionadas = CompañiasSeleccionadas + " " + clbCompañiaBomberos.CheckedItems[x].ToString();
                     }
 
-                ControlSQLite guardarEmergencia = new ControlSQLite();
-                guardarEmergencia.EjecutarConsulta("INSERT INTO main.Emergencias (Claves, Compañias, Coordenadas, Situacion, OficialAcargo, Lugar, Descripcion, Fecha) VALUES ('"+ClavesSeleccionadas+"', '"+CompañiasSeleccionadas+"', '"+txtCoordenadas.Text+"', '"+txtSituacion.Text+"', '"+txtOficialAcargo.Text+"', '"+txtLugar.Text+"', '"+txtDescripcion.Text+ "', '" + txtFechayHora.Text + "');");
+                    ControlSQLite guardarEmergencia = new ControlSQLite();
+                    guardarEmergencia.EjecutarConsulta("INSERT INTO main.Emergencias (Claves, Compañias, Coordenadas, Situacion, OficialAcargo, Lugar, Descripcion, Fecha) VALUES ('" + ClavesSeleccionadas + "', '" + CompañiasSeleccionadas + "', '" + txtCoordenadas.Text + "', '" + txtSituacion.Text + "', '" + txtOficialAcargo.Text + "', '" + txtLugar.Text + "', '" + txtDescripcion.Text + "', '" + txtFechayHora.Text + "');");
 
-                MessageBox.Show("Se Guardo Correctamente la Emergencia "+ txtSituacion.Text, "Guardado Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                LimpiarCampos();
+                    MessageBox.Show("Se Guardo Correctamente la Emergencia " + txtSituacion.Text, "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (cbPublicar.Checked == true)
+                    {
+                        System.Diagnostics.Process.Start("https://twitter.com/intent/tweet?text=SITUACION EMERGENCIA: " + txtSituacion.Text + " LUGAR: " + txtLugar.Text + ". Bomberos Acude a la Emergencia");
+                    }
+
+                    LimpiarCampos();
                 }
                 else
                 {
@@ -240,6 +260,11 @@ namespace AlarmaBomberosChimbarongo
         {
             Emergencias abrirEmergencias = new Emergencias();
             abrirEmergencias.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.microsoft.com");
         }
     }
 }

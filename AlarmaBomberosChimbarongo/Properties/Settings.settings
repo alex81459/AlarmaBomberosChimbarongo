@@ -5,26 +5,14 @@
     <Setting Name="FondoOscuro" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Cuarteles" Type="System.Data.DataTable" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Grifos" Type="System.Data.DataTable" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="MaterialesPeligrosos" Type="System.Data.DataTable" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Voluntarios" Type="System.Data.DataTable" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="GuiaTelefonica" Type="System.Data.DataTable" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ClavesRadiales" Type="System.Data.DataTable" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="ClaveMaestra" Type="System.String" Scope="User">
       <Value Profile="(Default)">a7ceff056d2f0212c18a1382f923c51e35341432b58910abf5d0c3bc68d5c3ab</Value>
+    </Setting>
+    <Setting Name="PuertoSerial" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VelocidadPuertoSerial" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

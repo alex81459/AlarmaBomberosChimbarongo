@@ -125,6 +125,9 @@
     <value>Realiza una copia de seguridad de todos los datos del programa, lo cual permite en caso de emergencia, como que se dañe el programa o el computador, tener un respaldo de todo los datos en un archivo que puede ser guardo en un Pendrive, Disco Duro Externo, CD, en La Nube o en cualquier dispositivo de almacenamiento.
 </value>
   </data>
+  <metadata name="SpPuertos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

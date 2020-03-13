@@ -125,35 +125,33 @@ namespace AlarmaBomberosChimbarongo
 
                         iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
-                        doc.Add(new Paragraph("Registro Emergencia Bomberos Chimbarongo      ID " + txtID.Text + "      FECHA " + txtFecha.Text));
-                        doc.Add(new Paragraph(" "));
+                        doc.Add(new Paragraph("ID "+ txtID.Text +"  Registro de Emergencia Bomberos Chimbarongo    Fecha Emergencia " + txtFecha.Text));
                         iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Application.StartupPath + @"\bomberoschimbarongo.png");
                         imagen.BorderWidth = 0;
                         imagen.Alignment = Element.ALIGN_CENTER;
                         float percentage = 0.0f;
                         percentage = 150 / imagen.Width;
-                        imagen.ScalePercent(percentage * 70);
+                        imagen.ScalePercent(percentage * 90);
                         doc.Add(imagen);
-                        doc.Add(Chunk.NEWLINE);
-                        doc.Add(new Paragraph("-----Claves-----"));
+                        doc.Add(new Paragraph("-------Claves-------"));
                         doc.Add(new Paragraph(txtClaves.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-----Compañias-----"));
+                        doc.Add(new Paragraph("-------Compañias-------"));
                         doc.Add(new Paragraph(txtCompañias.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-----Situacion-----"));
+                        doc.Add(new Paragraph("-------Situacion-------"));
                         doc.Add(new Paragraph(" " + txtSituacion.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-----Oficial a Cargo-----"));
+                        doc.Add(new Paragraph("-------Oficial a Cargo-------"));
                         doc.Add(new Paragraph(" " + txtOficialAcargo.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-----Lugar-----"));
+                        doc.Add(new Paragraph("-------Lugar-------"));
                         doc.Add(new Paragraph(" " + txtLugar.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-----Descripcion-----"));
+                        doc.Add(new Paragraph("-------Descripcion-------"));
                         doc.Add(new Paragraph(" " + txtDescripcion.Text));
                         doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-----Coordenadas-----"));
+                        doc.Add(new Paragraph("-------Coordenadas-------"));
 
                         if (txtCoordenadas.Text == "")
                         {

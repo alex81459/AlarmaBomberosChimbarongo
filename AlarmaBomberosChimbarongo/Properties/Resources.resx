@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ban" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ban.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="alert_alarm_22185" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alert_alarm_22185.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search_icon-icons.com_54989" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_icon-icons.com_54989.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,14 +130,17 @@
   <data name="facebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="compartir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\compartir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="mapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="029-alarm-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\029-alarm-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="impresion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\impresion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="camion-de-bomberos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\camion-de-bomberos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +148,14 @@
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="011-gasoline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\011-gasoline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="basura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\basura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="information_info_1565" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information_info_1565.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mapa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mapa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="compartir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compartir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="003-fire-alarm-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\003-fire-alarm-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +163,17 @@
   <data name="bomberos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bomberos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="twitter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\twitter1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-minimizar-la-ventana-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-minimizar-la-ventana-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alert_alarm_22185" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alert_alarm_22185.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="028-fire-station" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\028-fire-station.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="023-uniform" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\023-uniform.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,23 +187,32 @@
   <data name="walkie-talkie" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\walkie-talkie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="facebook1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facebook1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="035-fire-truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\035-fire-truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="029-alarm-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\029-alarm-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="004-emergency-call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\004-emergency-call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="011-gasoline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\011-gasoline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ban.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="limpiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\limpiar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mapa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mapa1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="base-de-datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\base-de-datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-cerrar-ventana-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-cerrar-ventana-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carga.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,14 +223,14 @@
   <data name="base-de-datos(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\base-de-datos(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-cerrar-ventana-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-cerrar-ventana-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="015-fire-truck-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\015-fire-truck-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="024-hydrant-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\024-hydrant-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="028-fire-station" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\028-fire-station.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngocean.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngocean.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="016-megaphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\016-megaphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,13 +238,13 @@
   <data name="settings5_118054" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings5_118054.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="004-emergency-call" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\004-emergency-call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="024-hydrant-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\024-hydrant-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Satellite_icon-icons.com_74901" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Satellite_icon-icons.com_74901.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="impresion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\impresion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="enchufe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enchufe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -58,7 +58,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.clbPublicar = new System.Windows.Forms.CheckedListBox();
             this.clbCompañiaBomberos = new System.Windows.Forms.CheckedListBox();
             this.clbClavesComunes = new System.Windows.Forms.CheckedListBox();
             this.txtFechayHora = new System.Windows.Forms.Label();
@@ -71,12 +70,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnMaterialesPeligroso = new System.Windows.Forms.Button();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.btnCuarteles = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btnGrifos = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnAJustes = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -86,6 +83,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cbPublicar = new System.Windows.Forms.CheckBox();
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -101,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAJustes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -177,12 +174,13 @@
             // 
             // tiempo
             // 
-            this.tiempo.Interval = 10;
+            this.tiempo.Interval = 1000;
             this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbPublicar);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
@@ -204,7 +202,6 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox13);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.clbPublicar);
             this.panel1.Controls.Add(this.clbCompañiaBomberos);
             this.panel1.Controls.Add(this.clbClavesComunes);
             this.panel1.Controls.Add(this.txtFechayHora);
@@ -217,12 +214,10 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnMaterialesPeligroso);
             this.panel1.Controls.Add(this.pictureBox14);
-            this.panel1.Controls.Add(this.btnCuarteles);
             this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.btnGrifos);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.btnAJustes);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox16);
@@ -242,7 +237,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(889, 494);
+            this.label17.Location = new System.Drawing.Point(765, 513);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(70, 12);
             this.label17.TabIndex = 305;
@@ -252,7 +247,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(669, 494);
+            this.label16.Location = new System.Drawing.Point(539, 513);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(70, 12);
             this.label16.TabIndex = 304;
@@ -262,7 +257,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(519, 494);
+            this.label15.Location = new System.Drawing.Point(899, 513);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 12);
             this.label15.TabIndex = 303;
@@ -272,7 +267,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(391, 494);
+            this.label14.Location = new System.Drawing.Point(385, 513);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 12);
             this.label14.TabIndex = 302;
@@ -282,7 +277,7 @@
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox17.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._016_megaphone;
-            this.pictureBox17.Location = new System.Drawing.Point(846, 214);
+            this.pictureBox17.Location = new System.Drawing.Point(853, 214);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(50, 50);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -295,7 +290,7 @@
             this.btnVerEmergencias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerEmergencias.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnVerEmergencias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVerEmergencias.Location = new System.Drawing.Point(772, 378);
+            this.btnVerEmergencias.Location = new System.Drawing.Point(779, 378);
             this.btnVerEmergencias.Name = "btnVerEmergencias";
             this.btnVerEmergencias.Size = new System.Drawing.Size(187, 27);
             this.btnVerEmergencias.TabIndex = 300;
@@ -317,10 +312,12 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(745, 440);
+            this.txtDescripcion.BackColor = System.Drawing.Color.Black;
+            this.txtDescripcion.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcion.Location = new System.Drawing.Point(615, 432);
             this.txtDescripcion.MaxLength = 500;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(214, 51);
+            this.txtDescripcion.Size = new System.Drawing.Size(228, 80);
             this.txtDescripcion.TabIndex = 298;
             this.txtDescripcion.Text = "";
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
@@ -333,7 +330,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(801, 421);
+            this.label13.Location = new System.Drawing.Point(677, 416);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(95, 16);
             this.label13.TabIndex = 297;
@@ -341,10 +338,12 @@
             // 
             // txtLugar
             // 
-            this.txtLugar.Location = new System.Drawing.Point(590, 440);
+            this.txtLugar.BackColor = System.Drawing.Color.Black;
+            this.txtLugar.ForeColor = System.Drawing.Color.White;
+            this.txtLugar.Location = new System.Drawing.Point(460, 432);
             this.txtLugar.MaxLength = 100;
             this.txtLugar.Name = "txtLugar";
-            this.txtLugar.Size = new System.Drawing.Size(149, 51);
+            this.txtLugar.Size = new System.Drawing.Size(149, 80);
             this.txtLugar.TabIndex = 296;
             this.txtLugar.Text = "";
             this.txtLugar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLugar_KeyPress);
@@ -357,7 +356,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(634, 421);
+            this.label12.Location = new System.Drawing.Point(504, 416);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 16);
             this.label12.TabIndex = 295;
@@ -365,10 +364,12 @@
             // 
             // txtOficialAcargo
             // 
-            this.txtOficialAcargo.Location = new System.Drawing.Point(467, 440);
+            this.txtOficialAcargo.BackColor = System.Drawing.Color.Black;
+            this.txtOficialAcargo.ForeColor = System.Drawing.Color.White;
+            this.txtOficialAcargo.Location = new System.Drawing.Point(849, 432);
             this.txtOficialAcargo.MaxLength = 50;
             this.txtOficialAcargo.Name = "txtOficialAcargo";
-            this.txtOficialAcargo.Size = new System.Drawing.Size(117, 51);
+            this.txtOficialAcargo.Size = new System.Drawing.Size(117, 80);
             this.txtOficialAcargo.TabIndex = 294;
             this.txtOficialAcargo.Text = "";
             this.txtOficialAcargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOficialAcargo_KeyPress);
@@ -381,7 +382,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(469, 421);
+            this.label11.Location = new System.Drawing.Point(847, 416);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(115, 16);
             this.label11.TabIndex = 293;
@@ -395,7 +396,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(285, 421);
+            this.label8.Location = new System.Drawing.Point(279, 416);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(166, 16);
             this.label8.TabIndex = 292;
@@ -403,10 +404,12 @@
             // 
             // txtSituacion
             // 
-            this.txtSituacion.Location = new System.Drawing.Point(273, 440);
+            this.txtSituacion.BackColor = System.Drawing.Color.Black;
+            this.txtSituacion.ForeColor = System.Drawing.Color.White;
+            this.txtSituacion.Location = new System.Drawing.Point(267, 432);
             this.txtSituacion.MaxLength = 100;
             this.txtSituacion.Name = "txtSituacion";
-            this.txtSituacion.Size = new System.Drawing.Size(188, 51);
+            this.txtSituacion.Size = new System.Drawing.Size(188, 80);
             this.txtSituacion.TabIndex = 291;
             this.txtSituacion.Text = "";
             this.txtSituacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSituacion_KeyPress);
@@ -450,7 +453,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(772, 267);
+            this.button1.Location = new System.Drawing.Point(779, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 105);
             this.button1.TabIndex = 286;
@@ -462,7 +465,7 @@
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.compartir;
-            this.pictureBox13.Location = new System.Drawing.Point(678, 214);
+            this.pictureBox13.Location = new System.Drawing.Point(680, 214);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(50, 50);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -474,27 +477,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Orbitron", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(647, 264);
+            this.label2.Location = new System.Drawing.Point(655, 267);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 284;
             this.label2.Text = "Publicar";
-            // 
-            // clbPublicar
-            // 
-            this.clbPublicar.BackColor = System.Drawing.Color.Black;
-            this.clbPublicar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.clbPublicar.CheckOnClick = true;
-            this.clbPublicar.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clbPublicar.ForeColor = System.Drawing.Color.White;
-            this.clbPublicar.FormattingEnabled = true;
-            this.clbPublicar.Items.AddRange(new object[] {
-            "Facebook",
-            "Twitter"});
-            this.clbPublicar.Location = new System.Drawing.Point(651, 290);
-            this.clbPublicar.Name = "clbPublicar";
-            this.clbPublicar.Size = new System.Drawing.Size(106, 36);
-            this.clbPublicar.TabIndex = 283;
             // 
             // clbCompañiaBomberos
             // 
@@ -543,11 +530,11 @@
             // txtFechayHora
             // 
             this.txtFechayHora.AutoSize = true;
-            this.txtFechayHora.Font = new System.Drawing.Font("Orbitron", 30.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechayHora.Font = new System.Drawing.Font("Orbitron", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechayHora.ForeColor = System.Drawing.Color.Red;
-            this.txtFechayHora.Location = new System.Drawing.Point(316, 16);
+            this.txtFechayHora.Location = new System.Drawing.Point(318, 16);
             this.txtFechayHora.Name = "txtFechayHora";
-            this.txtFechayHora.Size = new System.Drawing.Size(191, 49);
+            this.txtFechayHora.Size = new System.Drawing.Size(185, 48);
             this.txtFechayHora.TabIndex = 280;
             this.txtFechayHora.Text = "Hora¿?";
             // 
@@ -557,7 +544,7 @@
             this.btnGuiaTelefonica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuiaTelefonica.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnGuiaTelefonica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnGuiaTelefonica.Location = new System.Drawing.Point(303, 616);
+            this.btnGuiaTelefonica.Location = new System.Drawing.Point(261, 616);
             this.btnGuiaTelefonica.Name = "btnGuiaTelefonica";
             this.btnGuiaTelefonica.Size = new System.Drawing.Size(158, 27);
             this.btnGuiaTelefonica.TabIndex = 244;
@@ -569,7 +556,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._029_alarm_1;
-            this.pictureBox9.Location = new System.Drawing.Point(827, 560);
+            this.pictureBox9.Location = new System.Drawing.Point(785, 560);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(50, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -580,7 +567,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._023_uniform;
-            this.pictureBox7.Location = new System.Drawing.Point(94, 560);
+            this.pictureBox7.Location = new System.Drawing.Point(170, 560);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(50, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -591,7 +578,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._004_emergency_call;
-            this.pictureBox6.Location = new System.Drawing.Point(349, 560);
+            this.pictureBox6.Location = new System.Drawing.Point(307, 560);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(50, 50);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -604,7 +591,7 @@
             this.btnCLavesRadiales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCLavesRadiales.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnCLavesRadiales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCLavesRadiales.Location = new System.Drawing.Point(772, 616);
+            this.btnCLavesRadiales.Location = new System.Drawing.Point(730, 616);
             this.btnCLavesRadiales.Name = "btnCLavesRadiales";
             this.btnCLavesRadiales.Size = new System.Drawing.Size(167, 27);
             this.btnCLavesRadiales.TabIndex = 246;
@@ -618,7 +605,7 @@
             this.btnVoluntarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoluntarios.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnVoluntarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVoluntarios.Location = new System.Drawing.Point(61, 616);
+            this.btnVoluntarios.Location = new System.Drawing.Point(133, 616);
             this.btnVoluntarios.Name = "btnVoluntarios";
             this.btnVoluntarios.Size = new System.Drawing.Size(124, 27);
             this.btnVoluntarios.TabIndex = 242;
@@ -643,7 +630,7 @@
             this.btnMaterialesPeligroso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaterialesPeligroso.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnMaterialesPeligroso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMaterialesPeligroso.Location = new System.Drawing.Point(548, 616);
+            this.btnMaterialesPeligroso.Location = new System.Drawing.Point(506, 616);
             this.btnMaterialesPeligroso.Name = "btnMaterialesPeligroso";
             this.btnMaterialesPeligroso.Size = new System.Drawing.Size(218, 27);
             this.btnMaterialesPeligroso.TabIndex = 245;
@@ -662,24 +649,11 @@
             this.pictureBox14.TabIndex = 275;
             this.pictureBox14.TabStop = false;
             // 
-            // btnCuarteles
-            // 
-            this.btnCuarteles.BackColor = System.Drawing.SystemColors.Menu;
-            this.btnCuarteles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCuarteles.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCuarteles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCuarteles.Location = new System.Drawing.Point(191, 616);
-            this.btnCuarteles.Name = "btnCuarteles";
-            this.btnCuarteles.Size = new System.Drawing.Size(106, 27);
-            this.btnCuarteles.TabIndex = 241;
-            this.btnCuarteles.Text = "Cuarteles";
-            this.btnCuarteles.UseVisualStyleBackColor = false;
-            // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._011_gasoline;
-            this.pictureBox8.Location = new System.Drawing.Point(627, 560);
+            this.pictureBox8.Location = new System.Drawing.Point(585, 560);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(50, 50);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -692,7 +666,7 @@
             this.btnGrifos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGrifos.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold);
             this.btnGrifos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnGrifos.Location = new System.Drawing.Point(467, 616);
+            this.btnGrifos.Location = new System.Drawing.Point(425, 616);
             this.btnGrifos.Name = "btnGrifos";
             this.btnGrifos.Size = new System.Drawing.Size(75, 27);
             this.btnGrifos.TabIndex = 243;
@@ -704,7 +678,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._024_hydrant_1;
-            this.pictureBox5.Location = new System.Drawing.Point(478, 560);
+            this.pictureBox5.Location = new System.Drawing.Point(436, 560);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -723,17 +697,6 @@
             this.btnAJustes.TabIndex = 261;
             this.btnAJustes.TabStop = false;
             this.btnAJustes.Click += new System.EventHandler(this.btnAJustes_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources._028_fire_station;
-            this.pictureBox1.Location = new System.Drawing.Point(215, 560);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 247;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -837,6 +800,17 @@
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
             // 
+            // cbPublicar
+            // 
+            this.cbPublicar.AutoSize = true;
+            this.cbPublicar.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPublicar.Location = new System.Drawing.Point(652, 295);
+            this.cbPublicar.Name = "cbPublicar";
+            this.cbPublicar.Size = new System.Drawing.Size(115, 52);
+            this.cbPublicar.TabIndex = 306;
+            this.cbPublicar.Text = "Publicar en \r\nFacebook y \r\nTwitter";
+            this.cbPublicar.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -871,7 +845,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAJustes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -899,12 +872,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnMaterialesPeligroso;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Button btnCuarteles;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button btnGrifos;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox btnAJustes;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox16;
@@ -916,7 +887,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckedListBox clbCompañiaBomberos;
         private System.Windows.Forms.CheckedListBox clbClavesComunes;
-        private System.Windows.Forms.CheckedListBox clbPublicar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Button button1;
@@ -938,6 +908,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox cbPublicar;
     }
 }
 
