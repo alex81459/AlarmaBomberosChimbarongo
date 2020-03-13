@@ -87,14 +87,8 @@
     <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
     </Reference>
-    <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
-      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Hammock.ClientProfile.dll</HintPath>
-    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -117,9 +111,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TweetSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
-      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\TweetSharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ajustes.cs">
@@ -261,9 +252,6 @@
     <None Include="Resources\Paleta Colores.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bomberos.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\bomberos1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +267,18 @@
   <ItemGroup>
     <Content Include="alert_alarm_22185.ico" />
     <Content Include="bomberoschimbarongo.png" />
+    <Content Include="Sonidos\CuartaCompañia.wav" />
+    <Content Include="Sonidos\EDITANDO 1_sound_00037.wav" />
+    <Content Include="Sonidos\EDITANDO 1_sound_00047.wav" />
+    <Content Include="Sonidos\EDITANDO 1_sound_00059.wav" />
+    <Content Include="Sonidos\EDITANDO 1_sound_00118.wav" />
+    <Content Include="Sonidos\EDITANDO 1_sound_00175.wav" />
+    <Content Include="Sonidos\EDITANDO 1_sound_00184.wav" />
+    <Content Include="Sonidos\PrimeraCompañia.wav" />
+    <Content Include="Sonidos\QuintaCompañia.wav" />
+    <Content Include="Sonidos\SegundaCompañia.wav" />
+    <Content Include="Sonidos\TerceraCompañia.wav" />
+    <None Include="Resources\bombero1.png" />
     <None Include="Resources\enchufe.png" />
     <None Include="Resources\pngocean.com.png" />
     <None Include="Resources\facebook1.png" />

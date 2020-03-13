@@ -9,10 +9,10 @@
       <Value Profile="(Default)">a7ceff056d2f0212c18a1382f923c51e35341432b58910abf5d0c3bc68d5c3ab</Value>
     </Setting>
     <Setting Name="PuertoSerial" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">COM1</Value>
     </Setting>
     <Setting Name="VelocidadPuertoSerial" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">9200</Value>
     </Setting>
   </Settings>
 </SettingsFile>

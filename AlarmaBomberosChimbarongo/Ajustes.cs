@@ -13,8 +13,6 @@ namespace AlarmaBomberosChimbarongo
 {
     public partial class Ajustes : Form
     {
-        private string strBufferIn;
-        private string strBufferOut;
 
         public static string Base64Encode(string plainText)
         {
@@ -31,8 +29,6 @@ namespace AlarmaBomberosChimbarongo
         public Ajustes()
         {
             InitializeComponent();
-            strBufferIn = "";
-            strBufferOut = "";
             btnConectar.Enabled = false;
             btnGuardarCambiosPuerto.Enabled = false;
             CboPuertos.Text = Properties.Settings.Default.PuertoSerial;
@@ -140,8 +136,6 @@ namespace AlarmaBomberosChimbarongo
                 MessageBox.Show("NO se han detectado Puertos Libres disponibles","No hay Puertos Disponibles",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 CboPuertos.Items.Clear();
                 CboPuertos.Text = "";
-                strBufferIn = "";
-                strBufferOut = "";
                 btnConectar.Enabled = false;
                 btnGuardarCambiosPuerto.Enabled = false;
             }
@@ -180,10 +174,16 @@ namespace AlarmaBomberosChimbarongo
 
         private void btnGuardarCambiosPuerto_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.PuertoSerial = CboPuertos.Text;
-            Properties.Settings.Default.VelocidadPuertoSerial = btnConectar.Text;
-            Properties.Settings.Default.Save();
-            MessageBox.Show("Se Guardo Correctamente la Configuracion del Puerto Serie");
+            ClaveMaestra verificarClave = new ClaveMaestra();
+
+            if (verificarClave.ShowDialog() == DialogResult.OK) {
+                String PuertoGuardar = CboPuertos.Text;
+
+                Properties.Settings.Default.PuertoSerial = PuertoGuardar;
+                Properties.Settings.Default.VelocidadPuertoSerial = CboBautRate.Text;
+                Properties.Settings.Default.Save();
+                MessageBox.Show("Se Guardo Correctamente la Configuracion del Puerto Serie", "Configuracion Guardada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

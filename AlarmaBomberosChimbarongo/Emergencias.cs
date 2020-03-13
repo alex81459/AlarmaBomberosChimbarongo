@@ -125,7 +125,7 @@ namespace AlarmaBomberosChimbarongo
 
                         iTextSharp.text.Font _standardFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
-                        doc.Add(new Paragraph("ID "+ txtID.Text +"  Registro de Emergencia Bomberos Chimbarongo    Fecha Emergencia " + txtFecha.Text));
+                        doc.Add(new Paragraph("ID "+ txtID.Text +"  Registro Emergencia Bomberos Chimbarongo  Fecha Registro " + txtFecha.Text));
                         iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(Application.StartupPath + @"\bomberoschimbarongo.png");
                         imagen.BorderWidth = 0;
                         imagen.Alignment = Element.ALIGN_CENTER;

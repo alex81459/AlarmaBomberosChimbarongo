@@ -9,7 +9,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
-using TweetSharp;
+using System.IO.Ports;
+using System.Media;
 
 namespace AlarmaBomberosChimbarongo
 {
@@ -27,10 +28,20 @@ namespace AlarmaBomberosChimbarongo
             return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
 
+        string strbufferOut;
+
         public Menu()
         {
             InitializeComponent();
             tiempo.Enabled = true;
+
+            SpPuertos.BaudRate = Int32.Parse(Properties.Settings.Default.VelocidadPuertoSerial);
+            SpPuertos.DataBits = 8;
+            SpPuertos.Parity = Parity.None;
+            SpPuertos.StopBits = StopBits.One;
+            SpPuertos.Handshake = Handshake.None;
+            SpPuertos.PortName = Properties.Settings.Default.PuertoSerial;
+            strbufferOut = "";
         }
 
         Boolean TemaColorOscuro = Properties.Settings.Default.FondoOscuro;
@@ -233,6 +244,40 @@ namespace AlarmaBomberosChimbarongo
                         System.Diagnostics.Process.Start("https://twitter.com/intent/tweet?text=SITUACION EMERGENCIA: " + txtSituacion.Text + " LUGAR: " + txtLugar.Text + ". Bomberos Acude a la Emergencia");
                     }
 
+                    /*  try
+                      {
+                          SpPuertos.Open();
+                          SpPuertos.DiscardInBuffer();
+                          */
+
+                    SoundPlayer player = new SoundPlayer();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        player.SoundLocation = Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav";
+                        player.PlayLooping();
+                    }
+
+
+
+                    player.Stop();
+
+
+                    /*
+                    strbufferOut = "Datos a enviar";
+                    SpPuertos.Write(strbufferOut);
+                    */
+
+                    /*
+                        SpPuertos.Close();
+                        MessageBox.Show("Se Ejecuto Correctamente las Instrucciones de la Alerta","Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+;                         MessageBox.Show("Error al Intentar Ejecutar las Intrucciones de la Alerta, revise los ajustes de conexion ERROR: "+ex.Message,"ERROR Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                          SpPuertos.Close();
+                    }
+                    */
+
                     LimpiarCampos();
                 }
                 else
@@ -260,11 +305,6 @@ namespace AlarmaBomberosChimbarongo
         {
             Emergencias abrirEmergencias = new Emergencias();
             abrirEmergencias.ShowDialog();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.microsoft.com");
         }
     }
 }

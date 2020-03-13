@@ -37,6 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbPublicar = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -83,7 +84,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.cbPublicar = new System.Windows.Forms.CheckBox();
+            this.SpPuertos = new System.IO.Ports.SerialPort(this.components);
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -232,6 +233,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 688);
             this.panel1.TabIndex = 23;
+            // 
+            // cbPublicar
+            // 
+            this.cbPublicar.AutoSize = true;
+            this.cbPublicar.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPublicar.Location = new System.Drawing.Point(652, 295);
+            this.cbPublicar.Name = "cbPublicar";
+            this.cbPublicar.Size = new System.Drawing.Size(115, 52);
+            this.cbPublicar.TabIndex = 306;
+            this.cbPublicar.Text = "Publicar en \r\nFacebook y \r\nTwitter";
+            this.cbPublicar.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
@@ -800,16 +812,8 @@
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
             // 
-            // cbPublicar
+            // SpPuertos
             // 
-            this.cbPublicar.AutoSize = true;
-            this.cbPublicar.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPublicar.Location = new System.Drawing.Point(652, 295);
-            this.cbPublicar.Name = "cbPublicar";
-            this.cbPublicar.Size = new System.Drawing.Size(115, 52);
-            this.cbPublicar.TabIndex = 306;
-            this.cbPublicar.Text = "Publicar en \r\nFacebook y \r\nTwitter";
-            this.cbPublicar.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
@@ -909,6 +913,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox cbPublicar;
+        private System.IO.Ports.SerialPort SpPuertos;
     }
 }
 

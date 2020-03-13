@@ -189,17 +189,17 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(2, 562);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(2, 559);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(273, 9);
+            this.label16.Size = new System.Drawing.Size(344, 12);
             this.label16.TabIndex = 72;
             this.label16.Text = "ecb127cc94732a3b77a446563fc86040e62bdeb29e77fb9af8e7a9fb6932f281:AASP";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.impresion;
-            this.pictureBox1.Location = new System.Drawing.Point(586, 534);
+            this.pictureBox1.Location = new System.Drawing.Point(525, 534);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +225,7 @@
             this.btnImprimir.BackColor = System.Drawing.Color.Gray;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(635, 541);
+            this.btnImprimir.Location = new System.Drawing.Point(574, 541);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
@@ -431,7 +431,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.information_info_1565;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 537);
+            this.pictureBox4.Location = new System.Drawing.Point(10, 532);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -441,7 +441,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 541);
+            this.label9.Location = new System.Drawing.Point(33, 536);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(339, 13);
             this.label9.TabIndex = 47;
