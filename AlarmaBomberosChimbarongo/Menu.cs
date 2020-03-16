@@ -10,7 +10,6 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
-using System.Media;
 
 namespace AlarmaBomberosChimbarongo
 {
@@ -242,43 +241,73 @@ namespace AlarmaBomberosChimbarongo
                     if (cbPublicar.Checked == true)
                     {
                         System.Diagnostics.Process.Start("https://twitter.com/intent/tweet?text=SITUACION EMERGENCIA: " + txtSituacion.Text + " LUGAR: " + txtLugar.Text + ". Bomberos Acude a la Emergencia");
-                    }
+                    }    
 
-                    /*  try
-                      {
-                          SpPuertos.Open();
-                          SpPuertos.DiscardInBuffer();
-                          */
+                    List<String> RutaArchivos = new List<String>();
 
-                    SoundPlayer player = new SoundPlayer();
-                    for (int i = 0; i < 3; i++)
+                    for (int x = 0; x < clbCompañiaBomberos.CheckedItems.Count; x++)
                     {
-                        player.SoundLocation = Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav";
-                        player.PlayLooping();
+                        if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Primera")
+                        {
+                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav");
+                        }
+                        if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Segunda")
+                        {
+                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\SegundaCompañia.wav");
+                        }
+                        if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Tercera")
+                        {
+                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\TerceraCompañia.wav");
+                        }
+                        if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Cuarta")
+                        {
+                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\CuartaCompañia.wav");
+                        }
+                        if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Quinta")
+                        {
+                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\QuintaCompañia.wav");
+                        }
                     }
+                    Reproductor.URL = RutaArchivos[0];
 
-
-
-                    player.Stop();
-
-
-                    /*
-                    strbufferOut = "Datos a enviar";
-                    SpPuertos.Write(strbufferOut);
-                    */
-
-                    /*
-                        SpPuertos.Close();
-                        MessageBox.Show("Se Ejecuto Correctamente las Instrucciones de la Alerta","Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
+                    foreach (List RutaArchivos in RutaArchivos)
                     {
-;                         MessageBox.Show("Error al Intentar Ejecutar las Intrucciones de la Alerta, revise los ajustes de conexion ERROR: "+ex.Message,"ERROR Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                          SpPuertos.Close();
-                    }
-                    */
 
-                    LimpiarCampos();
+                    }
+
+
+
+
+                        /*  try
+                          {
+                              SpPuertos.Open();
+                              SpPuertos.DiscardInBuffer();
+                              */
+
+                        // SoundPlayer player = new SoundPlayer();
+                        // player.SoundLocation = Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav";
+                        // player.Play();
+
+
+
+
+                        /*
+                        strbufferOut = "Datos a enviar";
+                        SpPuertos.Write(strbufferOut);
+                        */
+
+                        /*
+                            SpPuertos.Close();
+                            MessageBox.Show("Se Ejecuto Correctamente las Instrucciones de la Alerta","Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+    ;                         MessageBox.Show("Error al Intentar Ejecutar las Intrucciones de la Alerta, revise los ajustes de conexion ERROR: "+ex.Message,"ERROR Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                              SpPuertos.Close();
+                        }
+                        */
+
+                        LimpiarCampos();
                 }
                 else
                 {

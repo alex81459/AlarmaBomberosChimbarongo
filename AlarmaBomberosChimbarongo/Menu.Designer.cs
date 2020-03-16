@@ -85,6 +85,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SpPuertos = new System.IO.Ports.SerialPort(this.components);
+            this.Reproductor = new AxWMPLib.AxWindowsMediaPlayer();
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -104,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).BeginInit();
             this.SuspendLayout();
             // 
             // Barra
@@ -181,6 +183,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Reproductor);
             this.panel1.Controls.Add(this.cbPublicar);
             this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label16);
@@ -770,7 +773,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(461, 131);
+            this.label10.Location = new System.Drawing.Point(461, 132);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(232, 29);
             this.label10.TabIndex = 265;
@@ -784,7 +787,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(411, 77);
+            this.label9.Location = new System.Drawing.Point(411, 78);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(356, 29);
             this.label9.TabIndex = 264;
@@ -795,7 +798,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(415, 104);
+            this.label3.Location = new System.Drawing.Point(415, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(351, 29);
             this.label3.TabIndex = 259;
@@ -812,8 +815,14 @@
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
             // 
-            // SpPuertos
+            // Reproductor
             // 
+            this.Reproductor.Enabled = true;
+            this.Reproductor.Location = new System.Drawing.Point(436, 358);
+            this.Reproductor.Name = "Reproductor";
+            this.Reproductor.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Reproductor.OcxState")));
+            this.Reproductor.Size = new System.Drawing.Size(220, 48);
+            this.Reproductor.TabIndex = 307;
             // 
             // Menu
             // 
@@ -853,6 +862,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -914,6 +924,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox cbPublicar;
         private System.IO.Ports.SerialPort SpPuertos;
+        private AxWMPLib.AxWindowsMediaPlayer Reproductor;
     }
 }
 
