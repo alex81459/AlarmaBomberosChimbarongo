@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ajustes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,6 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.SpPuertos = new System.IO.Ports.SerialPort(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -85,6 +85,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(569, 421);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Orbitron", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(358, 398);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(198, 14);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "© Alex Salinas Ponce 2020     ";
             // 
             // groupBox1
             // 
@@ -329,7 +339,7 @@
             this.Barra.Controls.Add(this.pictureBox12);
             this.Barra.Controls.Add(this.pictureBox11);
             this.Barra.Controls.Add(this.label7);
-            this.Barra.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.Barra.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Barra.Dock = System.Windows.Forms.DockStyle.Top;
             this.Barra.Location = new System.Drawing.Point(0, 0);
             this.Barra.Name = "Barra";
@@ -358,16 +368,6 @@
             this.pictureBox11.TabIndex = 23;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Orbitron", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(358, 398);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 14);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "© Alex Salinas Ponce 2020     ";
             // 
             // Ajustes
             // 

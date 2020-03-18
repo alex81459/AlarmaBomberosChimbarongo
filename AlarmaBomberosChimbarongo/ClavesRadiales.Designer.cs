@@ -222,6 +222,7 @@
             // cmbBuscarEn
             // 
             this.cmbBuscarEn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBuscarEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscarEn.FormattingEnabled = true;
             this.cmbBuscarEn.Items.AddRange(new object[] {
             "ID",

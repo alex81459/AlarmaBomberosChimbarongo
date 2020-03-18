@@ -165,11 +165,31 @@ namespace AlarmaBomberosChimbarongo
                 {
                     if (txtNumeroVoluntario.Text != "" && txtRut.Text != "" && txtNombreVoluntario.Text != "" && txtTelefono.Text != "" && txtDireccion.Text !="" && txtCompañia.Text !="" && txtCargo.Text !="" && txtEstado.Text != "")
                     {
-                        ControlSQLite guardarClaveRadial = new ControlSQLite();
-                        guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Voluntarios(NumeroVoluntario, RUT, NombreVoluntario, Telefono, Direccion, CompañiaBomberos, Cargo, Estado) VALUES ('"+ txtNumeroVoluntario.Text+ "', '"+ txtRut.Text+ "', '"+ txtNombreVoluntario.Text+ "', '"+ txtTelefono.Text+ "', '"+ txtDireccion.Text+ "', '"+ txtCompañia.Text+ "', '"+ txtCargo.Text+ "', '"+ txtEstado.Text+ "');");
+                        ControlSQLite ExistenciaDatos = new ControlSQLite();
+                        Boolean DatoExiste = ExistenciaDatos.ExistenciaDatoEnTabla("select * from Voluntarios where NumeroVoluntario = '"+ txtNumeroVoluntario.Text+ "'");
 
-                        MessageBox.Show("Se guardo Correctamente el Voluntario de RUT: " + txtRut.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarCampos();
+                        if (DatoExiste)
+                        {
+                            MessageBox.Show("El Numero de Voluntario " + txtNumeroVoluntario.Text + " Ya se encuentra Registrado en el Sistema", "Registro ya Existe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        else
+                        {
+                            ControlSQLite ExistenciaDatosRUT = new ControlSQLite();
+                            Boolean ExistenciaRut = ExistenciaDatos.ExistenciaDatoEnTabla("select * from Voluntarios where RUT = '" + txtRut.Text + "'");
+
+                            if (ExistenciaRut)
+                            {
+                                MessageBox.Show("El RUT  del Voluntario " + txtRut.Text + " Ya se encuentra Registrado en el Sistema", "Registro ya Existe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                ControlSQLite guardarClaveRadial = new ControlSQLite();
+                                guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Voluntarios(NumeroVoluntario, RUT, NombreVoluntario, Telefono, Direccion, CompañiaBomberos, Cargo, Estado) VALUES ('" + txtNumeroVoluntario.Text + "', '" + txtRut.Text + "', '" + txtNombreVoluntario.Text + "', '" + txtTelefono.Text + "', '" + txtDireccion.Text + "', '" + txtCompañia.Text + "', '" + txtCargo.Text + "', '" + txtEstado.Text + "');");
+
+                                MessageBox.Show("Se guardo Correctamente el Voluntario de RUT: " + txtRut.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LimpiarCampos();
+                            }
+                        }
                     }
                     else
                     {

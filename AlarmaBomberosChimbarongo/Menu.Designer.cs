@@ -177,11 +177,11 @@
             // 
             // tiempo
             // 
-            this.tiempo.Interval = 1000;
             this.tiempo.Tick += new System.EventHandler(this.tiempo_Tick);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Reproductor);
             this.panel1.Controls.Add(this.cbPublicar);
@@ -315,7 +315,7 @@
             // 
             // txtCoordenadas
             // 
-            this.txtCoordenadas.BackColor = System.Drawing.Color.Black;
+            this.txtCoordenadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtCoordenadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCoordenadas.ForeColor = System.Drawing.Color.White;
             this.txtCoordenadas.Location = new System.Drawing.Point(480, 293);
@@ -327,7 +327,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.Black;
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtDescripcion.ForeColor = System.Drawing.Color.White;
             this.txtDescripcion.Location = new System.Drawing.Point(615, 432);
             this.txtDescripcion.MaxLength = 500;
@@ -353,7 +353,7 @@
             // 
             // txtLugar
             // 
-            this.txtLugar.BackColor = System.Drawing.Color.Black;
+            this.txtLugar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtLugar.ForeColor = System.Drawing.Color.White;
             this.txtLugar.Location = new System.Drawing.Point(460, 432);
             this.txtLugar.MaxLength = 100;
@@ -379,7 +379,7 @@
             // 
             // txtOficialAcargo
             // 
-            this.txtOficialAcargo.BackColor = System.Drawing.Color.Black;
+            this.txtOficialAcargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtOficialAcargo.ForeColor = System.Drawing.Color.White;
             this.txtOficialAcargo.Location = new System.Drawing.Point(849, 432);
             this.txtOficialAcargo.MaxLength = 50;
@@ -419,7 +419,7 @@
             // 
             // txtSituacion
             // 
-            this.txtSituacion.BackColor = System.Drawing.Color.Black;
+            this.txtSituacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtSituacion.ForeColor = System.Drawing.Color.White;
             this.txtSituacion.Location = new System.Drawing.Point(267, 432);
             this.txtSituacion.MaxLength = 100;
@@ -465,7 +465,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.Location = new System.Drawing.Point(779, 267);
@@ -500,7 +500,7 @@
             // 
             // clbCompañiaBomberos
             // 
-            this.clbCompañiaBomberos.BackColor = System.Drawing.Color.Black;
+            this.clbCompañiaBomberos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.clbCompañiaBomberos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbCompañiaBomberos.CheckOnClick = true;
             this.clbCompañiaBomberos.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -519,7 +519,7 @@
             // 
             // clbClavesComunes
             // 
-            this.clbClavesComunes.BackColor = System.Drawing.Color.Black;
+            this.clbClavesComunes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.clbClavesComunes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbClavesComunes.CheckOnClick = true;
             this.clbClavesComunes.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -823,6 +823,7 @@
             this.Reproductor.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Reproductor.OcxState")));
             this.Reproductor.Size = new System.Drawing.Size(220, 48);
             this.Reproductor.TabIndex = 307;
+            this.Reproductor.Visible = false;
             // 
             // Menu
             // 

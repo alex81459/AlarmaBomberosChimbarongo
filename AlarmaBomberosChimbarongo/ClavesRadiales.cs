@@ -69,11 +69,21 @@ namespace AlarmaBomberosChimbarongo
             {
                 if (txtClaveRadial.Text != "" && txtCategoria.Text != "" && txtDescripcion.Text != "")
                 {
-                    ControlSQLite guardarClaveRadial = new ControlSQLite();
-                    guardarClaveRadial.EjecutarConsulta("INSERT INTO main.ClavesRadiales(ClaveRadial, Categoria, Descripcion)VALUES ('" + txtClaveRadial.Text + "', '" + txtCategoria.Text + "', '" + txtDescripcion.Text + "');");
+                    ControlSQLite ExistenciaDatos = new ControlSQLite();
+                    Boolean DatoExiste = ExistenciaDatos.ExistenciaDatoEnTabla("select * from ClavesRadiales where ClaveRadial = '"+ txtClaveRadial.Text+ "'");
 
-                    MessageBox.Show("Se guardo Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (DatoExiste)
+                    {
+                        MessageBox.Show("La Clave Radial "+ txtClaveRadial.Text+ " Ya se encuentra Registrada en el Sistema","Registro ya Existe",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        ControlSQLite guardarClaveRadial = new ControlSQLite();
+                        guardarClaveRadial.EjecutarConsulta("INSERT INTO main.ClavesRadiales(ClaveRadial, Categoria, Descripcion)VALUES ('" + txtClaveRadial.Text + "', '" + txtCategoria.Text + "', '" + txtDescripcion.Text + "');");
+
+                        MessageBox.Show("Se guardo Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }
                 }
                 else
                 {

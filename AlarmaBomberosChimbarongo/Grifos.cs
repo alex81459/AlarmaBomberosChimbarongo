@@ -212,11 +212,21 @@ namespace AlarmaBomberosChimbarongo
             {
                 if (txtNumero.Text != "" && txtDireccionGrifo.Text != "" && txtEstado.Text != "")
                 {
-                    ControlSQLite guardarClaveRadial = new ControlSQLite();
-                    guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Grifos(NumeroGrifo,DireccionGrifo,Estado,CoordenadasUbicacion)VALUES ('" + txtNumero.Text + "','" + txtDireccionGrifo.Text + "', '" + txtEstado.Text + "', '" + txtCordenadasUbicacion.Text + "');");
+                    ControlSQLite ExistenciaDatos = new ControlSQLite();
+                    Boolean DatoExiste = ExistenciaDatos.ExistenciaDatoEnTabla("select * from Grifos where NumeroGrifo = '"+ txtNumero.Text+ "'");
 
-                    MessageBox.Show("Se guardo Correctamente el Grifo Numero: " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (DatoExiste)
+                    {
+                        MessageBox.Show("El Grifo Numero " + txtNumero.Text + " Ya se encuentra Registrado en el Sistema", "Registro ya Existe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        ControlSQLite guardarClaveRadial = new ControlSQLite();
+                        guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Grifos(NumeroGrifo,DireccionGrifo,Estado,CoordenadasUbicacion)VALUES ('" + txtNumero.Text + "','" + txtDireccionGrifo.Text + "', '" + txtEstado.Text + "', '" + txtCordenadasUbicacion.Text + "');");
+
+                        MessageBox.Show("Se guardo Correctamente el Grifo Numero: " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }
                 }
                 else
                 {

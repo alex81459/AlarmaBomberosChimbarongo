@@ -112,11 +112,21 @@ namespace AlarmaBomberosChimbarongo
             {
                 if (txtNumero.Text != "" && txtCategoria.Text != "" && txtNombreContacto.Text != "")
                 {
-                    ControlSQLite guardarClaveRadial = new ControlSQLite();
-                    guardarClaveRadial.EjecutarConsulta("INSERT INTO main.GuiaTelefonica(Numero, Categoria, NombreContacto)VALUES ('" + txtNumero.Text + "', '" + txtCategoria.Text + "', '" + txtNombreContacto.Text + "');");
+                    ControlSQLite ExistenciaDatos = new ControlSQLite();
+                    Boolean DatoExiste = ExistenciaDatos.ExistenciaDatoEnTabla("select * from GuiaTelefonica where Numero = '"+ txtNumero.Text+ "'");
 
-                    MessageBox.Show("Se guardo Correctamente el Numero: " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                    if (DatoExiste)
+                    {
+                        MessageBox.Show("El Numero de Telefono " + txtNumero.Text + " Ya se encuentra Registrado en el Sistema", "Registro ya Existe", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        ControlSQLite guardarClaveRadial = new ControlSQLite();
+                        guardarClaveRadial.EjecutarConsulta("INSERT INTO main.GuiaTelefonica(Numero, Categoria, NombreContacto)VALUES ('" + txtNumero.Text + "', '" + txtCategoria.Text + "', '" + txtNombreContacto.Text + "');");
+
+                        MessageBox.Show("Se guardo Correctamente el Numero: " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarCampos();
+                    }
                 }
                 else
                 {
@@ -176,5 +186,6 @@ namespace AlarmaBomberosChimbarongo
                 }
             }
         }
+
     }
 }

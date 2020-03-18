@@ -99,7 +99,7 @@
             this.Barra.Controls.Add(this.pictureBox12);
             this.Barra.Controls.Add(this.pictureBox11);
             this.Barra.Controls.Add(this.label7);
-            this.Barra.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.Barra.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Barra.Dock = System.Windows.Forms.DockStyle.Top;
             this.Barra.Location = new System.Drawing.Point(0, 0);
             this.Barra.Name = "Barra";
@@ -230,7 +230,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 69;
-            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Text = "Generar";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
@@ -469,6 +469,7 @@
             // cmbBuscarEn
             // 
             this.cmbBuscarEn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBuscarEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscarEn.FormattingEnabled = true;
             this.cmbBuscarEn.Items.AddRange(new object[] {
             "ID",

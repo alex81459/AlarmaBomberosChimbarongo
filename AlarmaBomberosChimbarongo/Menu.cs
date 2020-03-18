@@ -270,10 +270,7 @@ namespace AlarmaBomberosChimbarongo
                     }
                     Reproductor.URL = RutaArchivos[0];
 
-                    foreach (List RutaArchivos in RutaArchivos)
-                    {
-
-                    }
+                    
 
 
 
