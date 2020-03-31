@@ -182,10 +182,16 @@ namespace AlarmaBomberosChimbarongo
 
                 Properties.Settings.Default.PuertoSerial = PuertoGuardar;
                 Properties.Settings.Default.VelocidadPuertoSerial = CboBautRate.Text;
-                Properties.Settings.Default.RepeticionAlarma = Convert.ToInt32(txtRepeticionAlarma.Value);
                 Properties.Settings.Default.Save();
                 MessageBox.Show("Se Guardo Correctamente la Configuracion del Puerto Serie", "Configuracion Guardada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnGuardarVeces_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.RepeticionAlarma = Convert.ToInt32(txtRepeticionAlarma.Value);
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Se Guardo Correctamente la cantidad de Veces que se Repetira la Alarma","Cantidad Guardada",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

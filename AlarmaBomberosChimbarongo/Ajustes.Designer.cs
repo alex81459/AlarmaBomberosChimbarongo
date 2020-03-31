@@ -33,6 +33,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRepeticionAlarma = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -56,10 +58,10 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.SpPuertos = new System.IO.Ports.SerialPort(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtRepeticionAlarma = new System.Windows.Forms.NumericUpDown();
+            this.btnGuardarVeces = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRepeticionAlarma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,13 +69,15 @@
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRepeticionAlarma)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnGuardarVeces);
+            this.panel1.Controls.Add(this.txtRepeticionAlarma);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.richTextBox1);
@@ -102,8 +106,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtRepeticionAlarma);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.pictureBox3);
@@ -114,11 +116,43 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnBuscarPuertos);
             this.groupBox1.Controls.Add(this.btnGuardarCambiosPuerto);
-            this.groupBox1.Location = new System.Drawing.Point(11, 268);
+            this.groupBox1.Location = new System.Drawing.Point(11, 316);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 177);
+            this.groupBox1.Size = new System.Drawing.Size(545, 129);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
+            // 
+            // txtRepeticionAlarma
+            // 
+            this.txtRepeticionAlarma.Location = new System.Drawing.Point(237, 276);
+            this.txtRepeticionAlarma.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtRepeticionAlarma.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtRepeticionAlarma.Name = "txtRepeticionAlarma";
+            this.txtRepeticionAlarma.Size = new System.Drawing.Size(45, 20);
+            this.txtRepeticionAlarma.TabIndex = 56;
+            this.txtRepeticionAlarma.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(8, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(223, 13);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Cantidad de Veces Que se Repetira la Alarma";
             // 
             // label5
             // 
@@ -142,7 +176,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.pngocean_com;
-            this.pictureBox3.Location = new System.Drawing.Point(399, 58);
+            this.pictureBox3.Location = new System.Drawing.Point(399, 36);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(99, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,7 +259,7 @@
             this.btnGuardarCambiosPuerto.Enabled = false;
             this.btnGuardarCambiosPuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambiosPuerto.ForeColor = System.Drawing.Color.Navy;
-            this.btnGuardarCambiosPuerto.Location = new System.Drawing.Point(390, 108);
+            this.btnGuardarCambiosPuerto.Location = new System.Drawing.Point(390, 86);
             this.btnGuardarCambiosPuerto.Name = "btnGuardarCambiosPuerto";
             this.btnGuardarCambiosPuerto.Size = new System.Drawing.Size(117, 21);
             this.btnGuardarCambiosPuerto.TabIndex = 47;
@@ -239,7 +273,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label2.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(10, 164);
+            this.label2.Location = new System.Drawing.Point(7, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(307, 20);
             this.label2.TabIndex = 39;
@@ -374,36 +408,17 @@
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
-            // label6
+            // btnGuardarVeces
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 141);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(223, 13);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "Cantidad de Veces Que se Repetira la Alarma";
-            // 
-            // txtRepeticionAlarma
-            // 
-            this.txtRepeticionAlarma.Location = new System.Drawing.Point(230, 138);
-            this.txtRepeticionAlarma.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.txtRepeticionAlarma.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtRepeticionAlarma.Name = "txtRepeticionAlarma";
-            this.txtRepeticionAlarma.Size = new System.Drawing.Size(45, 20);
-            this.txtRepeticionAlarma.TabIndex = 56;
-            this.txtRepeticionAlarma.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.btnGuardarVeces.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarVeces.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnGuardarVeces.Location = new System.Drawing.Point(288, 275);
+            this.btnGuardarVeces.Name = "btnGuardarVeces";
+            this.btnGuardarVeces.Size = new System.Drawing.Size(81, 21);
+            this.btnGuardarVeces.TabIndex = 57;
+            this.btnGuardarVeces.Text = "Guardar";
+            this.btnGuardarVeces.UseVisualStyleBackColor = true;
+            this.btnGuardarVeces.Click += new System.EventHandler(this.btnGuardarVeces_Click);
             // 
             // Ajustes
             // 
@@ -423,6 +438,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRepeticionAlarma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -431,7 +447,6 @@
             this.Barra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRepeticionAlarma)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -466,5 +481,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown txtRepeticionAlarma;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnGuardarVeces;
     }
 }

@@ -319,7 +319,7 @@ namespace AlarmaBomberosChimbarongo
                     Reproductor.currentPlaylist.clear();
                     Reproductor.playlistCollection.newPlaylist("AlarmaCarros");
 
-                    for (int i = 1; i <= Properties.Settings.Default.RepeticionAlarma; i++)
+                    for (int i = 0; i <= Properties.Settings.Default.RepeticionAlarma; i++)
                     {
                         for (int x = 0; x < RutaArchivosClaves.Count; x++)
                         {
@@ -335,8 +335,8 @@ namespace AlarmaBomberosChimbarongo
                     RutaArchivosCompañias.Clear();
                     RutaArchivosClaves.Clear();
 
-                /*    try
-                    {*/
+                    try
+                    {
                         SpPuertos.Open();
                         SpPuertos.DiscardInBuffer();
 
@@ -356,13 +356,12 @@ namespace AlarmaBomberosChimbarongo
                         SpPuertos.Write(SonidosEnviar);
 
                         SpPuertos.Close();
-                        MessageBox.Show("Se Ejecuto Correctamente las Instrucciones de la Alerta","Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                  /*  }
-                    catch (Exception ex)
+                        MessageBox.Show("Se Envio Correctamente la Alerta a la Antena", "Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
                     {
-;                         MessageBox.Show("Error al Intentar Ejecutar las Intrucciones de la Alerta, revise los ajustes de conexion ERROR: "+ex.Message,"ERROR Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                           SpPuertos.Close();
-                    }*/
+                    }
 
                     LimpiarCampos();
                 }

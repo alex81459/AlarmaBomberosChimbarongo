@@ -555,11 +555,11 @@
             // txtFechayHora
             // 
             this.txtFechayHora.AutoSize = true;
-            this.txtFechayHora.Font = new System.Drawing.Font("Orbitron", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechayHora.Font = new System.Drawing.Font("Orbitron", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechayHora.ForeColor = System.Drawing.Color.Red;
-            this.txtFechayHora.Location = new System.Drawing.Point(312, 16);
+            this.txtFechayHora.Location = new System.Drawing.Point(293, 16);
             this.txtFechayHora.Name = "txtFechayHora";
-            this.txtFechayHora.Size = new System.Drawing.Size(173, 45);
+            this.txtFechayHora.Size = new System.Drawing.Size(185, 48);
             this.txtFechayHora.TabIndex = 280;
             this.txtFechayHora.Text = "Hora¿?";
             // 
@@ -760,9 +760,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(165, 1);
+            this.pictureBox4.Location = new System.Drawing.Point(160, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(142, 160);
+            this.pictureBox4.Size = new System.Drawing.Size(133, 154);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 256;
             this.pictureBox4.TabStop = false;
@@ -773,7 +773,7 @@
             this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.bomberoschimbarongo;
             this.pictureBox3.Location = new System.Drawing.Point(1, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(168, 157);
+            this.pictureBox3.Size = new System.Drawing.Size(158, 151);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 255;
             this.pictureBox3.TabStop = false;
@@ -818,9 +818,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(840, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(849, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(157, 155);
+            this.pictureBox2.Size = new System.Drawing.Size(148, 152);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
