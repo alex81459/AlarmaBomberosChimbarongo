@@ -37,6 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tiempo = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Reproductor = new AxWMPLib.AxWindowsMediaPlayer();
             this.cbPublicar = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -85,12 +86,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SpPuertos = new System.IO.Ports.SerialPort(this.components);
-            this.Reproductor = new AxWMPLib.AxWindowsMediaPlayer();
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -105,7 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).BeginInit();
             this.SuspendLayout();
             // 
             // Barra
@@ -237,6 +237,16 @@
             this.panel1.Size = new System.Drawing.Size(1000, 688);
             this.panel1.TabIndex = 23;
             // 
+            // Reproductor
+            // 
+            this.Reproductor.Enabled = true;
+            this.Reproductor.Location = new System.Drawing.Point(154, 161);
+            this.Reproductor.Name = "Reproductor";
+            this.Reproductor.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Reproductor.OcxState")));
+            this.Reproductor.Size = new System.Drawing.Size(226, 46);
+            this.Reproductor.TabIndex = 307;
+            this.Reproductor.Visible = false;
+            // 
             // cbPublicar
             // 
             this.cbPublicar.AutoSize = true;
@@ -318,7 +328,7 @@
             this.txtCoordenadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtCoordenadas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCoordenadas.ForeColor = System.Drawing.Color.White;
-            this.txtCoordenadas.Location = new System.Drawing.Point(480, 293);
+            this.txtCoordenadas.Location = new System.Drawing.Point(476, 293);
             this.txtCoordenadas.Name = "txtCoordenadas";
             this.txtCoordenadas.ReadOnly = true;
             this.txtCoordenadas.Size = new System.Drawing.Size(133, 33);
@@ -433,7 +443,7 @@
             // 
             this.btnCoordenadas.Font = new System.Drawing.Font("Orbitron", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCoordenadas.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCoordenadas.Location = new System.Drawing.Point(494, 329);
+            this.btnCoordenadas.Location = new System.Drawing.Point(490, 329);
             this.btnCoordenadas.Name = "btnCoordenadas";
             this.btnCoordenadas.Size = new System.Drawing.Size(100, 23);
             this.btnCoordenadas.TabIndex = 289;
@@ -445,7 +455,7 @@
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.mapa;
-            this.pictureBox15.Location = new System.Drawing.Point(516, 214);
+            this.pictureBox15.Location = new System.Drawing.Point(512, 214);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(50, 50);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -457,7 +467,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Orbitron", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(456, 267);
+            this.label6.Location = new System.Drawing.Point(452, 267);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(172, 25);
             this.label6.TabIndex = 287;
@@ -534,22 +544,22 @@
             "10-5 Material Peligroso",
             "10-6 Emanacion de Gas",
             "10-7 Electrico",
-            "11-8 No Clasificado",
+            "10-8 No Clasificado",
             "10-9 Otros Servicios",
             "10-12 Apoyo Otros Cuerpos"});
             this.clbClavesComunes.Location = new System.Drawing.Point(33, 293);
             this.clbClavesComunes.Name = "clbClavesComunes";
-            this.clbClavesComunes.Size = new System.Drawing.Size(237, 198);
+            this.clbClavesComunes.Size = new System.Drawing.Size(224, 198);
             this.clbClavesComunes.TabIndex = 281;
             // 
             // txtFechayHora
             // 
             this.txtFechayHora.AutoSize = true;
-            this.txtFechayHora.Font = new System.Drawing.Font("Orbitron", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechayHora.Font = new System.Drawing.Font("Orbitron", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechayHora.ForeColor = System.Drawing.Color.Red;
-            this.txtFechayHora.Location = new System.Drawing.Point(318, 16);
+            this.txtFechayHora.Location = new System.Drawing.Point(312, 16);
             this.txtFechayHora.Name = "txtFechayHora";
-            this.txtFechayHora.Size = new System.Drawing.Size(185, 48);
+            this.txtFechayHora.Size = new System.Drawing.Size(173, 45);
             this.txtFechayHora.TabIndex = 280;
             this.txtFechayHora.Text = "Hora¿?";
             // 
@@ -750,7 +760,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(172, 1);
+            this.pictureBox4.Location = new System.Drawing.Point(165, 1);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(142, 160);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -761,7 +771,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.bomberoschimbarongo;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(1, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(168, 157);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -815,16 +825,6 @@
             this.pictureBox2.TabIndex = 254;
             this.pictureBox2.TabStop = false;
             // 
-            // Reproductor
-            // 
-            this.Reproductor.Enabled = true;
-            this.Reproductor.Location = new System.Drawing.Point(436, 358);
-            this.Reproductor.Name = "Reproductor";
-            this.Reproductor.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Reproductor.OcxState")));
-            this.Reproductor.Size = new System.Drawing.Size(220, 48);
-            this.Reproductor.TabIndex = 307;
-            this.Reproductor.Visible = false;
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -849,6 +849,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -863,7 +864,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).EndInit();
             this.ResumeLayout(false);
 
         }

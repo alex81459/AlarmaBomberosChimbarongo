@@ -56,6 +56,8 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.SpPuertos = new System.IO.Ports.SerialPort(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtRepeticionAlarma = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -65,6 +67,7 @@
             this.Barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRepeticionAlarma)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,14 +86,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(569, 421);
+            this.panel1.Size = new System.Drawing.Size(569, 464);
             this.panel1.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Orbitron", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(358, 398);
+            this.label3.Location = new System.Drawing.Point(370, 448);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(198, 14);
             this.label3.TabIndex = 43;
@@ -99,6 +102,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtRepeticionAlarma);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.pictureBox3);
@@ -111,14 +116,14 @@
             this.groupBox1.Controls.Add(this.btnGuardarCambiosPuerto);
             this.groupBox1.Location = new System.Drawing.Point(11, 268);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 127);
+            this.groupBox1.Size = new System.Drawing.Size(545, 177);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(89, 55);
+            this.label5.Location = new System.Drawing.Point(81, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 54;
@@ -127,7 +132,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.enchufe;
-            this.pictureBox4.Location = new System.Drawing.Point(271, 33);
+            this.pictureBox4.Location = new System.Drawing.Point(263, 36);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(45, 45);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +142,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.pngocean_com;
-            this.pictureBox3.Location = new System.Drawing.Point(407, 33);
+            this.pictureBox3.Location = new System.Drawing.Point(399, 58);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(99, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,7 +152,7 @@
             // lblBaudRate
             // 
             this.lblBaudRate.AutoSize = true;
-            this.lblBaudRate.Location = new System.Drawing.Point(14, 91);
+            this.lblBaudRate.Location = new System.Drawing.Point(6, 94);
             this.lblBaudRate.Name = "lblBaudRate";
             this.lblBaudRate.Size = new System.Drawing.Size(113, 13);
             this.lblBaudRate.TabIndex = 52;
@@ -167,7 +172,7 @@
             "38400",
             "56000",
             "115200"});
-            this.CboBautRate.Location = new System.Drawing.Point(133, 88);
+            this.CboBautRate.Location = new System.Drawing.Point(125, 91);
             this.CboBautRate.Name = "CboBautRate";
             this.CboBautRate.Size = new System.Drawing.Size(87, 21);
             this.CboBautRate.TabIndex = 51;
@@ -176,7 +181,7 @@
             // 
             this.btnConectar.Enabled = false;
             this.btnConectar.ForeColor = System.Drawing.Color.Black;
-            this.btnConectar.Location = new System.Drawing.Point(254, 84);
+            this.btnConectar.Location = new System.Drawing.Point(246, 87);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(74, 23);
             this.btnConectar.TabIndex = 50;
@@ -187,7 +192,7 @@
             // CboPuertos
             // 
             this.CboPuertos.FormattingEnabled = true;
-            this.CboPuertos.Location = new System.Drawing.Point(133, 52);
+            this.CboPuertos.Location = new System.Drawing.Point(125, 55);
             this.CboPuertos.Name = "CboPuertos";
             this.CboPuertos.Size = new System.Drawing.Size(87, 21);
             this.CboPuertos.TabIndex = 49;
@@ -198,7 +203,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label4.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(14, 17);
+            this.label4.Location = new System.Drawing.Point(6, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 43;
@@ -207,7 +212,7 @@
             // btnBuscarPuertos
             // 
             this.btnBuscarPuertos.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscarPuertos.Location = new System.Drawing.Point(17, 50);
+            this.btnBuscarPuertos.Location = new System.Drawing.Point(9, 53);
             this.btnBuscarPuertos.Name = "btnBuscarPuertos";
             this.btnBuscarPuertos.Size = new System.Drawing.Size(56, 23);
             this.btnBuscarPuertos.TabIndex = 48;
@@ -220,7 +225,7 @@
             this.btnGuardarCambiosPuerto.Enabled = false;
             this.btnGuardarCambiosPuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambiosPuerto.ForeColor = System.Drawing.Color.Navy;
-            this.btnGuardarCambiosPuerto.Location = new System.Drawing.Point(398, 83);
+            this.btnGuardarCambiosPuerto.Location = new System.Drawing.Point(390, 108);
             this.btnGuardarCambiosPuerto.Name = "btnGuardarCambiosPuerto";
             this.btnGuardarCambiosPuerto.Size = new System.Drawing.Size(117, 21);
             this.btnGuardarCambiosPuerto.TabIndex = 47;
@@ -369,12 +374,43 @@
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 141);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(223, 13);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Cantidad de Veces Que se Repetira la Alarma";
+            // 
+            // txtRepeticionAlarma
+            // 
+            this.txtRepeticionAlarma.Location = new System.Drawing.Point(230, 138);
+            this.txtRepeticionAlarma.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txtRepeticionAlarma.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtRepeticionAlarma.Name = "txtRepeticionAlarma";
+            this.txtRepeticionAlarma.Size = new System.Drawing.Size(45, 20);
+            this.txtRepeticionAlarma.TabIndex = 56;
+            this.txtRepeticionAlarma.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Ajustes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(569, 421);
+            this.ClientSize = new System.Drawing.Size(569, 464);
             this.Controls.Add(this.Barra);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
@@ -395,6 +431,7 @@
             this.Barra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRepeticionAlarma)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +464,7 @@
         private System.Windows.Forms.Label label5;
         private System.IO.Ports.SerialPort SpPuertos;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown txtRepeticionAlarma;
+        private System.Windows.Forms.Label label6;
     }
 }

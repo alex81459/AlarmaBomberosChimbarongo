@@ -14,5 +14,8 @@
     <Setting Name="VelocidadPuertoSerial" Type="System.String" Scope="User">
       <Value Profile="(Default)">9200</Value>
     </Setting>
+    <Setting Name="RepeticionAlarma" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -90,6 +90,7 @@
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -266,13 +267,18 @@
   <ItemGroup>
     <Content Include="alert_alarm_22185.ico" />
     <Content Include="bomberoschimbarongo.png" />
+    <Content Include="Sonidos\10-0 Llamado Estructural.wav" />
+    <Content Include="Sonidos\10-1 Incendio Estructural.wav" />
+    <Content Include="Sonidos\10-12 Apoyo Otros Cuerpos.wav" />
+    <Content Include="Sonidos\10-2 Pastizal o Basura.wav" />
+    <Content Include="Sonidos\10-3 Persona Atrapada.wav" />
+    <Content Include="Sonidos\10-4 Rescate Vehicular.wav" />
+    <Content Include="Sonidos\10-5 Material Peligroso.wav" />
+    <Content Include="Sonidos\10-6 Emanación de Gas.wav" />
+    <Content Include="Sonidos\10-7 Electrico.wav" />
+    <Content Include="Sonidos\10-8 No Clasificado.wav" />
+    <Content Include="Sonidos\10-9 Otros Servicios.wav" />
     <Content Include="Sonidos\CuartaCompañia.wav" />
-    <Content Include="Sonidos\EDITANDO 1_sound_00037.wav" />
-    <Content Include="Sonidos\EDITANDO 1_sound_00047.wav" />
-    <Content Include="Sonidos\EDITANDO 1_sound_00059.wav" />
-    <Content Include="Sonidos\EDITANDO 1_sound_00118.wav" />
-    <Content Include="Sonidos\EDITANDO 1_sound_00175.wav" />
-    <Content Include="Sonidos\EDITANDO 1_sound_00184.wav" />
     <Content Include="Sonidos\PrimeraCompañia.wav" />
     <Content Include="Sonidos\QuintaCompañia.wav" />
     <Content Include="Sonidos\SegundaCompañia.wav" />

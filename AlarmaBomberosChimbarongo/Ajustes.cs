@@ -33,6 +33,7 @@ namespace AlarmaBomberosChimbarongo
             btnGuardarCambiosPuerto.Enabled = false;
             CboPuertos.Text = Properties.Settings.Default.PuertoSerial;
             CboBautRate.Text = Properties.Settings.Default.VelocidadPuertoSerial;
+            txtRepeticionAlarma.Text = Properties.Settings.Default.RepeticionAlarma.ToString();
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -181,6 +182,7 @@ namespace AlarmaBomberosChimbarongo
 
                 Properties.Settings.Default.PuertoSerial = PuertoGuardar;
                 Properties.Settings.Default.VelocidadPuertoSerial = CboBautRate.Text;
+                Properties.Settings.Default.RepeticionAlarma = Convert.ToInt32(txtRepeticionAlarma.Value);
                 Properties.Settings.Default.Save();
                 MessageBox.Show("Se Guardo Correctamente la Configuracion del Puerto Serie", "Configuracion Guardada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

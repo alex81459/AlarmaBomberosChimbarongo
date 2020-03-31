@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Media;
+using System.ComponentModel;
+using WMPLib;
+using System.IO;
 
 namespace AlarmaBomberosChimbarongo
 {
     public partial class Menu : Form
     {
+        List<String> RutaArchivosCompañias = new List<String>();
+        List<String> RutaArchivosClaves = new List<String>();
+
+
         public static string Base64Encode(string plainText)
         {
             var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
@@ -27,8 +29,6 @@ namespace AlarmaBomberosChimbarongo
             return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
 
-        string strbufferOut;
-
         public Menu()
         {
             InitializeComponent();
@@ -40,7 +40,8 @@ namespace AlarmaBomberosChimbarongo
             SpPuertos.StopBits = StopBits.One;
             SpPuertos.Handshake = Handshake.None;
             SpPuertos.PortName = Properties.Settings.Default.PuertoSerial;
-            strbufferOut = "";
+
+           
         }
 
         Boolean TemaColorOscuro = Properties.Settings.Default.FondoOscuro;
@@ -241,70 +242,129 @@ namespace AlarmaBomberosChimbarongo
                     if (cbPublicar.Checked == true)
                     {
                         System.Diagnostics.Process.Start("https://twitter.com/intent/tweet?text=SITUACION EMERGENCIA: " + txtSituacion.Text + " LUGAR: " + txtLugar.Text + ". Bomberos Acude a la Emergencia");
-                    }    
-
-                    List<String> RutaArchivos = new List<String>();
+                    }
 
                     for (int x = 0; x < clbCompañiaBomberos.CheckedItems.Count; x++)
                     {
                         if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Primera")
                         {
-                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav");
+                            RutaArchivosCompañias.Add(Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav");
                         }
                         if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Segunda")
                         {
-                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\SegundaCompañia.wav");
+                            RutaArchivosCompañias.Add(Application.StartupPath + @"\Sonidos\SegundaCompañia.wav");
                         }
                         if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Tercera")
                         {
-                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\TerceraCompañia.wav");
+                            RutaArchivosCompañias.Add(Application.StartupPath + @"\Sonidos\TerceraCompañia.wav");
                         }
                         if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Cuarta")
                         {
-                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\CuartaCompañia.wav");
+                            RutaArchivosCompañias.Add(Application.StartupPath + @"\Sonidos\CuartaCompañia.wav");
                         }
                         if (clbCompañiaBomberos.CheckedItems[x].ToString() == "Quinta")
                         {
-                            RutaArchivos.Add(Application.StartupPath + @"\Sonidos\QuintaCompañia.wav");
+                            RutaArchivosCompañias.Add(Application.StartupPath + @"\Sonidos\QuintaCompañia.wav");
                         }
                     }
-                    Reproductor.URL = RutaArchivos[0];
 
-                    
-
-
-
-
-                        /*  try
-                          {
-                              SpPuertos.Open();
-                              SpPuertos.DiscardInBuffer();
-                              */
-
-                        // SoundPlayer player = new SoundPlayer();
-                        // player.SoundLocation = Application.StartupPath + @"\Sonidos\PrimeraCompañia.wav";
-                        // player.Play();
-
-
-
-
-                        /*
-                        strbufferOut = "Datos a enviar";
-                        SpPuertos.Write(strbufferOut);
-                        */
-
-                        /*
-                            SpPuertos.Close();
-                            MessageBox.Show("Se Ejecuto Correctamente las Instrucciones de la Alerta","Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        }
-                        catch (Exception ex)
+                    for (int x = 0; x < clbClavesComunes.CheckedItems.Count; x++)
+                    {
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-0 Llamado Estructural")
                         {
-    ;                         MessageBox.Show("Error al Intentar Ejecutar las Intrucciones de la Alerta, revise los ajustes de conexion ERROR: "+ex.Message,"ERROR Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                              SpPuertos.Close();
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-0 Llamado Estructural.wav");
                         }
-                        */
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-1 Incendio Estructural")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-1 Incendio Estructural.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-2 Pastizal o Basura")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-2 Pastizal o Basura.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-3 Persona Atrapada")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-3 Persona Atrapada.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-4 Rescate Vehicular")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-4 Rescate Vehicular.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-5 Material Peligroso")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-5 Material Peligroso.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-6 Emanacion de Gas")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-6 Emanación de Gas.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-7 Electrico")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-7 Electrico.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-8 No Clasificado")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-8 No Clasificado.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-9 Otros Servicios")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-9 Otros Servicios.wav");
+                        }
+                        if (clbClavesComunes.CheckedItems[x].ToString() == "10-12 Apoyo Otros Cuerpos")
+                        {
+                            RutaArchivosClaves.Add(Application.StartupPath + @"\Sonidos\10-12 Apoyo Otros Cuerpos.wav");
+                        }
+                    }
 
-                        LimpiarCampos();
+                    Reproductor.currentPlaylist.clear();
+                    Reproductor.playlistCollection.newPlaylist("AlarmaCarros");
+
+                    for (int i = 1; i <= Properties.Settings.Default.RepeticionAlarma; i++)
+                    {
+                        for (int x = 0; x < RutaArchivosClaves.Count; x++)
+                        {
+                            Reproductor.playlistCollection.getByName("AlarmaCarros").Item(0).appendItem(Reproductor.newMedia(RutaArchivosClaves[x]));
+                        }
+                        for (int x = 0; x < RutaArchivosCompañias.Count; x++)
+                        {
+                            Reproductor.playlistCollection.getByName("AlarmaCarros").Item(0).appendItem(Reproductor.newMedia(RutaArchivosCompañias[x]));
+                        }
+                    }
+
+                    Reproductor.currentPlaylist = Reproductor.playlistCollection.getByName("AlarmaCarros").Item(0);
+                    RutaArchivosCompañias.Clear();
+                    RutaArchivosClaves.Clear();
+
+                /*    try
+                    {*/
+                        SpPuertos.Open();
+                        SpPuertos.DiscardInBuffer();
+
+                        byte[] arregloByts = null;
+
+                        for (int x = 0; x < RutaArchivosClaves.Count; x++)
+                        {
+                            arregloByts = File.ReadAllBytes(RutaArchivosClaves[x]);
+                        }
+                        for (int x = 0; x < RutaArchivosCompañias.Count; x++)
+                        {
+                            arregloByts = File.ReadAllBytes(RutaArchivosCompañias[x]);
+                        }
+
+                        string SonidosEnviar = Convert.ToString(arregloByts);
+
+                        SpPuertos.Write(SonidosEnviar);
+
+                        SpPuertos.Close();
+                        MessageBox.Show("Se Ejecuto Correctamente las Instrucciones de la Alerta","Alertas Ejecutadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                  /*  }
+                    catch (Exception ex)
+                    {
+;                         MessageBox.Show("Error al Intentar Ejecutar las Intrucciones de la Alerta, revise los ajustes de conexion ERROR: "+ex.Message,"ERROR Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                          SpPuertos.Close();
+                    }*/
+
+                    LimpiarCampos();
                 }
                 else
                 {
@@ -316,7 +376,6 @@ namespace AlarmaBomberosChimbarongo
                 MessageBox.Show("Falta llenar Informacion, Debe Selecionar al MENOS una Clave, una Compañia de bomberos, ESCRIBIR la situacion de emergencia, el ofical a cargo, el lugar y la descripcion de la emergencia","Faltas Datos",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
-
         private void btnCoordenadas_Click(object sender, EventArgs e)
         {
             CoordenadasEmergencia buscarCoordendas = new CoordenadasEmergencia();
