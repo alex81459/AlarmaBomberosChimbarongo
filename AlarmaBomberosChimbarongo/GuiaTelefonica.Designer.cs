@@ -159,10 +159,11 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(2, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(947, 466);
+            this.panel1.Size = new System.Drawing.Size(950, 471);
             this.panel1.TabIndex = 43;
             // 
             // pictureBox7
@@ -509,7 +510,7 @@
             this.NombreContacto.HeaderText = "NombreContacto";
             this.NombreContacto.Name = "NombreContacto";
             this.NombreContacto.ReadOnly = true;
-            this.NombreContacto.Width = 385;
+            this.NombreContacto.Width = 360;
             // 
             // GuiaTelefonica
             // 

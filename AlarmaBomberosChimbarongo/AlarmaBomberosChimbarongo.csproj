@@ -42,6 +42,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,7 +71,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>alert_alarm_22185.ico</ApplicationIcon>
@@ -91,7 +93,9 @@
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -114,6 +118,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcercaDe.Designer.cs">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ajustes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,12 +155,19 @@
     <Compile Include="CoordenadasEmergencia.Designer.cs">
       <DependentUpon>CoordenadasEmergencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoordenadasEmergenciaBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordenadasEmergenciaBuscar.Designer.cs">
+      <DependentUpon>CoordenadasEmergenciaBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emergencias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Emergencias.Designer.cs">
       <DependentUpon>Emergencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="FuncionesAplicacion.cs" />
     <Compile Include="Grifos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,14 +180,32 @@
     <Compile Include="GuiaTelefonica.Designer.cs">
       <DependentUpon>GuiaTelefonica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operadores.Designer.cs">
+      <DependentUpon>Operadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros.Designer.cs">
+      <DependentUpon>Registros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Voluntarios.cs">
       <SubType>Form</SubType>
@@ -178,6 +213,9 @@
     <Compile Include="Voluntarios.Designer.cs">
       <DependentUpon>Voluntarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AcercaDe.resx">
+      <DependentUpon>AcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ajustes.resx">
       <DependentUpon>Ajustes.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +231,9 @@
     <EmbeddedResource Include="CoordenadasEmergencia.resx">
       <DependentUpon>CoordenadasEmergencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CoordenadasEmergenciaBuscar.resx">
+      <DependentUpon>CoordenadasEmergenciaBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Emergencias.resx">
       <DependentUpon>Emergencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,8 +243,14 @@
     <EmbeddedResource Include="GuiaTelefonica.resx">
       <DependentUpon>GuiaTelefonica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operadores.resx">
+      <DependentUpon>Operadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -215,6 +262,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registros.resx">
+      <DependentUpon>Registros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Voluntarios.resx">
       <DependentUpon>Voluntarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,25 +320,97 @@
   <ItemGroup>
     <Content Include="alert_alarm_22185.ico" />
     <Content Include="bomberoschimbarongo.png" />
-    <Content Include="Sonidos\10-0 Llamado Estructural.wav" />
-    <Content Include="Sonidos\10-1 Incendio Estructural.wav" />
-    <Content Include="Sonidos\10-12 Apoyo Otros Cuerpos.wav" />
-    <Content Include="Sonidos\10-2 Pastizal o Basura.wav" />
-    <Content Include="Sonidos\10-3 Persona Atrapada.wav" />
-    <Content Include="Sonidos\10-4 Rescate Vehicular.wav" />
-    <Content Include="Sonidos\10-5 Material Peligroso.wav" />
-    <Content Include="Sonidos\10-6 Emanación de Gas.wav" />
-    <Content Include="Sonidos\10-7 Electrico.wav" />
-    <Content Include="Sonidos\10-8 No Clasificado.wav" />
-    <Content Include="Sonidos\10-9 Otros Servicios.wav" />
-    <Content Include="Sonidos\CuartaCompañia.wav" />
-    <Content Include="Sonidos\PrimeraCompañia.wav" />
-    <Content Include="Sonidos\QuintaCompañia.wav" />
-    <Content Include="Sonidos\SegundaCompañia.wav" />
-    <Content Include="Sonidos\TerceraCompañia.wav" />
+    <None Include="Resources\Programador.png" />
+    <None Include="Resources\Electricista.png" />
+    <Content Include="Sonidos\10-0-LlamadoEstructural.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-12-ApoyoOtrosCuerpos.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-1-IncendioVehicular.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-2-PastizaloBasura.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-3-PersonaAtrapada.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-4-RescateVehicular.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-5-MaterialPeligroso.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-6-EmanacióndeGas.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-7-Electrico.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-8-NoClasificado.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\10-9-OtrosServicios.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\1Alarma.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\2Alarma.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\Aviso.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\chicagofire.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\CuartaCompania.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\PrimeraCompania.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\QuintaCompania.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\SegundaCompania.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\TerceraCompania.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\Timbre1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\Timbre2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\Timbre3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\Timbre4.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sonidos\Timbre5.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\torre.png" />
+    <None Include="Resources\volumen.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\UsuarioCandado.png" />
+    <None Include="Resources\Llave.png" />
+    <None Include="Resources\checkCirculo.png" />
+    <None Include="Resources\usuarioAlternativo.png" />
+    <None Include="Resources\actualizar.png" />
+    <None Include="Resources\Timbre.png" />
+    <None Include="Resources\registro.png" />
+    <None Include="Resources\Arduino.png" />
+    <None Include="Resources\operador.png" />
     <None Include="Resources\bombero1.png" />
     <None Include="Resources\enchufe.png" />
-    <None Include="Resources\pngocean.com.png" />
     <None Include="Resources\facebook1.png" />
     <None Include="Resources\twitter1.png" />
     <None Include="Resources\impresion.png" />
@@ -344,6 +466,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

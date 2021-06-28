@@ -12,7 +12,7 @@ namespace AlarmaBomberosChimbarongo.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.0.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,7 +37,7 @@ namespace AlarmaBomberosChimbarongo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("a7ceff056d2f0212c18a1382f923c51e35341432b58910abf5d0c3bc68d5c3ab")]
+        [global::System.Configuration.DefaultSettingValueAttribute("02d0fbf005980146eea8b44942d545b3654f2ca45e12a91a133481ca9f92efdf")]
         public string ClaveMaestra {
             get {
                 return ((string)(this["ClaveMaestra"]));
@@ -49,7 +49,7 @@ namespace AlarmaBomberosChimbarongo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM3")]
         public string PuertoSerial {
             get {
                 return ((string)(this["PuertoSerial"]));
@@ -61,7 +61,7 @@ namespace AlarmaBomberosChimbarongo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9200")]
+        [global::System.Configuration.DefaultSettingValueAttribute("9600")]
         public string VelocidadPuertoSerial {
             get {
                 return ((string)(this["VelocidadPuertoSerial"]));

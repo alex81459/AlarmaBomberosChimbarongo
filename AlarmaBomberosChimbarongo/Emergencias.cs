@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -18,7 +12,11 @@ namespace AlarmaBomberosChimbarongo
         public void CargarTabla()
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Emergencias;");
+            txtCantidadRegistro.Text = cargarTabla.CargarTabla("SELECT Count(ID) From Emergencias;").Rows[0][0].ToString();
+            txtPaginasDisponibles.Text = (Convert.ToInt32(txtCantidadRegistro.Text) / 50).ToString();
+            nudPaginaActual.Maximum = Convert.ToDecimal(txtPaginasDisponibles.Text);
+            nudPaginaActualBuscar.Refresh();
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Emergencias ORDER by ID DESC Limit 50;");
         }
 
         public Emergencias()
@@ -42,8 +40,6 @@ namespace AlarmaBomberosChimbarongo
                 txtClaves.Text = Convert.ToString(fila.Cells["Claves"].Value);
                 txtCompañias.Text = Convert.ToString(fila.Cells["Compañias"].Value); ;
                 txtFecha.Text = Convert.ToString(fila.Cells["Fecha"].Value); ;
-                txtSituacion.Text = Convert.ToString(fila.Cells["Situacion"].Value); ;
-                txtOficialAcargo.Text = Convert.ToString(fila.Cells["OficialAcargo"].Value);
                 txtLugar.Text = Convert.ToString(fila.Cells["Lugar"].Value);
                 txtDescripcion.Text = Convert.ToString(fila.Cells["Descripcion"].Value); ;
                 txtCoordenadas.Text = Convert.ToString(fila.Cells["Coordenadas"].Value); ;
@@ -63,19 +59,12 @@ namespace AlarmaBomberosChimbarongo
             }
         }
 
-        private void txtBuscarEn_KeyUp(object sender, KeyEventArgs e)
-        {
-            ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Emergencias Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
-        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtClaves.Text = "";
             txtCompañias.Text = "";
             txtFecha.Text = "";
-            txtSituacion.Text = "";
-            txtOficialAcargo.Text = "";
             txtLugar.Text = "";
             txtDescripcion.Text = "";
             txtCoordenadas.Text = "";
@@ -88,28 +77,11 @@ namespace AlarmaBomberosChimbarongo
         {
             if (txtID.Text != "¿?")
             {
-                /*
-                Document doc = new Document();
-                PdfWriter.GetInstance(doc, new FileStream("EmergenciaBomberosID"+txtID.Text+".pdf", FileMode.Create));
-                doc.Open();
-
-                Paragraph titulo = new Paragraph();
-                titulo.Font = FontFactory.GetFont(FontFactory.TIMES, 18f, BaseColor.BLUE);
-                titulo.Add("Emergencia Bomberos ID: "+ txtID.Text+ " Fecha: "+ txtFecha.Text+ "");
-                doc.Add(titulo);
-
-                doc.Add(new Paragraph("Claves: "+ txtClaves.Text+ ""));
-                doc.Add(new Paragraph("Compañias: "+ txtCompañias.Text+ ""));
-                doc.Add(new Paragraph("Situacion: "+ txtSituacion.Text+ ""));
-                doc.Add(new Paragraph("txtOficialAcargo: " + txtOficialAcargo.Text + ""));
-                doc.Add(new Paragraph("Situacion: " + txtSituacion.Text + ""));
-                doc.Add(new Paragraph("Descripcion: " + txtDescripcion.Text + ""));
-                doc.Add(new Paragraph("Coordenadas: " + txtCoordenadas.Text + ""));
-                doc.Close();
-                */
-
                 SaveFileDialog DialogoGuardar = new SaveFileDialog();
+                DialogoGuardar.Title = "Guardar Registro en PDF de Emergencia";
                 DialogoGuardar.FileName = "EmergenciaBomberosChimbarongoID" + txtID.Text + ".pdf";
+                DialogoGuardar.DefaultExt = ".pdf";
+                DialogoGuardar.Filter = "Documento de PDF(*.pdf)| *.pdf";
 
                 if (DialogoGuardar.ShowDialog() == DialogResult.OK)
                 {
@@ -138,12 +110,6 @@ namespace AlarmaBomberosChimbarongo
                         doc.Add(new Paragraph(" "));
                         doc.Add(new Paragraph("-------Compañias-------"));
                         doc.Add(new Paragraph(txtCompañias.Text));
-                        doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-------Situacion-------"));
-                        doc.Add(new Paragraph(" " + txtSituacion.Text));
-                        doc.Add(new Paragraph(" "));
-                        doc.Add(new Paragraph("-------Oficial a Cargo-------"));
-                        doc.Add(new Paragraph(" " + txtOficialAcargo.Text));
                         doc.Add(new Paragraph(" "));
                         doc.Add(new Paragraph("-------Lugar-------"));
                         doc.Add(new Paragraph(" " + txtLugar.Text));
@@ -187,6 +153,109 @@ namespace AlarmaBomberosChimbarongo
             else
             {
                 MessageBox.Show("Debe Seleccionar una emergencia para Imprimir","No hay Datos",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btnVerCordenadas_Click(object sender, EventArgs e)
+        {
+            if (txtCoordenadas.Text != "")
+            {
+                //Se dividi las 2 coordenadas juntas unidas
+                //Se separa la longitud de la latidud
+                String CoordendaSerparar = txtCoordenadas.Text;
+                //Se gaurdan las separacioned entro de un arreglo
+                String[] Separador = CoordendaSerparar.Split('/');
+
+                //Se extraen desde el arreglo
+                String Latitud = Separador[0];
+                String Longitud = Separador[1];
+
+                //Se crea una instancia especial para enviar los datos entre los 2 forms
+                CoordenadasEmergenciaBuscar abrirCoordenadas = new CoordenadasEmergenciaBuscar();
+                abrirCoordenadas.txtLatitud.Text = Latitud;
+                abrirCoordenadas.txtLonguitud.Text = Longitud;
+
+                //Aqui el problema no llegan las coordenadas
+                abrirCoordenadas.LatIncialFinal = Convert.ToDouble(Latitud);
+                abrirCoordenadas.LngInicialFinal = Convert.ToDouble(Longitud);
+                abrirCoordenadas.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No existen Coordenadas que revisar en el mapa registradas","No hay coordenadas",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCambiarPagina_Click(object sender, EventArgs e)
+        {
+            ControlSQLite cargarTabla = new ControlSQLite();
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Emergencias ORDER by ID DESC Limit " + Convert.ToInt32((nudPaginaActual.Value * 50)) + ",50;");
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            CargarTabla();
+            HacerInvisiblesyLimpiarCampos();
+        }
+
+        private void HacerInvisiblesyLimpiarCampos()
+        {
+            txtBuscarEn.Visible = false;
+            nudPaginaActualBuscar.Visible = false;
+            txtPaginasDisponiblesBusqueda.Visible = false;
+            txtBuscarEn.Text = "";
+            nudPaginaActualBuscar.Value = 0;
+            txtPaginasDisponiblesBusqueda.Text = "?????????";
+            txtPaginasDisponiblesBusqueda.Visible = false;
+            lblRegistrosEncontrados.Visible = false;
+            txtBuscarEn.Visible = true;
+            lnlParametrosABuscar.Visible = true;
+            lblPaginaActualBusqueda.Visible = false;
+            lblPaginasDisponibles.Visible = false;
+            lblRegistrosEncontrados.Visible = false;
+            txtRegistrosEncontradosSuperior.Visible = false;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscarEn.Text == "")
+            {
+                MessageBox.Show("Debe ingresar algun dato a buscar en el campo 'Parametros a Buscar'", "Faltan Datos para la Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                ControlSQLite BuscarRegistros = new ControlSQLite();
+                String CantidadRegistrosDetectados = (BuscarRegistros.CargarTabla("SELECT COUNT(ID) From Emergencias Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';").Rows[0][0].ToString());
+                txtRegistrosEncontradosSuperior.Text = CantidadRegistrosDetectados;
+                txtPaginasDisponiblesBusqueda.Text = (Convert.ToInt32(CantidadRegistrosDetectados) / 50).ToString();
+                nudPaginaActualBuscar.Maximum = (Convert.ToInt32(CantidadRegistrosDetectados) / 50);
+                ActivarControlpaginas();
+                dataGridView1.DataSource = BuscarRegistros.CargarTabla("SELECT * From Emergencias Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%' ORDER by ID DESC Limit 50 OFFSET " + Convert.ToUInt32(nudPaginaActualBuscar.Value * 50).ToString() + ";");
+                lblRegistrosEncontrados.Visible = true;
+                txtRegistrosEncontradosSuperior.Visible = true;
+            }
+        }
+
+        private void ActivarControlpaginas()
+        {
+            nudPaginaActualBuscar.Visible = true;
+            lblBuscarPor.Visible = true;
+            txtPaginasDisponiblesBusqueda.Visible = true;
+            lblPaginasDisponibles.Visible = true;
+            lblPaginaActualBusqueda.Visible = true;
+            lblPaginasDisponibles.Visible = true;
+        }
+
+        private void txtBuscarEn_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 65 && e.KeyChar <= 90) || (e.KeyChar >= 164) || (e.KeyChar >= 97 && e.KeyChar <= 122) || (e.KeyChar >= 165) || (e.KeyChar == Convert.ToChar(Keys.Back)) || (e.KeyChar == 32) || (e.KeyChar >= 48 && e.KeyChar <= 57) || (e.KeyChar == 44) || (e.KeyChar == 45) || (e.KeyChar == 43))
+            {
+                //Si se ingresa letras mayuculas, Ñ, minusculas, ñ, borrar, espacio, Numeros, - (Guion) y + , se mantienen en el textbox
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

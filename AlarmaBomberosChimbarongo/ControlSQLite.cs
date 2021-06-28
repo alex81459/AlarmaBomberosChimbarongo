@@ -10,6 +10,7 @@ namespace AlarmaBomberosChimbarongo
 {
     class ControlSQLite
     {
+
         //SQLiteConnection cadenaConexion = new SQLiteConnection(@"Data Source = c:\AlarmaBomberosChimbarongo.db; Version = 3;");
         SQLiteConnection cadenaConexion = new SQLiteConnection(@"Data Source =.\AlarmaBomberosChimbarongo.db; Version = 3;");
 

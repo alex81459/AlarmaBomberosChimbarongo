@@ -48,19 +48,19 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 5000;
+            this.timer1.Interval = 6000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(2, 367);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 12);
+            this.label2.Size = new System.Drawing.Size(253, 12);
             this.label2.TabIndex = 33;
-            this.label2.Text = "©Alex Salinas Ponce 2020";
+            this.label2.Text = "©Alex Salinas Ponce e Ismael Bello Saravia 2021";
             // 
             // pictureBox3
             // 
@@ -78,11 +78,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label1.Font = new System.Drawing.Font("Orbitron", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(113, 339);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 22);
+            this.label1.Size = new System.Drawing.Size(119, 24);
             this.label1.TabIndex = 30;
             this.label1.Text = "Cargando...";
             // 
@@ -90,11 +90,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label7.Font = new System.Drawing.Font("Orbitron", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(51, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(256, 58);
+            this.label7.Size = new System.Drawing.Size(221, 58);
             this.label7.TabIndex = 29;
             this.label7.Text = "Central Despacho\r\n      Bomberos";
             // 
@@ -114,9 +114,9 @@
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox4.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.bombero;
-            this.pictureBox4.Location = new System.Drawing.Point(338, 18);
+            this.pictureBox4.Location = new System.Drawing.Point(330, 18);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(349, 365);
+            this.pictureBox4.Size = new System.Drawing.Size(365, 365);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 34;
             this.pictureBox4.TabStop = false;
@@ -126,7 +126,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox2.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.bomberos;
-            this.pictureBox2.Location = new System.Drawing.Point(183, 79);
+            this.pictureBox2.Location = new System.Drawing.Point(179, 79);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(150, 150);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

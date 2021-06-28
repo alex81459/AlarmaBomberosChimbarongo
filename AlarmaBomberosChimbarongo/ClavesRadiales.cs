@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 
 namespace AlarmaBomberosChimbarongo
 {
@@ -29,7 +21,7 @@ namespace AlarmaBomberosChimbarongo
         public void CargarTabla()
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From ClavesRadiales;");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From ClavesRadiales ORDER by ID DESC;");
         }
 
 
@@ -53,6 +45,17 @@ namespace AlarmaBomberosChimbarongo
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.ClavesRadiales WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("La Clave Radial " + txtClaveRadial.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Eliminar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Elimino una Clave Radial con los siguientes datos, Clave: " + txtClaveRadial.Text + " Categoria: " + txtCategoria.Text + " Descripcion: " + txtDescripcion.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Claves Radiales');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }  
                     }
@@ -82,6 +85,17 @@ namespace AlarmaBomberosChimbarongo
                         guardarClaveRadial.EjecutarConsulta("INSERT INTO main.ClavesRadiales(ClaveRadial, Categoria, Descripcion)VALUES ('" + txtClaveRadial.Text + "', '" + txtCategoria.Text + "', '" + txtDescripcion.Text + "');");
 
                         MessageBox.Show("Se guardo Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Guardar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Registro una nueva Clave Radial con los siguientes datos, Clave: "+txtClaveRadial.Text+" Categoria: "+ txtCategoria.Text+ " Descripcion: "+ txtDescripcion.Text+ "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Claves Radiales');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }
                 }
@@ -101,7 +115,18 @@ namespace AlarmaBomberosChimbarongo
                         ControlSQLite modificarClaveRadial = new ControlSQLite();
                         modificarClaveRadial.EjecutarConsulta("UPDATE main.ClavesRadiales SET 'ClaveRadial'='" + txtClaveRadial.Text + "','Categoria'='" + txtCategoria.Text + "','Descripcion'='" + txtDescripcion.Text + "' Where ID= '" + txtID.Text + "' ");
 
-                        MessageBox.Show("Se Modifico Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Se Modifico Correctamente la Clave Radial " + txtClaveRadial.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);  
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Modificar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Modifico una Clave Radial con los siguientes datos, Clave: " + txtClaveRadial.Text + " Categoria: " + txtCategoria.Text + " Descripcion: " + txtDescripcion.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Claves Radiales');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }
                     else
@@ -185,7 +210,7 @@ namespace AlarmaBomberosChimbarongo
         private void txtBuscarEn_KeyUp(object sender, KeyEventArgs e)
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From ClavesRadiales Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From ClavesRadiales Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%' ORDER by ID DESC;");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

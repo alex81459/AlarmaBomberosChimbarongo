@@ -28,17 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Emergencias));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Emergencias));
             this.Barra = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.picLupa = new System.Windows.Forms.PictureBox();
+            this.lnlParametrosABuscar = new System.Windows.Forms.Label();
+            this.txtRegistrosEncontradosSuperior = new System.Windows.Forms.Label();
+            this.txtBuscarEn = new System.Windows.Forms.TextBox();
+            this.lblRegistrosEncontrados = new System.Windows.Forms.Label();
+            this.lblBuscarPor = new System.Windows.Forms.Label();
+            this.txtPaginasDisponiblesBusqueda = new System.Windows.Forms.Label();
+            this.cmbBuscarEn = new System.Windows.Forms.ComboBox();
+            this.lblPaginaActualBusqueda = new System.Windows.Forms.Label();
+            this.lblPaginasDisponibles = new System.Windows.Forms.Label();
+            this.nudPaginaActualBuscar = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCantidadTotalRegistros = new System.Windows.Forms.Label();
+            this.nudPaginaActual = new System.Windows.Forms.NumericUpDown();
+            this.txtCantidadRegistro = new System.Windows.Forms.Label();
+            this.lblRecargar = new System.Windows.Forms.Label();
+            this.lblPaginaActual = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.PictureBox();
+            this.txtPaginasDisponibles = new System.Windows.Forms.Label();
+            this.btnCambiarPagina = new System.Windows.Forms.Button();
+            this.lblPaginasDisponiblesInferior = new System.Windows.Forms.Label();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.btnVerCordenadas = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -49,26 +75,17 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtLugar = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtOficialAcargo = new System.Windows.Forms.RichTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtSituacion = new System.Windows.Forms.RichTextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.txtCoordenadas = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCompañias = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.txtID = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtBuscarEn = new System.Windows.Forms.TextBox();
-            this.cmbBuscarEn = new System.Windows.Forms.ComboBox();
             this.txtClaves = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -76,8 +93,6 @@
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Claves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Compañias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Situacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OficialAcargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Coordenadas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,9 +100,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLupa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActualBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -134,11 +156,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label7.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(23, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(189, 18);
+            this.label7.Size = new System.Drawing.Size(175, 18);
             this.label7.TabIndex = 22;
             this.label7.Text = "Registro Emergencias";
             // 
@@ -146,6 +168,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.pictureBox15);
+            this.panel1.Controls.Add(this.btnVerCordenadas);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnLimpiar);
@@ -156,26 +182,17 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.txtLugar);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.txtOficialAcargo);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.txtSituacion);
-            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtCoordenadas);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtCompañias);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.txtID);
-            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txtBuscarEn);
-            this.panel1.Controls.Add(this.cmbBuscarEn);
             this.panel1.Controls.Add(this.txtClaves);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -186,11 +203,319 @@
             this.panel1.Size = new System.Drawing.Size(964, 572);
             this.panel1.TabIndex = 44;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnBuscar);
+            this.panel4.Controls.Add(this.picLupa);
+            this.panel4.Controls.Add(this.lnlParametrosABuscar);
+            this.panel4.Controls.Add(this.txtRegistrosEncontradosSuperior);
+            this.panel4.Controls.Add(this.txtBuscarEn);
+            this.panel4.Controls.Add(this.lblRegistrosEncontrados);
+            this.panel4.Controls.Add(this.lblBuscarPor);
+            this.panel4.Controls.Add(this.txtPaginasDisponiblesBusqueda);
+            this.panel4.Controls.Add(this.cmbBuscarEn);
+            this.panel4.Controls.Add(this.lblPaginaActualBusqueda);
+            this.panel4.Controls.Add(this.lblPaginasDisponibles);
+            this.panel4.Controls.Add(this.nudPaginaActualBuscar);
+            this.panel4.Controls.Add(this.pictureBox5);
+            this.panel4.Location = new System.Drawing.Point(47, 13);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(629, 57);
+            this.panel4.TabIndex = 291;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Location = new System.Drawing.Point(554, 33);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(66, 20);
+            this.btnBuscar.TabIndex = 133;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // picLupa
+            // 
+            this.picLupa.Image = ((System.Drawing.Image)(resources.GetObject("picLupa.Image")));
+            this.picLupa.Location = new System.Drawing.Point(563, 2);
+            this.picLupa.Name = "picLupa";
+            this.picLupa.Size = new System.Drawing.Size(50, 32);
+            this.picLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLupa.TabIndex = 132;
+            this.picLupa.TabStop = false;
+            // 
+            // lnlParametrosABuscar
+            // 
+            this.lnlParametrosABuscar.AutoSize = true;
+            this.lnlParametrosABuscar.ForeColor = System.Drawing.Color.White;
+            this.lnlParametrosABuscar.Location = new System.Drawing.Point(216, 9);
+            this.lnlParametrosABuscar.Name = "lnlParametrosABuscar";
+            this.lnlParametrosABuscar.Size = new System.Drawing.Size(108, 13);
+            this.lnlParametrosABuscar.TabIndex = 64;
+            this.lnlParametrosABuscar.Text = "Paremetros a Buscar;";
+            // 
+            // txtRegistrosEncontradosSuperior
+            // 
+            this.txtRegistrosEncontradosSuperior.AutoSize = true;
+            this.txtRegistrosEncontradosSuperior.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegistrosEncontradosSuperior.ForeColor = System.Drawing.Color.White;
+            this.txtRegistrosEncontradosSuperior.Location = new System.Drawing.Point(477, 37);
+            this.txtRegistrosEncontradosSuperior.Name = "txtRegistrosEncontradosSuperior";
+            this.txtRegistrosEncontradosSuperior.Size = new System.Drawing.Size(63, 13);
+            this.txtRegistrosEncontradosSuperior.TabIndex = 131;
+            this.txtRegistrosEncontradosSuperior.Text = "????????";
+            this.txtRegistrosEncontradosSuperior.Visible = false;
+            // 
+            // txtBuscarEn
+            // 
+            this.txtBuscarEn.Location = new System.Drawing.Point(192, 25);
+            this.txtBuscarEn.MaxLength = 40;
+            this.txtBuscarEn.Name = "txtBuscarEn";
+            this.txtBuscarEn.Size = new System.Drawing.Size(157, 20);
+            this.txtBuscarEn.TabIndex = 63;
+            this.txtBuscarEn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarEn_KeyPress_1);
+            // 
+            // lblRegistrosEncontrados
+            // 
+            this.lblRegistrosEncontrados.AutoSize = true;
+            this.lblRegistrosEncontrados.ForeColor = System.Drawing.Color.White;
+            this.lblRegistrosEncontrados.Location = new System.Drawing.Point(477, 3);
+            this.lblRegistrosEncontrados.Name = "lblRegistrosEncontrados";
+            this.lblRegistrosEncontrados.Size = new System.Drawing.Size(70, 26);
+            this.lblRegistrosEncontrados.TabIndex = 130;
+            this.lblRegistrosEncontrados.Text = "Registros \r\nEncontrados:";
+            this.lblRegistrosEncontrados.Visible = false;
+            // 
+            // lblBuscarPor
+            // 
+            this.lblBuscarPor.AutoSize = true;
+            this.lblBuscarPor.ForeColor = System.Drawing.Color.White;
+            this.lblBuscarPor.Location = new System.Drawing.Point(95, 9);
+            this.lblBuscarPor.Name = "lblBuscarPor";
+            this.lblBuscarPor.Size = new System.Drawing.Size(62, 13);
+            this.lblBuscarPor.TabIndex = 61;
+            this.lblBuscarPor.Text = "Buscar Por:";
+            // 
+            // txtPaginasDisponiblesBusqueda
+            // 
+            this.txtPaginasDisponiblesBusqueda.AutoSize = true;
+            this.txtPaginasDisponiblesBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaginasDisponiblesBusqueda.ForeColor = System.Drawing.Color.White;
+            this.txtPaginasDisponiblesBusqueda.Location = new System.Drawing.Point(422, 36);
+            this.txtPaginasDisponiblesBusqueda.Name = "txtPaginasDisponiblesBusqueda";
+            this.txtPaginasDisponiblesBusqueda.Size = new System.Drawing.Size(49, 13);
+            this.txtPaginasDisponiblesBusqueda.TabIndex = 128;
+            this.txtPaginasDisponiblesBusqueda.Text = "??????";
+            this.txtPaginasDisponiblesBusqueda.Visible = false;
+            // 
+            // cmbBuscarEn
+            // 
+            this.cmbBuscarEn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmbBuscarEn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbBuscarEn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBuscarEn.ForeColor = System.Drawing.Color.White;
+            this.cmbBuscarEn.FormattingEnabled = true;
+            this.cmbBuscarEn.Items.AddRange(new object[] {
+            "ID",
+            "Claves",
+            "Compañias",
+            "Coordenadas",
+            "Lugar",
+            "Descripcion",
+            "Fecha"});
+            this.cmbBuscarEn.Location = new System.Drawing.Point(65, 25);
+            this.cmbBuscarEn.Name = "cmbBuscarEn";
+            this.cmbBuscarEn.Size = new System.Drawing.Size(121, 21);
+            this.cmbBuscarEn.TabIndex = 62;
+            // 
+            // lblPaginaActualBusqueda
+            // 
+            this.lblPaginaActualBusqueda.AutoSize = true;
+            this.lblPaginaActualBusqueda.ForeColor = System.Drawing.Color.White;
+            this.lblPaginaActualBusqueda.Location = new System.Drawing.Point(344, 9);
+            this.lblPaginaActualBusqueda.Name = "lblPaginaActualBusqueda";
+            this.lblPaginaActualBusqueda.Size = new System.Drawing.Size(76, 13);
+            this.lblPaginaActualBusqueda.TabIndex = 127;
+            this.lblPaginaActualBusqueda.Text = "Pagina Actual:";
+            this.lblPaginaActualBusqueda.Visible = false;
+            // 
+            // lblPaginasDisponibles
+            // 
+            this.lblPaginasDisponibles.AutoSize = true;
+            this.lblPaginasDisponibles.ForeColor = System.Drawing.Color.White;
+            this.lblPaginasDisponibles.Location = new System.Drawing.Point(418, 4);
+            this.lblPaginasDisponibles.Name = "lblPaginasDisponibles";
+            this.lblPaginasDisponibles.Size = new System.Drawing.Size(61, 26);
+            this.lblPaginasDisponibles.TabIndex = 129;
+            this.lblPaginasDisponibles.Text = "Paginas \r\nDisponibles";
+            this.lblPaginasDisponibles.Visible = false;
+            // 
+            // nudPaginaActualBuscar
+            // 
+            this.nudPaginaActualBuscar.Location = new System.Drawing.Point(355, 25);
+            this.nudPaginaActualBuscar.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.nudPaginaActualBuscar.Name = "nudPaginaActualBuscar";
+            this.nudPaginaActualBuscar.Size = new System.Drawing.Size(54, 20);
+            this.nudPaginaActualBuscar.TabIndex = 126;
+            this.nudPaginaActualBuscar.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.Search_icon_icons_com_54989;
+            this.pictureBox5.Location = new System.Drawing.Point(10, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(46, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 50;
+            this.pictureBox5.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblCantidadTotalRegistros);
+            this.groupBox1.Controls.Add(this.nudPaginaActual);
+            this.groupBox1.Controls.Add(this.txtCantidadRegistro);
+            this.groupBox1.Controls.Add(this.lblRecargar);
+            this.groupBox1.Controls.Add(this.lblPaginaActual);
+            this.groupBox1.Controls.Add(this.btnActualizar);
+            this.groupBox1.Controls.Add(this.txtPaginasDisponibles);
+            this.groupBox1.Controls.Add(this.btnCambiarPagina);
+            this.groupBox1.Controls.Add(this.lblPaginasDisponiblesInferior);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(47, 491);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(629, 63);
+            this.groupBox1.TabIndex = 290;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Control de Paginas";
+            // 
+            // lblCantidadTotalRegistros
+            // 
+            this.lblCantidadTotalRegistros.AutoSize = true;
+            this.lblCantidadTotalRegistros.ForeColor = System.Drawing.Color.White;
+            this.lblCantidadTotalRegistros.Location = new System.Drawing.Point(23, 16);
+            this.lblCantidadTotalRegistros.Name = "lblCantidadTotalRegistros";
+            this.lblCantidadTotalRegistros.Size = new System.Drawing.Size(118, 13);
+            this.lblCantidadTotalRegistros.TabIndex = 158;
+            this.lblCantidadTotalRegistros.Text = "Cantidad Registros:";
+            // 
+            // nudPaginaActual
+            // 
+            this.nudPaginaActual.Location = new System.Drawing.Point(327, 34);
+            this.nudPaginaActual.Name = "nudPaginaActual";
+            this.nudPaginaActual.Size = new System.Drawing.Size(54, 20);
+            this.nudPaginaActual.TabIndex = 156;
+            // 
+            // txtCantidadRegistro
+            // 
+            this.txtCantidadRegistro.AutoSize = true;
+            this.txtCantidadRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadRegistro.ForeColor = System.Drawing.Color.White;
+            this.txtCantidadRegistro.Location = new System.Drawing.Point(39, 39);
+            this.txtCantidadRegistro.Name = "txtCantidadRegistro";
+            this.txtCantidadRegistro.Size = new System.Drawing.Size(73, 13);
+            this.txtCantidadRegistro.TabIndex = 159;
+            this.txtCantidadRegistro.Text = "???????????";
+            // 
+            // lblRecargar
+            // 
+            this.lblRecargar.AutoSize = true;
+            this.lblRecargar.ForeColor = System.Drawing.Color.White;
+            this.lblRecargar.Location = new System.Drawing.Point(549, 8);
+            this.lblRecargar.Name = "lblRecargar";
+            this.lblRecargar.Size = new System.Drawing.Size(59, 13);
+            this.lblRecargar.TabIndex = 164;
+            this.lblRecargar.Text = "Recargar";
+            // 
+            // lblPaginaActual
+            // 
+            this.lblPaginaActual.AutoSize = true;
+            this.lblPaginaActual.ForeColor = System.Drawing.Color.White;
+            this.lblPaginaActual.Location = new System.Drawing.Point(316, 15);
+            this.lblPaginaActual.Name = "lblPaginaActual";
+            this.lblPaginaActual.Size = new System.Drawing.Size(90, 13);
+            this.lblPaginaActual.TabIndex = 157;
+            this.lblPaginaActual.Text = "Pagina Actual:";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.actualizar;
+            this.btnActualizar.Location = new System.Drawing.Point(557, 21);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(44, 36);
+            this.btnActualizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnActualizar.TabIndex = 163;
+            this.btnActualizar.TabStop = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // txtPaginasDisponibles
+            // 
+            this.txtPaginasDisponibles.AutoSize = true;
+            this.txtPaginasDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaginasDisponibles.ForeColor = System.Drawing.Color.White;
+            this.txtPaginasDisponibles.Location = new System.Drawing.Point(203, 39);
+            this.txtPaginasDisponibles.Name = "txtPaginasDisponibles";
+            this.txtPaginasDisponibles.Size = new System.Drawing.Size(43, 13);
+            this.txtPaginasDisponibles.TabIndex = 162;
+            this.txtPaginasDisponibles.Text = "??????";
+            // 
+            // btnCambiarPagina
+            // 
+            this.btnCambiarPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarPagina.ForeColor = System.Drawing.Color.Black;
+            this.btnCambiarPagina.Location = new System.Drawing.Point(435, 24);
+            this.btnCambiarPagina.Name = "btnCambiarPagina";
+            this.btnCambiarPagina.Size = new System.Drawing.Size(95, 25);
+            this.btnCambiarPagina.TabIndex = 160;
+            this.btnCambiarPagina.Text = "Cambiar Pagina";
+            this.btnCambiarPagina.UseVisualStyleBackColor = true;
+            this.btnCambiarPagina.Click += new System.EventHandler(this.btnCambiarPagina_Click);
+            // 
+            // lblPaginasDisponiblesInferior
+            // 
+            this.lblPaginasDisponiblesInferior.AutoSize = true;
+            this.lblPaginasDisponiblesInferior.ForeColor = System.Drawing.Color.White;
+            this.lblPaginasDisponiblesInferior.Location = new System.Drawing.Point(168, 16);
+            this.lblPaginasDisponiblesInferior.Name = "lblPaginasDisponiblesInferior";
+            this.lblPaginasDisponiblesInferior.Size = new System.Drawing.Size(125, 13);
+            this.lblPaginasDisponiblesInferior.TabIndex = 161;
+            this.lblPaginasDisponiblesInferior.Text = "Paginas Disponibles:";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox15.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.mapa;
+            this.pictureBox15.Location = new System.Drawing.Point(722, 430);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(47, 48);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 289;
+            this.pictureBox15.TabStop = false;
+            // 
+            // btnVerCordenadas
+            // 
+            this.btnVerCordenadas.BackColor = System.Drawing.Color.Green;
+            this.btnVerCordenadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCordenadas.ForeColor = System.Drawing.Color.Black;
+            this.btnVerCordenadas.Location = new System.Drawing.Point(771, 441);
+            this.btnVerCordenadas.Name = "btnVerCordenadas";
+            this.btnVerCordenadas.Size = new System.Drawing.Size(174, 23);
+            this.btnVerCordenadas.TabIndex = 73;
+            this.btnVerCordenadas.Text = "Ver Ubicacion Coordenadas";
+            this.btnVerCordenadas.UseVisualStyleBackColor = false;
+            this.btnVerCordenadas.Click += new System.EventHandler(this.btnVerCordenadas_Click);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(2, 559);
+            this.label16.Location = new System.Drawing.Point(618, 558);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(344, 12);
             this.label16.TabIndex = 72;
@@ -199,9 +524,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.impresion;
-            this.pictureBox1.Location = new System.Drawing.Point(525, 534);
+            this.pictureBox1.Location = new System.Drawing.Point(762, 483);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
@@ -222,15 +547,15 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.Gray;
+            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
             this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(574, 541);
+            this.btnImprimir.Location = new System.Drawing.Point(814, 495);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(75, 23);
+            this.btnImprimir.Size = new System.Drawing.Size(111, 23);
             this.btnImprimir.TabIndex = 69;
-            this.btnImprimir.Text = "Generar";
+            this.btnImprimir.Text = "Generar PDF";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
@@ -260,7 +585,7 @@
             // 
             this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDescripcion.ForeColor = System.Drawing.Color.White;
-            this.txtDescripcion.Location = new System.Drawing.Point(716, 446);
+            this.txtDescripcion.Location = new System.Drawing.Point(716, 310);
             this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ReadOnly = true;
@@ -272,7 +597,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(713, 430);
+            this.label14.Location = new System.Drawing.Point(713, 294);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 13);
             this.label14.TabIndex = 65;
@@ -282,7 +607,7 @@
             // 
             this.txtLugar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtLugar.ForeColor = System.Drawing.Color.White;
-            this.txtLugar.Location = new System.Drawing.Point(716, 380);
+            this.txtLugar.Location = new System.Drawing.Point(716, 244);
             this.txtLugar.MaxLength = 100;
             this.txtLugar.Name = "txtLugar";
             this.txtLugar.ReadOnly = true;
@@ -294,61 +619,17 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(713, 364);
+            this.label13.Location = new System.Drawing.Point(713, 228);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 13);
             this.label13.TabIndex = 63;
             this.label13.Text = "Lugar";
             // 
-            // txtOficialAcargo
-            // 
-            this.txtOficialAcargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtOficialAcargo.ForeColor = System.Drawing.Color.White;
-            this.txtOficialAcargo.Location = new System.Drawing.Point(716, 326);
-            this.txtOficialAcargo.MaxLength = 100;
-            this.txtOficialAcargo.Name = "txtOficialAcargo";
-            this.txtOficialAcargo.ReadOnly = true;
-            this.txtOficialAcargo.Size = new System.Drawing.Size(243, 35);
-            this.txtOficialAcargo.TabIndex = 62;
-            this.txtOficialAcargo.Text = "";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(713, 310);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 13);
-            this.label12.TabIndex = 61;
-            this.label12.Text = "Oficial a Cargo";
-            // 
-            // txtSituacion
-            // 
-            this.txtSituacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSituacion.ForeColor = System.Drawing.Color.White;
-            this.txtSituacion.Location = new System.Drawing.Point(716, 241);
-            this.txtSituacion.MaxLength = 100;
-            this.txtSituacion.Name = "txtSituacion";
-            this.txtSituacion.ReadOnly = true;
-            this.txtSituacion.Size = new System.Drawing.Size(243, 66);
-            this.txtSituacion.TabIndex = 60;
-            this.txtSituacion.Text = "";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(712, 225);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "Situacion";
-            // 
             // txtCoordenadas
             // 
             this.txtCoordenadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCoordenadas.ForeColor = System.Drawing.Color.White;
-            this.txtCoordenadas.Location = new System.Drawing.Point(713, 543);
+            this.txtCoordenadas.Location = new System.Drawing.Point(713, 407);
             this.txtCoordenadas.MaxLength = 100;
             this.txtCoordenadas.Name = "txtCoordenadas";
             this.txtCoordenadas.ReadOnly = true;
@@ -360,7 +641,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(710, 527);
+            this.label6.Location = new System.Drawing.Point(710, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 57;
@@ -408,16 +689,6 @@
             this.txtID.TabIndex = 53;
             this.txtID.Text = "¿?";
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.Search_icon_icons_com_54989;
-            this.pictureBox5.Location = new System.Drawing.Point(51, 13);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(46, 40);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 50;
-            this.pictureBox5.TabStop = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -431,9 +702,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::AlarmaBomberosChimbarongo.Properties.Resources.information_info_1565;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 532);
+            this.pictureBox4.Location = new System.Drawing.Point(47, 71);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.Size = new System.Drawing.Size(15, 15);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 48;
             this.pictureBox4.TabStop = false;
@@ -441,50 +712,22 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 536);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(63, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(339, 13);
+            this.label9.Size = new System.Drawing.Size(288, 12);
             this.label9.TabIndex = 47;
             this.label9.Text = "Para Seleccionar una Emergencia debe dar doble click sobre la misma";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Orbitron", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(789, 13);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 18);
+            this.label8.Size = new System.Drawing.Size(97, 18);
             this.label8.TabIndex = 44;
             this.label8.Text = "Emergencia";
-            // 
-            // txtBuscarEn
-            // 
-            this.txtBuscarEn.Location = new System.Drawing.Point(414, 25);
-            this.txtBuscarEn.Name = "txtBuscarEn";
-            this.txtBuscarEn.Size = new System.Drawing.Size(182, 20);
-            this.txtBuscarEn.TabIndex = 31;
-            this.txtBuscarEn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarEn_KeyPress);
-            this.txtBuscarEn.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarEn_KeyUp);
-            // 
-            // cmbBuscarEn
-            // 
-            this.cmbBuscarEn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBuscarEn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBuscarEn.FormattingEnabled = true;
-            this.cmbBuscarEn.Items.AddRange(new object[] {
-            "ID",
-            "Claves",
-            "Compañias",
-            "Coordenadas",
-            "Situacion",
-            "OficialAcargo",
-            "Lugar",
-            "Descripcion",
-            "Fecha"});
-            this.cmbBuscarEn.Location = new System.Drawing.Point(199, 23);
-            this.cmbBuscarEn.Name = "cmbBuscarEn";
-            this.cmbBuscarEn.Size = new System.Drawing.Size(121, 21);
-            this.cmbBuscarEn.TabIndex = 27;
             // 
             // txtClaves
             // 
@@ -497,26 +740,6 @@
             this.txtClaves.Size = new System.Drawing.Size(243, 40);
             this.txtClaves.TabIndex = 40;
             this.txtClaves.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(112, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Busca En";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(346, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 16);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Buscar";
             // 
             // label5
             // 
@@ -563,8 +786,6 @@
             this.Fecha,
             this.Claves,
             this.Compañias,
-            this.Situacion,
-            this.OficialAcargo,
             this.Lugar,
             this.Descripcion,
             this.Coordenadas});
@@ -577,7 +798,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -589,7 +810,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 472);
+            this.dataGridView1.Size = new System.Drawing.Size(701, 399);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -631,22 +852,6 @@
             this.Compañias.Name = "Compañias";
             this.Compañias.ReadOnly = true;
             this.Compañias.Width = 150;
-            // 
-            // Situacion
-            // 
-            this.Situacion.DataPropertyName = "Situacion";
-            this.Situacion.HeaderText = "Situacion";
-            this.Situacion.Name = "Situacion";
-            this.Situacion.ReadOnly = true;
-            this.Situacion.Width = 250;
-            // 
-            // OficialAcargo
-            // 
-            this.OficialAcargo.DataPropertyName = "OficialAcargo";
-            this.OficialAcargo.HeaderText = "OficialAcargo";
-            this.OficialAcargo.Name = "OficialAcargo";
-            this.OficialAcargo.ReadOnly = true;
-            this.OficialAcargo.Width = 120;
             // 
             // Lugar
             // 
@@ -691,9 +896,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLupa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActualBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPaginaActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnActualizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -714,20 +928,12 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtBuscarEn;
-        private System.Windows.Forms.ComboBox cmbBuscarEn;
         private System.Windows.Forms.RichTextBox txtClaves;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RichTextBox txtLugar;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox txtOficialAcargo;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.RichTextBox txtSituacion;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RichTextBox txtCoordenadas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox txtCompañias;
@@ -744,10 +950,33 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Claves;
         private System.Windows.Forms.DataGridViewTextBoxColumn Compañias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Situacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OficialAcargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lugar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Coordenadas;
+        private System.Windows.Forms.Button btnVerCordenadas;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblCantidadTotalRegistros;
+        private System.Windows.Forms.NumericUpDown nudPaginaActual;
+        private System.Windows.Forms.Label txtCantidadRegistro;
+        private System.Windows.Forms.Label lblRecargar;
+        private System.Windows.Forms.Label lblPaginaActual;
+        private System.Windows.Forms.PictureBox btnActualizar;
+        private System.Windows.Forms.Label txtPaginasDisponibles;
+        private System.Windows.Forms.Button btnCambiarPagina;
+        private System.Windows.Forms.Label lblPaginasDisponiblesInferior;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.PictureBox picLupa;
+        private System.Windows.Forms.Label lnlParametrosABuscar;
+        private System.Windows.Forms.Label txtRegistrosEncontradosSuperior;
+        private System.Windows.Forms.TextBox txtBuscarEn;
+        private System.Windows.Forms.Label lblRegistrosEncontrados;
+        private System.Windows.Forms.Label lblBuscarPor;
+        private System.Windows.Forms.Label txtPaginasDisponiblesBusqueda;
+        private System.Windows.Forms.ComboBox cmbBuscarEn;
+        private System.Windows.Forms.Label lblPaginaActualBusqueda;
+        private System.Windows.Forms.Label lblPaginasDisponibles;
+        private System.Windows.Forms.NumericUpDown nudPaginaActualBuscar;
     }
 }

@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AlarmaBomberosChimbarongo
@@ -14,7 +8,7 @@ namespace AlarmaBomberosChimbarongo
         public void CargarTabla()
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From GuiaTelefonica;");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From GuiaTelefonica ORDER by ID DESC;");
         }
         public void LimpiarCampos()
         {
@@ -59,7 +53,7 @@ namespace AlarmaBomberosChimbarongo
         private void txtBuscarEn_KeyUp(object sender, KeyEventArgs e)
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From GuiaTelefonica Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From GuiaTelefonica Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%' ORDER by ID DESC;");
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -125,6 +119,17 @@ namespace AlarmaBomberosChimbarongo
                         guardarClaveRadial.EjecutarConsulta("INSERT INTO main.GuiaTelefonica(Numero, Categoria, NombreContacto)VALUES ('" + txtNumero.Text + "', '" + txtCategoria.Text + "', '" + txtNombreContacto.Text + "');");
 
                         MessageBox.Show("Se guardo Correctamente el Numero: " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Guardar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Guardo un Numero Telefonico con los siguientes datos, Numero: " + txtNumero.Text + " Categoria: " + txtCategoria.Text + " Nombre Contacto: " + txtNombreContacto.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Guia Telefonica');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }
                 }
@@ -145,6 +150,17 @@ namespace AlarmaBomberosChimbarongo
                         modificarClaveRadial.EjecutarConsulta("UPDATE main.GuiaTelefonica SET 'Numero'='" + txtNumero.Text + "','Categoria'='" + txtCategoria.Text + "','NombreContacto'='" + txtNombreContacto.Text + "' Where ID= '" + txtID.Text + "' ");
 
                         MessageBox.Show("Se Modifico Correctamente el Numero " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Modificar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Modifico un Numero Telefonico con los siguientes datos, Numero: " + txtNumero.Text + " Categoria: " + txtCategoria.Text + " Nombre Contacto: " + txtNombreContacto.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Guia Telefonica');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }     
                 }
@@ -177,6 +193,17 @@ namespace AlarmaBomberosChimbarongo
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.GuiaTelefonica WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("El Numero de Telefono: " + txtNumero.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Eliminar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Elimino un Numero Telefonico con los siguientes datos, Numero: " + txtNumero.Text + " Categoria: " + txtCategoria.Text + " Nombre Contacto: " + txtNombreContacto.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Guia Telefonica');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }    
                 }

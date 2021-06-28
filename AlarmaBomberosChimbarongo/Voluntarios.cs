@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AlarmaBomberosChimbarongo
@@ -14,7 +8,7 @@ namespace AlarmaBomberosChimbarongo
         public void CargarTabla()
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Voluntarios;");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Voluntarios ORDER by ID DESC;");
         }
 
         public bool validarRut(string Stringrut)
@@ -144,7 +138,7 @@ namespace AlarmaBomberosChimbarongo
         private void txtBuscarEn_KeyUp(object sender, KeyEventArgs e)
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Voluntarios Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Voluntarios Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%' ORDER by ID DESC;");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -187,6 +181,17 @@ namespace AlarmaBomberosChimbarongo
                                 guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Voluntarios(NumeroVoluntario, RUT, NombreVoluntario, Telefono, Direccion, CompañiaBomberos, Cargo, Estado) VALUES ('" + txtNumeroVoluntario.Text + "', '" + txtRut.Text + "', '" + txtNombreVoluntario.Text + "', '" + txtTelefono.Text + "', '" + txtDireccion.Text + "', '" + txtCompañia.Text + "', '" + txtCargo.Text + "', '" + txtEstado.Text + "');");
 
                                 MessageBox.Show("Se guardo Correctamente el Voluntario de RUT: " + txtRut.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                try
+                                {
+                                    ControlSQLite guardarRegistro = new ControlSQLite();
+                                    guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Guardar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Registro un nuevo Voluntario con los siguientes datos, N° Voluntario: " + txtNumeroVoluntario.Text + " Rut: " + txtRut.Text + " Nombre Voluntario: " + txtNombreVoluntario.Text + " Telefono: "+ txtTelefono.Text+ " Direccion: "+ txtDireccion.Text+ " Compañia Bomberos: "+ txtCompañia.Text+ " Cargo: "+ txtCargo.Text+ " Estado: "+ txtEstado.Text+ "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Voluntarios');");
+                                }
+                                catch (Exception)
+                                {
+                                    throw;
+                                }
+
                                 LimpiarCampos();
                             }
                         }
@@ -208,6 +213,17 @@ namespace AlarmaBomberosChimbarongo
                             modificarClaveRadial.EjecutarConsulta("UPDATE main.Voluntarios SET 'NumeroVoluntario'='" + txtNumeroVoluntario.Text + "','RUT'='" + txtRut.Text + "','NombreVoluntario'='" + txtNombreVoluntario.Text + "','Telefono'='" + txtTelefono.Text + "','Direccion'='" + txtDireccion.Text + "','CompañiaBomberos'='" + txtCompañia.Text + "','Cargo'='" + txtCargo.Text + "','Estado'='" + txtEstado.Text + "' Where ID= '" + txtID.Text + "' ");
 
                             MessageBox.Show("Se Modifico Correctamente el Voluntario con el RUT: " + txtRut.Text + "", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            try
+                            {
+                                ControlSQLite guardarRegistro = new ControlSQLite();
+                                guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Modificar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Modifico un Voluntario con los siguientes datos, N° Voluntario: " + txtNumeroVoluntario.Text + " Rut: " + txtRut.Text + " Nombre Voluntario: " + txtNombreVoluntario.Text + " Telefono: " + txtTelefono.Text + " Direccion: " + txtDireccion.Text + " Compañia Bomberos: " + txtCompañia.Text + " Cargo: " + txtCargo.Text + " Estado: " + txtEstado.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Voluntarios');");
+                            }
+                            catch (Exception)
+                            {
+                                throw;
+                            }
+
                             LimpiarCampos();
                         }
                     }
@@ -236,7 +252,7 @@ namespace AlarmaBomberosChimbarongo
                 txtEstado.Text = Convert.ToString(fila.Cells["Estado"].Value);
                 txtNumeroVoluntario.Text = Convert.ToString(fila.Cells["NumeroVoluntario"].Value);
                 txtCompañia.Text = Convert.ToString(fila.Cells["CompañiaBomberos"].Value);
-                txtCargo.Text = Convert.ToString(fila.Cells["Cargo"].Value); ;
+                txtCargo.Text = Convert.ToString(fila.Cells["Cargo"].Value);
                 btnEliminar.Enabled = true;
             }
         }
@@ -261,6 +277,17 @@ namespace AlarmaBomberosChimbarongo
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Voluntarios WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("El Voluntario Rut: " + txtRut.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Eliminar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Elimino un Voluntario con los siguientes datos, N° Voluntario: " + txtNumeroVoluntario.Text + " Rut: " + txtRut.Text + " Nombre Voluntario: " + txtNombreVoluntario.Text + " Telefono: " + txtTelefono.Text + " Direccion: " + txtDireccion.Text + " Compañia Bomberos: " + txtCompañia.Text + " Cargo: " + txtCargo.Text + " Estado: " + txtEstado.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Voluntarios');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }   
                 }

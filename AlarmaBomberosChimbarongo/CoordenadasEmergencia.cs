@@ -3,19 +3,12 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AlarmaBomberosChimbarongo
 {
     public partial class CoordenadasEmergencia : Form
     {
-
         public String CoordenadasEmer { get; set; }
 
         //Se crea el marcador y capa de marcador para el mapa
@@ -23,8 +16,8 @@ namespace AlarmaBomberosChimbarongo
         GMapOverlay markerOverlay;
 
         //Longitud y Latitus Inicial par el mapa
-        double LatIncial = -34.7088493761234;
-        double LngInicial = -71.0404300689697;
+        public double LatIncial = -34.7088493761234;
+        public double LngInicial = -71.0404300689697;
 
         public CoordenadasEmergencia()
         {
@@ -95,11 +88,13 @@ namespace AlarmaBomberosChimbarongo
 
             CoordenadasEmer = txtCoordenadas.Text;
             this.DialogResult = DialogResult.OK;
+            gMapControl1.Dispose();
             this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            gMapControl1.Dispose();
             this.Close();
         }
     }

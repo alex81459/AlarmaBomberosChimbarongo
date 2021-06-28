@@ -3,12 +3,6 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace AlarmaBomberosChimbarongo
@@ -26,7 +20,7 @@ namespace AlarmaBomberosChimbarongo
         public void CargarTabla()
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Grifos;");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Grifos ORDER by ID DESC;");
         }
 
         public void CargarMapaLimpio()
@@ -67,6 +61,7 @@ namespace AlarmaBomberosChimbarongo
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            gMapControl1.Dispose();
             this.Close();
         }
 
@@ -122,8 +117,32 @@ namespace AlarmaBomberosChimbarongo
                 
                 if (Convert.ToString(fila.Cells["CoordenadasUbicacion"]) != "")
                 {
+                    
+                    try
+                    {
+                        //Se separa la longitud de la latidud
+                        String CoordendaSerparar = txtCordenadasUbicacion.Text;
+                        //Se gaurdan las separacioned entro de un arreglo
+                        String[] Separador = CoordendaSerparar.Split('/');
 
-                    //Se separa la longitud de la latidud
+                        //Se extraen desde el arreglo
+                        String Latitud = Separador[0];
+                        String Longuitud = Separador[1];
+
+                        //Se posiciona la Ubicacion de la tienda
+                        marker.Position = new PointLatLng(Convert.ToDouble(Latitud), Convert.ToDouble(Longuitud));
+                        marker.ToolTipText = string.Format("Lugar de Grifo Latitud: {0} \n Longitud: {1}", Convert.ToDouble(Latitud), Convert.ToDouble(Longuitud));
+                        gMapControl1.Position = new PointLatLng(Convert.ToDouble(Latitud), Convert.ToDouble(Longuitud));
+                        gMapControl1.Zoom = 17;
+                        trackZoom.Value = 17;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al intentar extraer las coordenadas, procesarlas y cargarlas ERROR: " + ex.Message + "", "ERROR cargar cordenadas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+
+                    /*//Se separa la longitud de la latidud
                     String CoordendaSerparar = txtCordenadasUbicacion.Text;
                     //Se gaurdan las separacioned entro de un arreglo
                     String[] Separador = CoordendaSerparar.Split('/');
@@ -137,7 +156,7 @@ namespace AlarmaBomberosChimbarongo
                     marker.ToolTipText = string.Format("Grifo Numero: " + txtNumero.Text + " Latitud: {0} \n Longitud: {1}", Convert.ToDouble(Latidud), Convert.ToDouble(Longitud));
                     gMapControl1.Position = new PointLatLng(Convert.ToDouble(Latidud), Convert.ToDouble(Longitud));
                     gMapControl1.Zoom = 17;
-                    trackZoom.Value = 17;
+                    trackZoom.Value = 17;*/
                 }
             }
         }
@@ -203,7 +222,7 @@ namespace AlarmaBomberosChimbarongo
         private void txtBuscarEn_KeyUp(object sender, KeyEventArgs e)
         {
             ControlSQLite cargarTabla = new ControlSQLite();
-            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Grifos Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%';");
+            dataGridView1.DataSource = cargarTabla.CargarTabla("SELECT * From Grifos Where " + cmbBuscarEn.Text + " like '%" + txtBuscarEn.Text + "%' ORDER by ID DESC;;");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -225,6 +244,17 @@ namespace AlarmaBomberosChimbarongo
                         guardarClaveRadial.EjecutarConsulta("INSERT INTO main.Grifos(NumeroGrifo,DireccionGrifo,Estado,CoordenadasUbicacion)VALUES ('" + txtNumero.Text + "','" + txtDireccionGrifo.Text + "', '" + txtEstado.Text + "', '" + txtCordenadasUbicacion.Text + "');");
 
                         MessageBox.Show("Se guardo Correctamente el Grifo Numero: " + txtNumero.Text + "", "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Guardar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Registro un nuevo Grifo con los siguientes datos, Numero Grifo: " + txtNumero.Text + " Direccion Grifo: " + txtDireccionGrifo.Text + " Estado: " + txtEstado.Text + " Coordenadas: "+ txtCordenadasUbicacion.Text+ "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Grifos');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }
                 }
@@ -245,6 +275,17 @@ namespace AlarmaBomberosChimbarongo
                         modificarClaveRadial.EjecutarConsulta("UPDATE main.Grifos SET 'NumeroGrifo'='" + txtNumero.Text + "','DireccionGrifo'='" + txtDireccionGrifo.Text + "','Estado'='" + txtEstado.Text + "','CoordenadasUbicacion'='" + txtCordenadasUbicacion.Text + "' Where ID= '" + txtID.Text + "' ");
 
                         MessageBox.Show("Se Modifico Correctamente el Grifo Numero: " + txtNumero.Text + "", "Modificacion Correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Modificar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Modifico un Grifo con los siguientes datos, Numero Grifo: " + txtNumero.Text + " Direccion Grifo: " + txtDireccionGrifo.Text + " Estado: " + txtEstado.Text + " Coordenadas: " + txtCordenadasUbicacion.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Grifos');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+
                         LimpiarCampos();
                     }     
                 }
@@ -280,6 +321,16 @@ namespace AlarmaBomberosChimbarongo
                         eliminarClaveRadial.EjecutarConsulta("DELETE FROM main.Grifos WHERE _rowid_ IN ('" + txtID.Text + "');");
 
                         MessageBox.Show("El Grifo Numero: " + txtNumero.Text + " se Elimino Correctamente", "Eliminado Correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        try
+                        {
+                            ControlSQLite guardarRegistro = new ControlSQLite();
+                            guardarRegistro.EjecutarConsulta("INSERT INTO main.Registros(UsuarioRUT,Accion,Descripcion,Fecha,Lugar) VALUES ('" + FuncionesAplicacion.RutLogin + "','Eliminar','El Usuario con RUT: " + FuncionesAplicacion.RutLogin + " Elimino un Grifo con los siguientes datos, Numero Grifo: " + txtNumero.Text + " Direccion Grifo: " + txtDireccionGrifo.Text + " Estado: " + txtEstado.Text + " Coordenadas: " + txtCordenadasUbicacion.Text + "','" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToString("hh:mm:ss") + "','Grifos');");
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
                         LimpiarCampos();
                     }    
                 }
