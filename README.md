@@ -12,4 +12,9 @@ Monitor: 1024x768
 
 ![bomberos](https://user-images.githubusercontent.com/50557455/159138500-f58e7d0c-d9dc-4799-82da-48aec0df0706.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GWFYVNBe6LI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<object width="425" height="350">
+<param name="movie" value="https://www.youtube.com/embed/GWFYVNBe6LI"></param>
+<param name="wmode" value="transparent"></param>
+<embed src="https://www.youtube.com/embed/GWFYVNBe6LI" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350">
+</embed>
+</object>
