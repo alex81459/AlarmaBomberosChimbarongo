@@ -12,4 +12,6 @@ Monitor: 1024x768
 
 ![bomberos](https://user-images.githubusercontent.com/50557455/159138500-f58e7d0c-d9dc-4799-82da-48aec0df0706.png)
 
+VIDEO DE COMO FUNCIONA EN YOUTUVE 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/GWFYVNBe6LI/0.jpg)](https://www.youtube.com/watch?v=GWFYVNBe6LI)
+https://www.youtube.com/watch?v=GWFYVNBe6LI
