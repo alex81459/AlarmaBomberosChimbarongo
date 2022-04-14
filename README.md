@@ -11,7 +11,10 @@ Almacenamiento: 2 GB Libre
 Monitor: 1024x768
 
 ![bomberos](https://user-images.githubusercontent.com/50557455/159138500-f58e7d0c-d9dc-4799-82da-48aec0df0706.png)
+<br>Capturas del Sistema
 
+![photo_2022-04-14_12-55-03](https://user-images.githubusercontent.com/50557455/163437101-9117c767-7070-4eed-9351-51cb9b3e706e.jpg)
+<br>Imagen de Dispositivo de Control de Transmision de Emergencias
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/GWFYVNBe6LI/0.jpg)](https://www.youtube.com/watch?v=GWFYVNBe6LI)
 <p>VIDEO DE COMO FUNCIONA EN YOUTUBE (CLICK EN LA IMAGEN)
